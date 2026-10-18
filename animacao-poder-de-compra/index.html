@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Poder de Compra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #070708; --gold: #E2B84B; }
+  html, body { margin: 0; height: 100%; background: var(--bg); }
+  body { display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  canvas { height: 100vh; max-width: 100vw; aspect-ratio: 9 / 16; object-fit: contain; display: block; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<script>
+// IPCA anual (jul/1994 em diante). Curva reescalada para terminar exatamente em R$ 11,19.
+const IPCA = {1994:18.6,1995:22.41,1996:9.56,1997:5.22,1998:1.65,1999:8.94,2000:5.97,2001:7.67,
+  2002:12.53,2003:9.30,2004:7.60,2005:5.69,2006:3.14,2007:4.46,2008:5.90,2009:4.31,2010:5.91,
+  2011:6.50,2012:5.84,2013:5.91,2014:6.41,2015:10.67,2016:6.29,2017:2.95,2018:3.75,2019:4.31,
+  2020:4.52,2021:10.06,2022:5.79,2023:4.62,2024:4.83,2025:4.30};
+const FINAL = 11.19, Y0 = 1994, Y1 = 2026;
+const raw = [100];
+for (let y = Y0; y < Y1; y++) raw.push(raw[raw.length - 1] / (1 + IPCA[y] / 100));
+// reescala logarítmica para cravar o valor final sem distorcer o formato
+const k = Math.log(FINAL / 100) / Math.log(raw[raw.length - 1] / 100);
+const SERIES = raw.map(v => 100 * Math.pow(v / 100, k));
+
+const W = 1080, H = 1920, DURATION = 13;
+const cv = document.getElementById('c'), ctx = cv.getContext('2d');
+const GOLD = '#E2B84B', GOLD_HI = '#FFE29A', GOLD_DK = '#9A7424', INK = '#F4EFE4', MUTED = '#8C877C';
+const F = (w, s) => `${w} ${s}px Inter, "Inter Display", system-ui, sans-serif`;
+
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const prog = (t, a, b) => clamp((t - a) / (b - a));
+const easeOut = x => 1 - Math.pow(1 - x, 3);
+const easeInOut = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+const backOut = x => { const c = 1.9; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+const brl = v => 'R$ ' + v.toFixed(2).replace('.', ',');
+
+// partículas douradas determinísticas
+let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+const DUST = Array.from({length: 70}, () => ({x: rnd() * W, y: rnd() * H, r: .6 + rnd() * 2.2, s: 8 + rnd() * 30, p: rnd() * 6.28}));
+
+function roundRect(x, y, w, h, r) {
+  ctx.beginPath(); ctx.moveTo(x + r, y); ctx.arcTo(x + w, y, x + w, y + h, r);
+  ctx.arcTo(x + w, y + h, x, y + h, r); ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath();
+}
+function goldGrad(x0, y0, x1, y1) {
+  const g = ctx.createLinearGradient(x0, y0, x1, y1);
+  g.addColorStop(0, GOLD_HI); g.addColorStop(.45, GOLD); g.addColorStop(1, GOLD_DK); return g;
+}
+
+function background(t) {
+  const g = ctx.createLinearGradient(0, 0, 0, H);
+  g.addColorStop(0, '#0C0B0A'); g.addColorStop(.5, '#060607'); g.addColorStop(1, '#100D07');
+  ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+  const rg = ctx.createRadialGradient(W * .5, 980, 40, W * .5, 980, 900);
+  rg.addColorStop(0, 'rgba(226,184,75,0.10)'); rg.addColorStop(1, 'rgba(226,184,75,0)');
+  ctx.fillStyle = rg; ctx.fillRect(0, 0, W, H);
+  // marca d'água
+  ctx.save(); ctx.globalAlpha = .035; ctx.fillStyle = GOLD; ctx.font = F(900, 760);
+  ctx.textAlign = 'center'; ctx.fillText('R$', W / 2 + Math.sin(t * .3) * 10, 1500); ctx.restore();
+  for (const d of DUST) {
+    const y = (d.y - t * d.s + H) % H, a = .15 + .25 * (.5 + .5 * Math.sin(t * 1.3 + d.p));
+    ctx.fillStyle = `rgba(226,184,75,${a})`; ctx.beginPath(); ctx.arc(d.x, y, d.r, 0, 6.29); ctx.fill();
+  }
+}
+
+function header(t) {
+  const p = easeOut(prog(t, .1, .9));
+  ctx.save(); ctx.globalAlpha = p; ctx.translate(0, (1 - p) * -40);
+  // faixa dourada
+  ctx.fillStyle = goldGrad(0, 180, 700, 330);
+  ctx.beginPath(); ctx.moveTo(0, 200); ctx.lineTo(560 * p + 80, 200); ctx.lineTo(500 * p + 80, 300); ctx.lineTo(0, 300); ctx.fill();
+  ctx.fillStyle = '#0A0907'; ctx.font = F(900, 74); ctx.textBaseline = 'middle';
+  ctx.fillText('PODER DE', 60, 252);
+  ctx.fillStyle = INK; ctx.font = F(900, 92); ctx.fillText('COMPRA', 60, 370);
+  ctx.fillStyle = GOLD; ctx.font = F(700, 32); ctx.fillText('@victornaito.financas', 64, 445);
+  ctx.restore();
+}
+
+// área do gráfico
+const CARD = {x: 48, y: 520, w: 984, h: 760};
+const PLOT = {x: 110, y: 780, w: 860, h: 400};
+const vmax = 100;
+const px = i => PLOT.x + (i / (SERIES.length - 1)) * PLOT.w;
+const py = v => PLOT.y + PLOT.h - (v / vmax) * PLOT.h;
+
+function chart(t) {
+  const pc = easeOut(prog(t, .7, 1.5));
+  if (pc <= 0) return;
+  ctx.save(); ctx.globalAlpha = pc; ctx.translate(0, (1 - pc) * 50);
+  roundRect(CARD.x, CARD.y, CARD.w, CARD.h, 36);
+  const cg = ctx.createLinearGradient(0, CARD.y, 0, CARD.y + CARD.h);
+  cg.addColorStop(0, '#15130F'); cg.addColorStop(1, '#0B0A08');
+  ctx.fillStyle = cg; ctx.fill();
+  ctx.strokeStyle = 'rgba(226,184,75,0.28)'; ctx.lineWidth = 2; ctx.stroke();
+
+  // progresso da linha
+  const pl = easeInOut(prog(t, 1.6, 8.6));
+  const fi = pl * (SERIES.length - 1), i0 = Math.floor(fi), fr = fi - i0;
+  const curV = i0 >= SERIES.length - 1 ? SERIES[SERIES.length - 1] : SERIES[i0] + (SERIES[i0 + 1] - SERIES[i0]) * fr;
+  const curY = Math.round(Y0 + fi);
+
+  ctx.textBaseline = 'alphabetic';
+  ctx.fillStyle = MUTED; ctx.font = F(700, 26); ctx.letterSpacing = '3px';
+  ctx.fillText('PODER DE COMPRA DE R$ 100 DE 1994', CARD.x + 52, CARD.y + 74);
+  ctx.letterSpacing = '0px';
+  ctx.fillStyle = goldGrad(0, CARD.y + 90, 0, CARD.y + 210); ctx.font = F(900, 128);
+  ctx.fillText(brl(curV), CARD.x + 46, CARD.y + 210);
+  ctx.textAlign = 'right'; ctx.fillStyle = 'rgba(244,239,228,0.85)'; ctx.font = F(800, 64);
+  ctx.fillText(String(curY), CARD.x + CARD.w - 52, CARD.y + 200); ctx.textAlign = 'left';
+
+  // grade
+  ctx.strokeStyle = 'rgba(244,239,228,0.07)'; ctx.lineWidth = 1.5; ctx.font = F(500, 22); ctx.fillStyle = MUTED;
+  for (const v of [0, 25, 50, 75, 100]) {
+    ctx.beginPath(); ctx.moveTo(PLOT.x, py(v)); ctx.lineTo(PLOT.x + PLOT.w, py(v)); ctx.stroke();
+    ctx.textAlign = 'right'; ctx.fillText(String(v), PLOT.x - 16, py(v) + 8);
+  }
+  ctx.textAlign = 'center';
+  for (const y of [1994, 2002, 2010, 2018, 2026]) ctx.fillText(String(y), px(y - Y0), PLOT.y + PLOT.h + 44);
+  ctx.textAlign = 'left';
+
+  if (pl > 0) {
+    const pts = [];
+    for (let i = 0; i <= i0 && i < SERIES.length; i++) pts.push([px(i), py(SERIES[i])]);
+    if (i0 < SERIES.length - 1) pts.push([px(fi), py(curV)]);
+    const head = pts[pts.length - 1];
+    // área preenchida
+    ctx.beginPath(); ctx.moveTo(pts[0][0], PLOT.y + PLOT.h);
+    pts.forEach(p => ctx.lineTo(p[0], p[1])); ctx.lineTo(head[0], PLOT.y + PLOT.h); ctx.closePath();
+    const ag = ctx.createLinearGradient(0, PLOT.y, 0, PLOT.y + PLOT.h);
+    ag.addColorStop(0, 'rgba(226,184,75,0.38)'); ag.addColorStop(1, 'rgba(226,184,75,0.02)');
+    ctx.fillStyle = ag; ctx.fill();
+    // linha com brilho
+    ctx.beginPath(); pts.forEach((p, i) => i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1]));
+    ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+    ctx.shadowColor = 'rgba(255,214,110,0.75)'; ctx.shadowBlur = 24;
+    ctx.strokeStyle = goldGrad(PLOT.x, 0, PLOT.x + PLOT.w, 0); ctx.lineWidth = 7; ctx.stroke();
+    ctx.shadowBlur = 0;
+    // ponto da cabeça
+    const pulse = t > 8.6 ? .5 + .5 * Math.sin((t - 8.6) * 5) : 0;
+    ctx.fillStyle = `rgba(255,226,154,${.18 + .2 * pulse})`;
+    ctx.beginPath(); ctx.arc(head[0], head[1], 26 + 12 * pulse, 0, 6.29); ctx.fill();
+    ctx.fillStyle = GOLD_HI; ctx.beginPath(); ctx.arc(head[0], head[1], 11, 0, 6.29); ctx.fill();
+  }
+
+  // selo de queda
+  const pb = prog(t, 8.7, 9.3);
+  if (pb > 0) {
+    const s = backOut(pb), bx = px(SERIES.length - 1) - 190, by = py(SERIES[SERIES.length - 1]) - 150;
+    ctx.save(); ctx.translate(bx + 110, by + 40); ctx.scale(s, s); ctx.translate(-110, -40);
+    roundRect(0, 0, 220, 80, 40); ctx.fillStyle = goldGrad(0, 0, 220, 80); ctx.fill();
+    ctx.fillStyle = '#0A0907'; ctx.font = F(900, 40); ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillText('−88,8%', 110, 42); ctx.restore();
+  }
+  ctx.restore();
+}
+
+function headline(t) {
+  const lines = [
+    [{s: 'DO PLANO REAL A 2026', c: GOLD}],
+    [{s: 'R$ 100 DE 1994', c: INK}],
+    [{s: 'PASSARAM A', c: INK}],
+    [{s: 'REPRESENTAR ', c: INK}, {s: 'R$ 11,19', c: 'gold'}],
+    [{s: 'EM PODER DE COMPRA', c: INK}],
+  ];
+  const x0 = 96, top = 1400, lh = 74;
+  const pbar = easeOut(prog(t, 9.1, 9.7));
+  ctx.fillStyle = goldGrad(0, top - 50, 0, top + 340);
+  ctx.fillRect(60, top - 50, 6, 360 * pbar);
+  lines.forEach((ln, i) => {
+    const p = easeOut(prog(t, 9.3 + i * .22, 9.9 + i * .22));
+    if (p <= 0) return;
+    ctx.save(); ctx.globalAlpha = p; ctx.translate((1 - p) * 60, 0);
+    ctx.font = F(900, 58); ctx.textBaseline = 'alphabetic';
+    let x = x0;
+    for (const seg of ln) {
+      ctx.fillStyle = seg.c === 'gold' ? goldGrad(0, top + i * lh - 50, 0, top + i * lh) : seg.c;
+      ctx.fillText(seg.s, x, top + i * lh); x += ctx.measureText(seg.s).width;
+    }
+    ctx.restore();
+  });
+  const pf = prog(t, 10.8, 11.4);
+  if (pf > 0) {
+    ctx.save(); ctx.globalAlpha = pf; ctx.fillStyle = MUTED; ctx.font = F(500, 24);
+    ctx.fillText('Fonte: IPCA/IBGE acumulado desde jul/1994 · valores aproximados', x0, 1820); ctx.restore();
+  }
+}
+
+function render(t) {
+  ctx.clearRect(0, 0, W, H);
+  background(t); header(t); chart(t); headline(t);
+}
+window.render = render; window.DURATION = DURATION;
+
+if (!new URLSearchParams(location.search).has('capture')) {
+  const start = performance.now();
+  const loop = now => { render(((now - start) / 1000) % (DURATION + 1.5)); requestAnimationFrame(loop); };
+  (document.fonts ? document.fonts.ready : Promise.resolve()).then(() => requestAnimationFrame(loop));
+}
+</script>
+</body>
+</html>
