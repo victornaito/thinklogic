@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>BYD x Creta</title>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Archivo:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #e8e4d8;
+    --paper: #fbf9f3;
+    --ink: #1c1c1c;
+    --muted: #7a766c;
+    --dash: #c9c4b4;
+    --stamp: #b5442e;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { width:1080px; height:1920px; overflow:hidden; background:var(--bg); }
+  body { font-family:'Courier Prime', monospace; color:var(--ink); }
+  #stage { position:relative; width:1080px; height:1920px; }
+
+  /* papel persistente */
+  .receipt {
+    position:absolute; left:70px; top:400px; width:940px; height:1330px;
+    background:var(--paper);
+    box-shadow:0 30px 60px rgba(0,0,0,.18);
+    -webkit-mask-image:
+      radial-gradient(circle 16px at 28px 0px, transparent 15px, black 17px),
+      radial-gradient(circle 16px at 912px 0px, transparent 15px, black 17px);
+  }
+  .rhead { position:absolute; left:126px; width:828px; top:455px; text-align:center; }
+  .rhead .brand { font-family:'Archivo',sans-serif; font-weight:800; font-size:38px; letter-spacing:1px; }
+  .rhead .sub { margin-top:8px; font-size:23px; color:var(--muted); letter-spacing:3px; text-transform:uppercase; }
+  .dashed { position:absolute; left:126px; width:828px; border-top:3px dashed var(--dash); }
+  .barcode {
+    position:absolute; left:126px; width:828px; top:1600px; height:62px;
+    background-image:repeating-linear-gradient(90deg,
+      var(--ink) 0, var(--ink) 3px, transparent 3px, transparent 8px,
+      var(--ink) 8px, var(--ink) 9px, transparent 9px, transparent 14px);
+  }
+  .foot { position:absolute; left:126px; width:828px; top:1680px; text-align:center; font-size:22px; color:var(--muted); letter-spacing:2px; }
+
+  /* cenas */
+  .scene { position:absolute; inset:0; opacity:0; }
+  .cap {
+    position:absolute; left:60px; right:60px; top:130px; height:240px;
+    display:flex; align-items:center; justify-content:center; text-align:center;
+    font-family:'Archivo',sans-serif; font-weight:800; font-size:68px; line-height:1.08; letter-spacing:-.5px;
+  }
+  .cap em { font-style:normal; text-decoration:underline; text-decoration-thickness:7px; text-underline-offset:10px; }
+  .body { position:absolute; left:126px; width:828px; top:620px; height:930px; }
+
+  .row { display:grid; grid-template-columns:1fr 268px 268px; align-items:baseline; font-size:36px; margin-bottom:46px; }
+  .row .k { color:var(--muted); font-size:30px; }
+  .row .v { text-align:right; font-weight:700; }
+  .row.colh { font-family:'Archivo',sans-serif; font-weight:800; font-size:31px; margin-bottom:44px; letter-spacing:.5px; }
+  .row.colh span { text-align:right; }
+  .row.big { font-size:40px; }
+  .row.big .v { font-size:40px; }
+  .row.big .k { font-size:34px; color:var(--ink); font-family:'Archivo',sans-serif; font-weight:800; }
+  .sep { border-top:3px dashed var(--dash); margin:8px 0 34px; }
+  .note { font-size:33px; color:var(--muted); text-align:center; line-height:1.35; }
+  .note b { color:var(--ink); }
+  .tag {
+    display:inline-block; border:3px solid var(--ink); padding:6px 16px;
+    font-family:'Archivo',sans-serif; font-weight:800; font-size:26px; letter-spacing:1px;
+  }
+  .stamp {
+    position:absolute; border:5px solid var(--stamp); color:var(--stamp);
+    font-family:'Archivo',sans-serif; font-weight:800; letter-spacing:2px; text-align:center;
+    padding:10px 26px; background:rgba(251,249,243,.85);
+  }
+  .inline { display:inline-block; }
+
+  /* cena 1 */
+  .cars { display:flex; justify-content:space-between; margin-top:40px; }
+  .car { width:370px; text-align:center; }
+  .car svg { width:300px; height:130px; }
+  .car .name { font-family:'Archivo',sans-serif; font-weight:800; font-size:40px; margin-top:16px; }
+  .car .yr { font-size:24px; color:var(--muted); letter-spacing:3px; margin-top:6px; }
+  .car .price { font-size:52px; font-weight:700; margin-top:26px; }
+
+  /* cena 6 */
+  .strike { position:relative; display:inline-block; color:var(--muted); font-weight:400; font-size:30px; }
+  .strike i { position:absolute; left:0; top:52%; height:3px; background:var(--ink); width:0; }
+  .chart { position:relative; height:330px; margin-top:16px; display:flex; align-items:flex-end; justify-content:space-between; padding:0 6px; border-bottom:3px solid var(--ink); }
+  .bar { width:104px; position:relative; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%; }
+  .bar .fill { width:100%; background:var(--ink); transform-origin:bottom; }
+  .bar .val { font-size:23px; font-weight:700; margin-bottom:8px; white-space:nowrap; }
+  .years { display:flex; justify-content:space-between; padding:10px 6px 0; font-size:24px; color:var(--muted); }
+  .years span { width:104px; text-align:center; }
+
+  /* cena 8 */
+  .moral { font-family:'Archivo',sans-serif; font-weight:800; font-size:64px; line-height:1.12; text-align:center; }
+  .moral .u { position:relative; display:inline-block; }
+  .moral .u i { position:absolute; left:0; bottom:-4px; height:9px; background:var(--ink); width:0; }
+</style>
+</head>
+<body>
+<div id="stage">
+
+  <div class="receipt"></div>
+  <div class="rhead">
+    <div class="brand">EXTRATO · CARRO EM 5 ANOS</div>
+    <div class="sub">BYD 0 km x Creta 2019 · 60 meses</div>
+  </div>
+  <div class="dashed" style="top:585px"></div>
+  <div class="dashed" style="top:1565px"></div>
+  <div class="barcode"></div>
+  <div class="foot">INVESTIDOR DO CERRADO · SALVA ESSE EXTRATO</div>
+
+  <!-- CENA 1 · gancho -->
+  <section class="scene" data-start="0" data-end="4.6">
+    <div class="cap" data-a="up" data-t="0"><span>BYD 0 km ou<br>Creta 2019?</span></div>
+    <div class="body">
+      <div class="cars">
+        <div class="car" data-a="left" data-t=".15">
+          <svg viewBox="0 0 300 130" fill="none" stroke="#1c1c1c" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M18 92 L18 70 Q20 58 40 54 L84 48 L118 22 Q126 16 140 16 L196 16 Q210 16 220 24 L252 50 L272 56 Q284 60 284 74 L284 92"/>
+            <path d="M18 92 L58 92 M118 92 L182 92 M242 92 L284 92"/><path d="M128 24 L120 50 L240 50 L212 26 Z"/>
+            <circle cx="88" cy="96" r="22"/><circle cx="212" cy="96" r="22"/>
+          </svg>
+          <div class="name">BYD</div>
+          <div class="yr">0 KM · ELÉTRICO</div>
+          <div class="price" data-count="120000" data-t=".4" data-cd="1.1" data-pre="R$ ">R$ 0</div>
+        </div>
+        <div class="car" data-a="right" data-t=".15">
+          <svg viewBox="0 0 300 130" fill="none" stroke="#1c1c1c" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M16 92 L16 64 Q18 54 34 52 L80 48 L110 20 Q116 14 128 14 L210 14 Q222 14 230 22 L258 50 L276 54 Q286 58 286 70 L286 92"/>
+            <path d="M16 92 L58 92 M118 92 L182 92 M242 92 L286 92"/><path d="M120 22 L112 50 L246 50 L222 22 Z"/><path d="M60 40 L240 40" stroke-width="4"/>
+            <circle cx="88" cy="96" r="22"/><circle cx="212" cy="96" r="22"/>
+          </svg>
+          <div class="name">CRETA</div>
+          <div class="yr">2019 · USADO</div>
+          <div class="price" data-count="80000" data-t=".4" data-cd="1.1" data-pre="R$ ">R$ 0</div>
+        </div>
+      </div>
+      <div class="stamp" data-a="stamp" data-t="1.5" style="left:334px; top:150px; font-size:56px; padding:4px 26px;">VS</div>
+      <div class="note" data-a="print" data-t="2.3" data-d=".9" style="margin-top:110px">Fiz a conta de <b>5 anos</b>.<br>Linha por linha.</div>
+    </div>
+  </section>
+
+  <!-- CENA 2 · regras -->
+  <section class="scene" data-start="4.6" data-end="10.2">
+    <div class="cap" data-a="up" data-t="0"><span>As regras<br>do jogo</span></div>
+    <div class="body">
+      <div class="row" style="grid-template-columns:1fr 340px" data-a="print" data-t=".3"><span class="k">Mesma pessoa, na mão hoje</span><span class="v" data-count="40000" data-t=".4" data-cd=".7" data-pre="R$ ">R$ 0</span></div>
+      <div class="row" style="grid-template-columns:1fr 340px" data-a="print" data-t=".9"><span class="k">Financia nos dois casos</span><span class="v">R$ 80.000</span></div>
+      <div class="row" style="grid-template-columns:1fr 340px" data-a="print" data-t="1.4"><span class="k">Prazo</span><span class="v">60x · 5 anos</span></div>
+      <div class="sep" data-a="fade" data-t="1.9"></div>
+      <div class="row colh" data-a="fade" data-t="2.1"><span></span><span>BYD 0KM</span><span>CRETA 19</span></div>
+      <div class="row" data-a="print" data-t="2.5"><span class="k">Os R$ 40 mil</span><span class="v">ENTRADA</span><span class="v">INVESTIDOS</span></div>
+      <div class="row" data-a="print" data-t="3.2"><span class="k">Rendimento</span><span class="v">—</span><span class="v">10% a.a.</span></div>
+      <div class="row" data-a="print" data-t="3.9"><span class="k">Saldo guardado</span><span class="v" data-count="0" data-from="40000" data-t="4.1" data-cd=".8" data-pre="R$ ">R$ 40.000</span><span class="v">R$ 40.000</span></div>
+    </div>
+  </section>
+
+  <!-- CENA 3 · financiamento -->
+  <section class="scene" data-start="10.2" data-end="18.2">
+    <div class="cap" data-a="up" data-t="0"><span>1. O financiamento</span></div>
+    <div class="body">
+      <div class="row colh" data-a="fade" data-t=".2"><span></span><span>BYD 0KM</span><span>CRETA 19</span></div>
+      <div class="row" data-a="print" data-t=".6"><span class="k">Valor financiado</span><span class="v">R$ 80.000</span><span class="v">R$ 80.000</span></div>
+      <div class="row" data-a="print" data-t="1.5"><span class="k">Parcela (60x)</span><span class="v" data-count="2207" data-t="1.6" data-cd=".8" data-pre="R$ ">R$ 0</span><span class="v" data-count="2376" data-t="1.6" data-cd=".8" data-pre="R$ ">R$ 0</span></div>
+      <div class="row" data-a="print" data-t="2.6"><span class="k">CET ao ano</span><span class="v" data-count="24.3" data-dec="1" data-t="2.7" data-cd=".7" data-suf="%">0%</span><span class="v" data-count="28.8" data-dec="1" data-t="2.7" data-cd=".7" data-suf="%">0%</span></div>
+      <div class="sep" data-a="fade" data-t="3.5"></div>
+      <div class="row big" data-a="print" data-t="3.7"><span class="k">Total pago</span><span class="v" data-count="132400" data-t="3.8" data-cd="1.1" data-pre="R$ ">R$ 0</span><span class="v" data-count="142600" data-t="3.8" data-cd="1.1" data-pre="R$ " data-dim="5.2">R$ 0</span></div>
+      <div class="row" style="margin-top:-6px"><span></span><span class="v"><span class="tag" data-a="pop" data-t="5.2">✓ PONTO BYD</span></span><span></span></div>
+      <div class="note" data-a="print" data-t="5.6" data-d=".9" style="margin-top:40px">Carro usado tem juros maiores.<br><b>Aqui o BYD ganha.</b></div>
+    </div>
+  </section>
+
+  <!-- CENA 4 · custos -->
+  <section class="scene" data-start="18.2" data-end="28.2">
+    <div class="cap" data-a="up" data-t="0"><span>2. Os custos<br>de 5 anos</span></div>
+    <div class="body">
+      <div class="row colh" data-a="fade" data-t=".2"><span></span><span>BYD 0KM</span><span>CRETA 19</span></div>
+      <div class="row" data-a="print" data-t=".6"><span class="k">IPVA (4%)</span><span class="v" data-count="18000" data-t=".7" data-cd=".8" data-pre="R$ " data-dim="1.6">R$ 0</span><span class="v" data-count="13000" data-t=".7" data-cd=".8" data-pre="R$ ">R$ 0</span></div>
+      <div class="row" data-a="print" data-t="2.2"><span class="k">Seguro</span><span class="v" data-count="22500" data-t="2.3" data-cd=".8" data-pre="R$ " data-dim="3.2">R$ 0</span><span class="v" data-count="17500" data-t="2.3" data-cd=".8" data-pre="R$ ">R$ 0</span></div>
+      <div class="row" data-a="print" data-t="3.8"><span class="k">Manutenção</span><span class="v" data-count="4000" data-t="3.9" data-cd=".8" data-pre="R$ ">R$ 0</span><span class="v" data-count="15000" data-t="3.9" data-cd=".8" data-pre="R$ " data-dim="4.8">R$ 0</span></div>
+      <div class="row" data-a="print" data-t="5.4"><span class="k">Energia/gasolina</span><span class="v" data-count="7400" data-t="5.5" data-cd=".9" data-pre="R$ ">R$ 0</span><span class="v" data-count="37800" data-t="5.5" data-cd=".9" data-pre="R$ " data-pulse="6.5" data-dim="7.3">R$ 0</span></div>
+      <div class="note" data-a="print" data-t="7.6" data-d=".9" style="margin-top:56px">12 mil km por ano.<br>Elétrico é muito mais barato de rodar.<br><b>Ponto pro BYD de novo.</b></div>
+    </div>
+  </section>
+
+  <!-- CENA 5 · empate -->
+  <section class="scene" data-start="28.2" data-end="32.6">
+    <div class="cap" data-a="up" data-t="0"><span>Total que saiu<br>do bolso</span></div>
+    <div class="body">
+      <div class="row colh" data-a="fade" data-t=".1"><span></span><span>BYD 0KM</span><span>CRETA 19</span></div>
+      <div class="row big" data-a="print" data-t=".3"><span class="k">Total</span><span class="v" data-count="224300" data-t=".4" data-cd="1" data-pre="R$ ">R$ 0</span><span class="v" data-count="225900" data-t=".4" data-cd="1" data-pre="R$ ">R$ 0</span></div>
+      <div data-a="fade" data-t="1.2" style="display:flex; justify-content:center; margin-top:20px">
+        <svg id="balance" width="420" height="250" viewBox="0 0 420 250" fill="none" stroke="#1c1c1c" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M210 40 L210 220 M150 220 L270 220"/>
+          <g id="beam">
+            <path d="M50 40 L370 40"/>
+            <path d="M70 40 L40 120 L100 120 Z M350 40 L320 120 L380 120 Z"/>
+            <text x="70" y="160" fill="#1c1c1c" stroke="none" font-family="Archivo" font-weight="800" font-size="24" text-anchor="middle">BYD</text>
+            <text x="350" y="160" fill="#1c1c1c" stroke="none" font-family="Archivo" font-weight="800" font-size="24" text-anchor="middle">CRETA</text>
+          </g>
+          <circle cx="210" cy="40" r="10" fill="#1c1c1c"/>
+        </svg>
+      </div>
+      <div class="note" data-a="print" data-t="2.4" data-d=".8" style="margin-top:30px">Diferença de R$ 1.600.<br><b>Até aqui, empate.</b></div>
+    </div>
+  </section>
+
+  <!-- CENA 6 · virada -->
+  <section class="scene" data-start="32.6" data-end="41.6">
+    <div class="cap" data-a="up" data-t="0"><span>Mas a conta termina<br>no que <em>sobrou</em></span></div>
+    <div class="body">
+      <div class="row colh" data-a="fade" data-t=".3"><span></span><span>BYD 0KM</span><span>CRETA 19</span></div>
+      <div class="row" data-a="print" data-t=".6"><span class="k">Pagou</span><span class="v"><span class="strike">R$ 120.000<i data-strike="1.4"></i></span></span><span class="v"><span class="strike">R$ 80.000<i data-strike="1.4"></i></span></span></div>
+      <div class="row big" data-a="print" data-t="1.7"><span class="k">Vale em 2031</span><span class="v" data-count="62000" data-from="120000" data-t="1.8" data-cd="1.2" data-pre="R$ ">R$ 120.000</span><span class="v" data-count="50000" data-from="80000" data-t="1.8" data-cd="1.2" data-pre="R$ ">R$ 80.000</span></div>
+      <div class="row" style="margin-top:-14px" data-a="fade" data-t="3"><span></span><span class="v" style="font-weight:400;color:var(--muted)">−48%</span><span class="v" style="font-weight:400;color:var(--muted)">−38%</span></div>
+      <div class="sep" data-a="fade" data-t="3.4"></div>
+      <div class="row" style="grid-template-columns:1fr auto; margin-bottom:6px" data-a="print" data-t="3.6"><span class="k" style="color:var(--ink);font-family:Archivo;font-weight:800">Os R$ 40 mil do Creta, a 10% a.a.</span><span></span></div>
+      <div class="chart">
+        <div class="bar"><span class="val" data-a="fade" data-t="4.0">40,0 mil</span><div class="fill" data-a="grow" data-t="3.9" style="height:155px"></div></div>
+        <div class="bar"><span class="val" data-a="fade" data-t="4.4">44,0 mil</span><div class="fill" data-a="grow" data-t="4.3" style="height:171px"></div></div>
+        <div class="bar"><span class="val" data-a="fade" data-t="4.8">48,4 mil</span><div class="fill" data-a="grow" data-t="4.7" style="height:188px"></div></div>
+        <div class="bar"><span class="val" data-a="fade" data-t="5.2">53,2 mil</span><div class="fill" data-a="grow" data-t="5.1" style="height:207px"></div></div>
+        <div class="bar"><span class="val" data-a="fade" data-t="5.6">58,6 mil</span><div class="fill" data-a="grow" data-t="5.5" style="height:227px"></div></div>
+        <div class="bar"><span class="val" data-a="fade" data-t="6.0">64,4 mil</span><div class="fill" data-a="grow" data-t="5.9" style="height:250px"></div></div>
+      </div>
+      <div class="years" data-a="fade" data-t="3.9"><span>hoje</span><span>ano 1</span><span>ano 2</span><span>ano 3</span><span>ano 4</span><span>ano 5</span></div>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:34px">
+        <span class="note" data-a="print" data-t="6.6" style="text-align:left">BYD: <b>R$ 0</b> guardado</span>
+        <span class="tag" data-a="pop" data-t="7.2" style="font-size:26px; transform:rotate(-2deg)">LÍQUIDO DE IR: R$ 60.800</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CENA 7 · resultado -->
+  <section class="scene" data-start="41.6" data-end="49.6">
+    <div class="cap" data-a="up" data-t="0"><span>O resultado</span></div>
+    <div class="body">
+      <div class="row colh" data-a="fade" data-t=".2"><span></span><span>BYD 0KM</span><span>CRETA 19</span></div>
+      <div class="row" data-a="print" data-t=".5"><span class="k">Saiu do bolso</span><span class="v" data-dim="4.6">R$ 224.300</span><span class="v">R$ 225.900</span></div>
+      <div class="row" data-a="print" data-t="1.2"><span class="k">(−) carro 2031</span><span class="v" data-dim="4.6">R$ 62.000</span><span class="v">R$ 50.000</span></div>
+      <div class="row" data-a="print" data-t="1.9"><span class="k">(−) investimento</span><span class="v" data-dim="4.6">R$ 0</span><span class="v">R$ 60.800</span></div>
+      <div class="sep" data-a="fade" data-t="2.5"></div>
+      <div class="row big" data-a="print" data-t="2.7"><span class="k">Custo real</span><span class="v" data-count="162300" data-t="2.8" data-cd="1.1" data-pre="R$ " data-dim="4.6">R$ 0</span><span class="v" data-count="115100" data-t="2.8" data-cd="1.1" data-pre="R$ ">R$ 0</span></div>
+      <div class="stamp" data-a="stamp" data-t="4.3" data-rot="-5" style="left:84px; top:600px; width:660px; font-size:30px; line-height:1.15">
+        CRETA SAI<br><span data-count="47200" data-t="4.5" data-cd=".9" data-pre="R$ " style="font-size:84px; letter-spacing:0">R$ 0</span><br>MAIS BARATO
+      </div>
+    </div>
+  </section>
+
+  <!-- CENA 8 · moral + CTA -->
+  <section class="scene" data-start="49.6" data-end="55.6" data-fadeout="0.5">
+    <div class="body" style="display:flex; flex-direction:column; justify-content:center; align-items:center; gap:56px">
+      <div class="moral">
+        <div data-a="up" data-t=".2">Carro novo não</div>
+        <div data-a="up" data-t=".5">é investimento.</div>
+        <div data-a="up" data-t="1.3" style="margin-top:28px">A diferença</div>
+        <div data-a="up" data-t="1.6"><span class="u">investida<i data-strike="2.1"></i></span> é.</div>
+      </div>
+      <div class="note" data-a="print" data-t="2.8" data-d=".9">Salva pra fazer essa conta<br><b>antes de ir na concessionária.</b></div>
+      <div class="note" data-a="fade" data-t="3.6" style="font-size:20px">Simulação. Premissas na legenda.<br>Valores variam por estado, banco e uso.</div>
+    </div>
+  </section>
+
+</div>
+<script>
+  const clamp = x => Math.min(1, Math.max(0, x));
+  const easeOut = x => 1 - Math.pow(1 - x, 3);
+  const easeBack = x => { const c = 1.9; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+  const fmt = (n, dec) => n.toLocaleString('pt-BR', { minimumFractionDigits: dec, maximumFractionDigits: dec });
+  const num = (el, k, d) => el.dataset[k] !== undefined ? parseFloat(el.dataset[k]) : d;
+
+  const scenes = [...document.querySelectorAll('.scene')];
+  window.DURATION = Math.max(...scenes.map(s => +s.dataset.end));
+
+  function render(t) {
+    for (const s of scenes) {
+      const st = +s.dataset.start, en = +s.dataset.end, lt = t - st;
+      const last = s === scenes[scenes.length - 1];
+      if (t < st || t >= en + (last ? 1 : 0)) { s.style.opacity = 0; continue; }
+      const fin = easeOut(clamp(lt / .35));
+      const fo = num(s, 'fadeout', .3);
+      const fout = clamp((en - t) / fo);
+      s.style.opacity = Math.min(fin, fout);
+      s.style.transform = `translateY(${(1 - fin) * 40 + (1 - fout) * -30}px)`;
+
+      s.querySelectorAll('[data-a]').forEach(el => {
+        const p = clamp((lt - num(el, 't', 0)) / num(el, 'd', .45)), e = easeOut(p);
+        let o = e, tr = '', clip = '';
+        switch (el.dataset.a) {
+          case 'up': tr = `translateY(${(1 - e) * 40}px)`; break;
+          case 'left': tr = `translateX(${(1 - e) * -120}px)`; break;
+          case 'right': tr = `translateX(${(1 - e) * 120}px)`; break;
+          case 'print': o = p > 0 ? 1 : 0; clip = `inset(0 ${(1 - p) * 100}% 0 0)`; break;
+          case 'grow': o = 1; tr = `scaleY(${e})`; break;
+          case 'pop': tr = `scale(${p > 0 ? .4 + .6 * easeBack(p) : 0})`; break;
+          case 'stamp': {
+            const q = clamp((lt - num(el, 't', 0)) / .28), rot = num(el, 'rot', -8);
+            const shake = lt - num(el, 't', 0) > .28 ? Math.sin((lt - num(el, 't', 0)) * 60) * 6 * clamp(1 - (lt - num(el, 't', 0) - .28) / .3) : 0;
+            o = q > 0 ? Math.min(1, q * 2) : 0;
+            tr = `translate(${shake}px,0) rotate(${rot}deg) scale(${2.4 - 1.4 * q})`;
+            break;
+          }
+          case 'fade': break;
+        }
+        el.style.opacity = o; el.style.transform = tr; el.style.clipPath = clip;
+      });
+
+      s.querySelectorAll('[data-count]').forEach(el => {
+        const p = easeOut(clamp((lt - num(el, 't', 0)) / num(el, 'cd', 1)));
+        const from = num(el, 'from', 0), to = +el.dataset.count, dec = num(el, 'dec', 0);
+        const v = from + (to - from) * p;
+        el.textContent = (el.dataset.pre || '') + fmt(dec ? v : Math.round(v), dec) + (el.dataset.suf || '');
+      });
+
+      s.querySelectorAll('[data-dim]').forEach(el => {
+        el.style.opacity = 1 - .62 * easeOut(clamp((lt - +el.dataset.dim) / .4));
+        el.style.color = lt > +el.dataset.dim ? 'var(--muted)' : '';
+      });
+
+      s.querySelectorAll('[data-pulse]').forEach(el => {
+        const p = clamp((lt - +el.dataset.pulse) / .7);
+        el.style.display = 'inline-block';
+        el.style.transform = `scale(${1 + .28 * Math.sin(Math.PI * p)})`;
+        el.style.transformOrigin = 'right center';
+      });
+
+      s.querySelectorAll('[data-strike]').forEach(el => {
+        el.style.width = (easeOut(clamp((lt - +el.dataset.strike) / .4)) * 100) + '%';
+      });
+
+      const beam = s.querySelector('#beam');
+      if (beam) {
+        const bt = Math.max(0, lt - 1.2);
+        const ang = bt > 0 ? -14 * Math.exp(-bt * 1.6) * Math.cos(bt * 7) + 0.6 * (1 - Math.exp(-bt * 1.6)) : -14;
+        beam.setAttribute('transform', `rotate(${ang} 210 40)`);
+      }
+    }
+  }
+  window.render = render;
+  render(new URLSearchParams(location.search).has('t') ? +new URLSearchParams(location.search).get('t') : 0);
+</script>
+</body>
+</html>
