@@ -33,6 +33,7 @@ Storyboard do vivo: `STORYBOARD.md` · Fotos reais: `IMAGENS.md` · Contas: `pyt
 | A espinha é um **recibo/extrato** em papel creme, com Geist Mono e linhas pontilhadas | O tema É um extrato. O recibo é o dispositivo, não decoração. Creme e Geist Mono já estão na receita do padrão-base, então a família visual se mantém. |
 | **Hodômetro de dinheiro** no rodapé de todos os slides ("ACUMULADO R$ 0.000") | Amarra carro e conta numa imagem só e cria a antecipação: a pessoa passa o slide pra ver o número subir. |
 | Virada com **fundo marinho e tinta "invisível"** | As duas linhas que ninguém vê precisam *parecer* diferentes de tudo que veio antes. |
+| **Capa em papel, não em foto escura** | A foto do carro é de estúdio claro (fundo branco). Aplicada em *multiply* sobre o papel do extrato, o carro parece impresso no recibo, o que reforça a metáfora. A garagem à noite fica para os slides internos, se surgirem fotos assim. |
 | Payoff e CTA no mesmo slide | O limite é 10 slides e a espinha precisa de 8. O CTA vira uma faixa no pé do slide 10. |
 
 ### As seis perguntas
@@ -51,7 +52,7 @@ Storyboard do vivo: `STORYBOARD.md` · Fotos reais: `IMAGENS.md` · Contas: `pyt
 
 ## 2. Premissas (todas no `contas.py`)
 
-Carro de **R$ 80 mil** (compacto seminovo: Onix, HB20, Polo 2022/2023; conferir a FIPE do modelo das fotos), **1.000 km/mês**, **São Paulo**.
+Carro de **R$ 80 mil** (o das fotos é um Nissan Kicks cinza seminovo; conferir na FIPE se o ano/versão bate com ~R$ 80 mil), **1.000 km/mês**, **São Paulo**.
 
 | Linha | Conta | R$/mês |
 |---|---|---|
@@ -80,7 +81,7 @@ Carro de **R$ 80 mil** (compacto seminovo: Onix, HB20, Polo 2022/2023; conferir 
 
 | # | Posição | Fundo | Dispositivo | Hodômetro |
 |---|---|---|---|---|
-| 1 | Open | foto real, garagem à noite | número gigante + carimbo QUITADO + ponta do recibo saindo | 2.629 |
+| 1 | Open | papel + foto real do carro em multiply | número gigante + carimbo QUITADO* + "*só a parcela" | 2.629 |
 | 2 | Hold | papel creme | cabeçalho do extrato | 0.000 |
 | 3 | Spine | foto real, carro parado (mesma garagem) | 2 linhas do recibo sobre a foto | 0.580 |
 | 4 | Spine | papel creme + recortes reais (bomba, painel) | 2 linhas + subtotal | 1.322 |
@@ -102,8 +103,9 @@ Regras: uma ideia por frase, ponto final cedo, zero hype, linha de print marcada
 - médio: **ainda custa**
 - GIGANTE: **R$ 2.629**
 - assinatura em serifa: ***por mês.***
-- carimbo laranja inclinado sobre o capô: **QUITADO** · e logo abaixo, à mão, em creme: *(só a parcela)*
-- pé: a ponta do recibo saindo da borda de baixo, escrito "EXTRATO MENSAL ▸"
+- carimbo laranja inclinado sobre a lateral do carro: **QUITADO*** · e no papel, em serifa: ***só a parcela**
+- pé: hodômetro "ACUMULADO R$ 2.629" e "ABRIR O EXTRATO ▸"
+- render: `resultados/estatico/slide-01.png` (v1)
 
 ✂ "Seu carro quitado ainda custa R$ 2.629 por mês."
 

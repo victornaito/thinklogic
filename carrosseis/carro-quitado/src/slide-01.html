@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Capa · carro quitado</title>
+<style>
+@font-face { font-family: 'Geist'; src: url('fontes/Geist-Variable.ttf') format('truetype'); font-weight: 100 900; }
+@font-face { font-family: 'Geist Mono'; src: url('fontes/GeistMono-Variable.ttf') format('truetype'); font-weight: 100 900; }
+@font-face { font-family: 'DM Serif'; src: url('fontes/DMSerifDisplay-Italic.ttf') format('truetype'); font-style: italic; }
+
+:root {
+  --papel: #EDE9E1; --tinta: #15130F; --laranja: #F2511F; --creme: #FBF4E8;
+  --mudo: rgba(21,19,15,.62); --fio: rgba(21,19,15,.18); --margem: 72px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1080px; height: 1350px; overflow: hidden; background: var(--papel); }
+body { -webkit-font-smoothing: antialiased; font-family: 'Geist'; color: var(--tinta); }
+.abs { position: absolute; }
+
+#quadro { position: absolute; inset: 0; background: var(--papel); overflow: hidden; }
+#grao { position: absolute; inset: 0; opacity: .35; mix-blend-mode: multiply; }
+
+.cabecalho { left: var(--margem); top: 64px; font: 500 20px/1 'Geist Mono'; letter-spacing: .14em; text-transform: uppercase; color: var(--mudo); }
+.fio { left: var(--margem); right: var(--margem); height: 0; border-top: 3px dotted var(--fio); }
+
+.linha { left: var(--margem); font-weight: 800; letter-spacing: -0.045em; line-height: 1; white-space: nowrap; }
+.l1 { top: 150px; font-size: 76px; }
+.l2 { top: 236px; font-size: 76px; color: var(--mudo); }
+.numero { left: 62px; top: 318px; font-weight: 900; font-size: 262px; letter-spacing: -0.06em; line-height: 1; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.numero .rs { font-size: 120px; letter-spacing: -0.04em; vertical-align: 0.95em; margin-right: 14px; }
+.serifa { right: var(--margem); top: 590px; font-family: 'DM Serif'; font-style: italic; font-size: 104px; letter-spacing: -0.02em; line-height: 1; }
+
+.carro { left: 56px; top: 468px; width: 960px; mix-blend-mode: multiply; }
+
+.carimbo { left: 196px; top: 806px; transform: rotate(-9deg); transform-origin: 50% 50%;
+  border: 9px solid var(--laranja); border-radius: 14px; padding: 4px 26px 8px;
+  color: var(--laranja); font: 900 96px/1 'Geist'; letter-spacing: .02em; mix-blend-mode: multiply; opacity: .92; }
+.carimbo::after { content: ''; position: absolute; inset: 7px; border: 3px solid var(--laranja); border-radius: 7px; }
+.nota { left: 76px; top: 598px; transform: rotate(-4deg); font-family: 'DM Serif'; font-style: italic; font-size: 52px; color: var(--tinta); }
+
+.odometro { left: var(--margem); top: 1206px; display: flex; align-items: center; gap: 18px; }
+.odometro .rot { font: 500 18px/1.2 'Geist Mono'; letter-spacing: .14em; text-transform: uppercase; color: var(--mudo); }
+.digitos { display: flex; gap: 4px; padding: 6px; background: #111; border-radius: 6px; }
+.digitos span { width: 40px; height: 56px; background: linear-gradient(#000 0%, #2a2a2a 50%, #000 100%); color: #f4f1ea; border-radius: 3px;
+  font: 600 38px/56px 'Geist Mono'; text-align: center; }
+.digitos span.sep { width: 14px; background: none; color: #f4f1ea; }
+.rodape { left: var(--margem); top: 1292px; font: 500 20px/1 'Geist Mono'; letter-spacing: .02em; color: var(--mudo); }
+.seta { left: 560px; top: 1226px; font: 600 22px/1 'Geist Mono'; letter-spacing: .14em; text-transform: uppercase; color: var(--tinta); }
+</style>
+</head>
+<body>
+<div id="quadro">
+  <canvas id="grao" width="1080" height="1350"></canvas>
+
+  <div class="abs cabecalho">Extrato mensal · carro quitado</div>
+  <div class="abs fio" style="top:110px"></div>
+
+  <div class="abs linha l1">Seu carro quitado</div>
+  <div class="abs linha l2">ainda custa</div>
+  <div class="abs numero"><span class="rs">R$</span>2.629</div>
+  <div class="abs serifa">por mês.</div>
+
+  <img class="abs carro" src="../assets/kicks-papel.png" alt="">
+
+  <div class="abs carimbo">QUITADO*</div>
+  <div class="abs nota">*só a parcela</div>
+
+  <div class="abs fio" style="top:1180px"></div>
+  <div class="abs odometro">
+    <div class="rot">Acumulado<br>R$ / mês</div>
+    <div class="digitos"><span>2</span><span class="sep">.</span><span>6</span><span>2</span><span>9</span></div>
+  </div>
+  <div class="abs seta">Abrir o extrato ▸</div>
+  <div class="abs rodape">@victornaito.financas</div>
+</div>
+<script>
+// grão de papel com semente fixa (render idêntico entre rodadas)
+(function () {
+  const c = document.getElementById('grao'), x = c.getContext('2d');
+  const d = x.createImageData(c.width, c.height); let s = 7;
+  const r = () => (s = (s * 16807) % 2147483647) / 2147483647;
+  for (let i = 0; i < d.data.length; i += 4) {
+    const v = 200 + r() * 55; d.data[i] = d.data[i + 1] = d.data[i + 2] = v; d.data[i + 3] = 255;
+  }
+  x.putImageData(d, 0, 0);
+})();
+</script>
+</body>
+</html>

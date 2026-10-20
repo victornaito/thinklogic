@@ -1,6 +1,19 @@
-# IMAGENS · fotos do carro (Higgsfield)
+# IMAGENS · fotos do carro
 
-**Status:** ainda não geradas. A conta do Higgsfield está com **0 créditos** (plano free, sem gerações ilimitadas). Os prompts abaixo estão prontos pra rodar assim que houver saldo.
+## Em uso: o Nissan Kicks cinza (enviado pelo autor)
+- Original: `assets/originais/kicks-cinza.jpg` (552×414, foto de anúncio em estúdio claro).
+- Tratada: `assets/kicks-papel.png`. A placa da loja ("DASHEM AUTO") foi coberta por uma placa Mercosul em branco, o fundo foi estourado pra branco (fica invisível em *multiply* sobre o papel) e a imagem foi ampliada 2× com nitidez.
+- Recorte bruto sem fundo: `assets/recortes/kicks-sem-fundo.png`. Perde parte do capô; serve só pro parallax do vivo.
+- **Resolução baixa.** Aguenta o carro a ~960 px de largura, mas aparece um pouco mole no tamanho real. Se houver a mesma foto maior (o anúncio original costuma ter 1200 px ou mais), troque o arquivo e rode de novo.
+- **Direitos.** Parece foto de anúncio de uma loja. Se não for sua, peça autorização à loja ou troque por foto própria ou de banco livre antes de publicar.
+
+---
+
+## Alternativas (não usadas por enquanto)
+
+### Higgsfield
+
+**Status:** não geradas. A conta do Higgsfield está com **0 créditos** (plano free, sem gerações ilimitadas). Os prompts abaixo estão prontos pra rodar assim que houver saldo.
 
 **Orçamento:** 5 cenas × 2 variações × 2 créditos (Nano Banana Pro, 2k, 4:5) = **20 créditos**, mais ~3 créditos de recorte sem fundo = **~23 a 25 créditos**.
 

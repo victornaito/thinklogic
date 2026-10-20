@@ -65,14 +65,14 @@ Ordem de leitura: número → "por mês" → carimbo → recibo.
 | t (s) | O que se mexe | Som |
 |---|---|---|
 | 0,0 | quadro 0 = PNG estático (número já em R$ 2.629) | música entra (baixo + instrumentos) |
-| 0,5 | farol do carro acende (camada em *screen* sobre a foto, 2 batidas) | IGNICAO |
-| 0,5 a 7,5 | câmera empurra devagar com parallax em 3 camadas: fundo da garagem 4%, carro recortado 5,5%, texto 7%; volta ao repouso | — |
+| 0,5 | o carro dá um "tranco" de partida: sobe 4 px e assenta com mola (só a camada do carro) | IGNICAO |
+| 0,5 a 7,5 | câmera empurra devagar com parallax em 3 camadas: papel 2%, carro 4%, texto 6%; volta ao repouso | — |
 | 1,0 a 2,0 | os dígitos do R$ 2.629 giram como hodômetro (cada rolo dá uma volta inteira, da esquerda pra direita, uma batida de atraso entre eles) e assentam no mesmo número | HODOMETRO, 4 cliques |
 | 2,0 | "por mês." sobe de uma máscara, esticando, e achata no pouso | clique |
-| 3,0 | o carimbo QUITADO levanta (cresce 14%, gira −6°) e **carimba** sobre o capô | IMP-carimbo-forte |
-| 3,5 | "(só a parcela)" se escreve à mão, traço a traço | lápis curto (opcional) |
-| 4,5 a 6,0 | a ponta do recibo sai da borda de baixo, 3 linhas pontilhadas imprimindo | RECIBO, 3 pulsos |
-| 6,5 e 7,0 | a seta "EXTRATO MENSAL ▸" pulsa e empurra pra direita | 2 cliques |
+| 3,0 | o carimbo QUITADO* levanta (cresce 14%, gira −6°) e **carimba** sobre a lateral do carro | IMP-carimbo-forte |
+| 3,5 | "*só a parcela" se escreve, letra a letra, numa batida | lápis curto (opcional) |
+| 4,5 a 6,0 | o fio pontilhado de cima e o de baixo se desenham, como bordas de recibo | RECIBO, 3 pulsos |
+| 6,5 e 7,0 | "ABRIR O EXTRATO ▸" pulsa e empurra pra direita | 2 cliques |
 | 7,2 a 8,0 | repouso | — |
 
 ## Slide 2 · HOLD (6 s, compassos 5 a 7)
