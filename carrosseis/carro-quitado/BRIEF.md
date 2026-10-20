@@ -9,7 +9,7 @@ Storyboard do vivo: `STORYBOARD.md` · Fotos reais: `IMAGENS.md` · Contas: `pyt
 
 | Item | Decisão | Origem |
 |---|---|---|
-| Conta | Investidor do Cerrado / Despertando seu Potencial | assumido, a confirmar |
+| Conta | **@victornaito.financas** (o @ vai só no rodapé do motor, nunca dentro da arte) | do pedido |
 | Resultado desejado | **Share** (o principal) + comentário com palavra-chave | do pedido |
 | Arquétipo | Teardown: desmonta uma crença ("carro quitado não custa nada") linha por linha, com o recibo como prova | assumido |
 | Sentimento | **Desconforto** que vira clareza. Não é culpa, é conta. | assumido |
@@ -245,5 +245,5 @@ depreciação 10% a.a., dinheiro investido a 0,8% a.m. líquido.
 ## 6. Dependências antes de publicar
 - [ ] A planilha do CTA (3 campos → total mensal + 10 anos). Posso montar a partir do `contas.py`.
 - [ ] Automação de DM pra palavra EXTRATO (ManyChat ou similar).
-- [ ] Fotos reais do `IMAGENS.md` (o ideal: seu próprio carro, uma sessão de 20 minutos).
+- [ ] Fotos do `IMAGENS.md`: gerar no Higgsfield com os prompts prontos (~24 créditos; a conta está com 0) ou fotografar o próprio carro.
 - [ ] Rodar `contas.py` com gasolina, CDI e FIPE do mês.
