@@ -52,25 +52,25 @@ body { -webkit-font-smoothing: antialiased; font-family: 'Geist'; color: var(--t
 <div id="quadro">
   <canvas id="grao" width="1080" height="1350"></canvas>
 
-  <div class="abs cabecalho">Extrato mensal · carro quitado</div>
-  <div class="abs fio" style="top:110px"></div>
+  <div class="abs cabecalho" data-camada="texto">Extrato mensal · carro quitado</div>
+  <div class="abs fio" id="fio-topo" style="top:110px"></div>
 
-  <div class="abs linha l1">Seu carro quitado</div>
-  <div class="abs linha l2">ainda custa</div>
-  <div class="abs numero"><span class="rs">R$</span>2.629</div>
-  <div class="abs serifa">por mês.</div>
+  <div class="abs linha l1" data-camada="texto">Seu carro quitado</div>
+  <div class="abs linha l2" data-camada="texto">ainda custa</div>
+  <div class="abs numero" id="numero" data-camada="texto"><span class="rs">R$</span><span class="rolo">2</span>.<span class="rolo">6</span><span class="rolo">2</span><span class="rolo">9</span></div>
+  <div class="abs serifa" id="pormes" data-camada="texto"><span class="dentro">por mês.</span></div>
 
-  <img class="abs carro" src="../assets/kicks-papel.png" alt="">
+  <img class="abs carro" id="carro" src="../assets/kicks-papel.png" alt="">
 
-  <div class="abs carimbo">QUITADO*</div>
-  <div class="abs nota">*só a parcela</div>
+  <div class="abs carimbo" id="carimbo">QUITADO*</div>
+  <div class="abs nota" id="nota">*só a parcela</div>
 
-  <div class="abs fio" style="top:1180px"></div>
+  <div class="abs fio" id="fio-base" style="top:1180px"></div>
   <div class="abs odometro">
     <div class="rot">Acumulado<br>R$ / mês</div>
-    <div class="digitos"><span>2</span><span class="sep">.</span><span>6</span><span>2</span><span>9</span></div>
+    <div class="digitos" id="odo"><span>2</span><span class="sep">.</span><span>6</span><span>2</span><span>9</span></div>
   </div>
-  <div class="abs seta">Abrir o extrato ▸</div>
+  <div class="abs seta" id="seta">Abrir o extrato ▸</div>
   <div class="abs rodape">@victornaito.financas</div>
 </div>
 <script>
@@ -83,6 +83,108 @@ body { -webkit-font-smoothing: antialiased; font-family: 'Geist'; color: var(--t
     const v = 200 + r() * 55; d.data[i] = d.data[i + 1] = d.data[i + 2] = v; d.data[i + 3] = 255;
   }
   x.putImageData(d, 0, 0);
+})();
+
+// ---- versão viva: tudo é função pura de t (s), 8 s a 120 BPM; seek(0) é o estado do PNG ----
+(function () {
+  const $ = id => document.getElementById(id);
+  const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+  const fase = (t, a, b) => clamp((t - a) / (b - a));
+  const inOut = u => u < .5 ? 4 * u * u * u : 1 - Math.pow(-2 * u + 2, 3) / 2;
+  const outC = u => 1 - Math.pow(1 - u, 3);
+  const sino = u => 0.5 - 0.5 * Math.cos(2 * Math.PI * clamp(u));          // 0 → 1 → 0, parado nas pontas
+  const mola = (t, a, dur, ciclos = 1.5) => {                                 // zera exatamente em a + dur
+    const u = (t - a) / dur; if (u <= 0 || u >= 1) return 0;
+    return Math.exp(-3 * u) * Math.sin(2 * Math.PI * ciclos * u) * (1 - u);
+  };
+  const tf = (el, s) => { el.style.transform = s; };
+
+  // rolos do número: cada dígito ganha uma fita d, d+1, …, d+10 (= d) e gira uma volta
+  const rolos = [...document.querySelectorAll('#numero .rolo')];
+  rolos.forEach(r => {
+    const d = Number(r.textContent);
+    r.innerHTML = '<span class="fita">' + Array.from({ length: 11 }, (_, k) => `<span>${(d + k) % 10}</span>`).join('') + '</span>';
+  });
+  const st = document.createElement('style');
+  st.textContent = `
+    #numero .rolo { display: inline-block; height: 1em; overflow: hidden; vertical-align: top; }
+    #numero .fita { display: block; }
+    #numero .fita span { display: block; height: 1em; }
+    #pormes { overflow: hidden; padding: .1em .15em .3em .2em; margin: -.1em -.15em 0 0; }
+    #pormes .dentro { display: inline-block; transform-origin: 50% 100%; }`;
+  document.head.appendChild(st);
+  const fitas = rolos.map(r => r.firstChild);
+  const textos = [...document.querySelectorAll('[data-camada="texto"]')];
+  const carro = $('carro'), grao = $('grao'), dentro = document.querySelector('#pormes .dentro');
+  const notaLen = $('nota').textContent.length;
+
+  window.DURACAO = 8;
+  window.CUES = [
+    { t: 0.5, tipo: 'land', o_que: 'partida: o carro dá um tranco', gain: 0.8 },
+    { t: 1.0, tipo: 'clique', o_que: 'rolo 1' }, { t: 1.15, tipo: 'clique', o_que: 'rolo 2' },
+    { t: 1.3, tipo: 'clique', o_que: 'rolo 3' }, { t: 1.45, tipo: 'clique', o_que: 'rolo 4' },
+    { t: 2.0, tipo: 'land', o_que: 'por mês pousa', gain: 0.6 },
+    { t: 3.0, tipo: 'impacto', o_que: 'carimbo QUITADO' },
+    { t: 3.5, tipo: 'tecla', o_que: 'só a parcela' }, { t: 3.75, tipo: 'tecla', o_que: 'só a parcela' },
+    { t: 4.5, tipo: 'clique', o_que: 'fio imprime' }, { t: 5.0, tipo: 'clique', o_que: 'fio imprime' },
+    { t: 5.5, tipo: 'clique', o_que: 'hodômetro imprime' },
+    { t: 6.5, tipo: 'clique', o_que: 'seta' }, { t: 7.0, tipo: 'clique', o_que: 'seta' }
+  ];
+
+  window.seek = function (t) {
+    // câmera: empurra devagar e volta (0,5 a 7,5); o carro, mais perto, cresce mais
+    const p = sino(fase(t, 0.5, 7.5));
+    tf(grao, p ? `scale(${1 + 0.01 * p})` : '');
+    textos.forEach(el => tf(el, p ? `scale(${1 + 0.02 * p})` : ''));
+    const tranco = mola(t, 0.5, 0.9, 2);                                      // partida
+    const sc = 1 + 0.035 * p;
+    tf(carro, (p || tranco) ? `translateY(${-7 * tranco}px) scale(${sc})` : '');
+    carro.style.transformOrigin = '50% 80%';
+
+    // rolos: uma volta cada, um depois do outro (1,0 a 2,0)
+    fitas.forEach((f, j) => {
+      const u = inOut(fase(t, 1.0 + j * 0.15, 1.55 + j * 0.15));
+      tf(f, u > 0 && u < 1 ? `translateY(${-10 * u}em)` : '');
+    });
+
+    // "por mês." desce pela máscara (1,7 a 1,9) e sobe esticando, pousa em 2,0
+    let y = 0, sy = 1;
+    if (t >= 1.7 && t < 1.9) y = 115 * inOut(fase(t, 1.7, 1.9));
+    else if (t >= 1.9 && t < 2.0) { const u = fase(t, 1.9, 2.0); y = 115 * (1 - outC(u)); sy = 1 + 0.12 * (1 - u); }
+    else if (t >= 2.0 && t < 2.4) sy = 1 - 0.06 * mola(t, 2.0, 0.4, 1);
+    tf(dentro, (y || sy !== 1) ? `translateY(${y}%) scaleY(${sy})` : '');
+
+    // carimbo: levanta (2,5 a 2,85), cai acelerando e bate em 3,0
+    const c = $('carimbo');
+    if (t >= 2.5 && t < 2.85) { const u = inOut(fase(t, 2.5, 2.85)); tf(c, `rotate(${-9 - 6 * u}deg) scale(${1 + 0.14 * u})`); c.style.opacity = (0.92 - 0.35 * u).toFixed(3); }
+    else if (t >= 2.85 && t < 3.0) { const v = Math.pow(fase(t, 2.85, 3.0), 3); tf(c, `rotate(${-15 + 6 * v}deg) scale(${1.14 - 0.14 * v})`); c.style.opacity = (0.57 + 0.35 * v).toFixed(3); }
+    else if (t >= 3.0 && t < 3.4) { tf(c, `rotate(-9deg) scale(${1 - 0.05 * mola(t, 3.0, 0.4, 1)})`); c.style.opacity = ''; }
+    else { tf(c, ''); c.style.opacity = ''; }
+
+    // "*só a parcela": some (3,2 a 3,35) e se escreve letra a letra (3,5 a 4,0)
+    const nota = $('nota');
+    let corte = 0;
+    if (t >= 3.2 && t < 3.5) corte = inOut(fase(t, 3.2, 3.35));
+    else if (t >= 3.5 && t < 4.0) corte = 1 - Math.floor(fase(t, 3.5, 4.0) * notaLen) / notaLen;
+    nota.style.clipPath = corte ? `inset(-20% ${(corte * 100).toFixed(2)}% -20% 0)` : '';
+
+    // fios de recibo: recolhem (4,2 a 4,45) e imprimem de novo (4,5 e 5,0)
+    const fio = (el, a) => {
+      let k = 0;
+      if (t >= 4.2 && t < 4.45) k = inOut(fase(t, 4.2, 4.45));
+      else if (t >= 4.45 && t < a) k = 1;
+      else if (t >= a && t < a + 0.45) k = 1 - outC(fase(t, a, a + 0.45));
+      el.style.clipPath = k ? `inset(-4px ${(k * 100).toFixed(2)}% -4px 0)` : '';
+    };
+    fio($('fio-topo'), 4.5); fio($('fio-base'), 5.0);
+
+    // hodômetro do rodapé dá um pulo em 5,5
+    tf($('odo'), t >= 5.5 && t < 5.9 ? `translateY(${-6 * mola(t, 5.5, 0.4, 1)}px)` : '');
+
+    // seta: dois empurrões pra direita (6,5 e 7,0)
+    const e1 = mola(t, 6.5, 0.45, 0.5) + mola(t, 7.0, 0.45, 0.5);
+    tf($('seta'), e1 ? `translateX(${16 * e1}px)` : '');
+  };
 })();
 </script>
 </body>

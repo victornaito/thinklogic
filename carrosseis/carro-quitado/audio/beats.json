@@ -1,0 +1,83 @@
+{
+ "bpm": 120,
+ "slides": [
+  {
+   "slide": 1,
+   "duracao_s": 8,
+   "eventos": [
+    {
+     "t": 0.5,
+     "tipo": "land",
+     "o_que": "partida: o carro dá um tranco",
+     "gain": 0.8
+    },
+    {
+     "t": 1,
+     "tipo": "clique",
+     "o_que": "rolo 1"
+    },
+    {
+     "t": 1.15,
+     "tipo": "clique",
+     "o_que": "rolo 2"
+    },
+    {
+     "t": 1.3,
+     "tipo": "clique",
+     "o_que": "rolo 3"
+    },
+    {
+     "t": 1.45,
+     "tipo": "clique",
+     "o_que": "rolo 4"
+    },
+    {
+     "t": 2,
+     "tipo": "land",
+     "o_que": "por mês pousa",
+     "gain": 0.6
+    },
+    {
+     "t": 3,
+     "tipo": "impacto",
+     "o_que": "carimbo QUITADO"
+    },
+    {
+     "t": 3.5,
+     "tipo": "tecla",
+     "o_que": "só a parcela"
+    },
+    {
+     "t": 3.75,
+     "tipo": "tecla",
+     "o_que": "só a parcela"
+    },
+    {
+     "t": 4.5,
+     "tipo": "clique",
+     "o_que": "fio imprime"
+    },
+    {
+     "t": 5,
+     "tipo": "clique",
+     "o_que": "fio imprime"
+    },
+    {
+     "t": 5.5,
+     "tipo": "clique",
+     "o_que": "hodômetro imprime"
+    },
+    {
+     "t": 6.5,
+     "tipo": "clique",
+     "o_que": "seta"
+    },
+    {
+     "t": 7,
+     "tipo": "clique",
+     "o_que": "seta"
+    }
+   ]
+  }
+ ]
+}

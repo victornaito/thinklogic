@@ -208,7 +208,7 @@ Fundo marinho. Duas barras lado a lado.
 - barra alta (laranja): **R$ 473 mil** · "sem o carro, investindo os R$ 80 mil + os R$ 1.322 do mês"
 - barra baixa (com miniatura desbotada do carro das fotos): **R$ 28 mil** · "com o carro: um carro de 10 anos"
 - crença, na serifa: ***O carro quitado de R$ 80 mil custa R$ 445 mil.***
-- faixa CTA no pé: Comenta **EXTRATO** que eu te mando a planilha: põe FIPE, km por mês e estado. Sai o **seu** número.
+- faixa CTA no pé: Comenta **EXTRATO** e eu te mando o site pra você calcular o seu cenário. (O site é a `calculadora.html`.)
 
 ✂ "O carro quitado de R$ 80 mil custa R$ 445 mil em 10 anos."
 
@@ -229,7 +229,7 @@ Isso você não vê. Mas paga igual.
 Não é pra vender o carro. Às vezes ele vale cada centavo.
 É pra decidir sabendo o preço.
 
-Comenta EXTRATO que eu te mando a planilha.
+Comenta EXTRATO que eu te mando a calculadora.
 Você põe a FIPE do seu carro, quantos km roda e o seu estado,
 e ela devolve o seu número.
 
