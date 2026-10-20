@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Slide 10 · carro quitado</title>
+<link rel="stylesheet" href="base.css">
+<style>
+.t1 { top: 150px; font-size: 100px; }
+.base { left: 72px; width: 936px; top: 820px; border-top: 3px solid var(--fio); }
+.barA { left: 72px; top: 300px; width: 420px; height: 520px; background: var(--laranja); color: var(--tinta); padding: 28px 30px; }
+.barA .val { font: 900 100px/1 'Geist'; letter-spacing: -0.05em; }
+.barA .val small { font-size: 52px; letter-spacing: -0.03em; }
+.barB { left: 588px; top: 789px; width: 420px; height: 31px; background: var(--creme); }
+.valB { left: 588px; top: 470px; font: 900 100px/1 'Geist'; letter-spacing: -0.05em; }
+.valB small { font-size: 52px; letter-spacing: -0.03em; }
+.kB { left: 620px; top: 590px; padding: 10px 10px 12px; transform: rotate(-3deg); }
+.kB .janela { width: 300px; height: 160px; }
+.kB .janela img { width: 310px; left: -6px; top: -54px; filter: grayscale(1) contrast(.75) brightness(1.08); opacity: .85; }
+.rotulo { top: 840px; width: 420px; font: 500 19px/1.45 'Geist Mono'; letter-spacing: .06em; text-transform: uppercase; color: var(--mudo); }
+.rA { left: 72px; } .rB { left: 588px; }
+.p1 { left: 72px; top: 930px; font-size: 56px; }
+.p1 b { font-style: normal; font-family: 'Geist'; font-weight: 900; letter-spacing: -0.04em; box-shadow: inset 0 -14px 0 var(--laranja); }
+.cta { left: 72px; top: 1080px; width: 936px; height: 80px; background: var(--creme); color: var(--tinta); display: flex; align-items: center; padding: 0 28px; gap: 14px; font: 500 28px/1 'Geist'; letter-spacing: -0.01em; white-space: nowrap; }
+.cta b { font-weight: 900; background: var(--laranja); padding: 8px 12px; letter-spacing: .02em; }
+</style>
+</head>
+<body>
+<div id="quadro" class="marinho">
+  <canvas id="grao" width="1080" height="1350" data-semente="10"></canvas>
+  <div class="abs cabecalho">A conta de 10 anos</div>
+  <div class="abs fio" style="top:110px"></div>
+
+  <div class="abs titulo t1">Em 10 anos:</div>
+  <div class="abs barA"><div class="val"><small>R$</small> 473<small> mil</small></div></div>
+  <div class="abs valB"><small>R$</small> 28<small> mil</small></div>
+  <div class="abs cartao-foto kB"><div class="janela"><img src="../assets/kicks-papel.png" alt=""></div></div>
+  <div class="abs barB"></div>
+  <div class="abs base"></div>
+  <div class="abs rotulo rA">Sem o carro: os R$ 80 mil<br>+ R$ 1.322/mês investidos</div>
+  <div class="abs rotulo rB">Com o carro: um carro<br>de 10 anos</div>
+  <div class="abs serifa p1">O carro quitado de R$ 80 mil<br>custa <b>R$ 445 mil.</b></div>
+  <div class="abs cta">Comenta <b>EXTRATO</b> e eu te mando a planilha com o seu número.</div>
+
+  <div class="abs fio" style="top:1180px"></div>
+  <div class="abs odometro">
+    <div class="rot">Acumulado<br>R$ / mês</div>
+    <div class="digitos" data-valor="2.629"></div>
+  </div>
+  <div class="abs rodape">@victornaito.financas</div>
+</div>
+<script src="base.js"></script>
+</body>
+</html>

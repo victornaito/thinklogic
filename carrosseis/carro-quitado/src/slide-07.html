@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Slide 07 · carro quitado</title>
+<link rel="stylesheet" href="base.css">
+<style>
+.t1 { top: 150px; font-size: 104px; }
+.car { left: 300px; top: 300px; width: 700px; }
+.cordao { left: 548px; top: 548px; width: 4px; height: 92px; background: var(--tinta); transform: rotate(14deg); transform-origin: top center; }
+.etiqueta { left: 380px; top: 628px; transform: rotate(8deg); background: var(--laranja); color: var(--tinta);
+  padding: 18px 34px 18px 64px; border-radius: 8px 18px 18px 8px; font: 900 64px/1 'Geist'; letter-spacing: -0.03em;
+  clip-path: polygon(34px 0, 100% 0, 100% 100%, 34px 100%, 0 50%); }
+.etiqueta::before { content: ''; position: absolute; left: 30px; top: 50%; width: 16px; height: 16px; margin-top: -8px; border-radius: 50%; background: var(--papel); }
+.rec { left: 72px; top: 850px; width: 936px; }
+.c1 { top: 1010px; width: 936px; }
+.n1 { top: 1124px; }
+</style>
+</head>
+<body>
+<div id="quadro" class="papel">
+  <canvas id="grao" width="1080" height="1350" data-semente="07"></canvas>
+  <div class="abs cabecalho">Linha 06 · custo de oportunidade</div>
+  <div class="abs fio" style="top:110px"></div>
+
+  <div class="abs titulo t1">R$ 80 mil parados<br>na garagem.</div>
+  <img class="abs carro-papel car" src="../assets/kicks-papel.png" alt="">
+  <div class="abs cordao"></div>
+  <div class="abs etiqueta">R$ 80.000</div>
+  <div class="abs recibo rec">
+    <div class="ln"><span>06 Custo de oportunidade</span><span class="pt"></span><span class="v">R$ 640</span></div>
+  </div>
+  <div class="abs corpo c1">Investidos, pagariam R$ 640. Todo mês. Sem você sair de casa.</div>
+  <div class="abs nota n1">0,8% a.m. líquido: abaixo do CDI de hoje. A conta é conservadora.</div>
+
+  <div class="abs fio" style="top:1180px"></div>
+  <div class="abs odometro">
+    <div class="rot">Acumulado<br>R$ / mês</div>
+    <div class="digitos" data-valor="2.629"></div>
+  </div>
+  <div class="abs rodape">@victornaito.financas</div>
+</div>
+<script src="base.js"></script>
+</body>
+</html>

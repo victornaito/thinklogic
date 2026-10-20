@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Slide 06 · carro quitado</title>
+<link rel="stylesheet" href="base.css">
+<style>
+.t1 { top: 150px; font-size: 112px; }
+.k1 { left: 72px; top: 412px; transform: rotate(-2deg); }
+.k2 { left: 564px; top: 420px; transform: rotate(2deg); }
+.janela { width: 408px; height: 250px; }
+.janela img { width: 430px; left: -12px; top: -88px; }
+.k2 .janela img { filter: grayscale(1) contrast(.75) brightness(1.08); opacity: .8; }
+.k2 .leg { color: rgba(21,19,15,.55); }
+.rec { left: 72px; top: 800px; width: 936px; }
+.c1 { top: 1000px; width: 936px; }
+</style>
+</head>
+<body>
+<div id="quadro" class="marinho">
+  <canvas id="grao" width="1080" height="1350" data-semente="06"></canvas>
+  <div class="abs cabecalho">Linha 05 · depreciação</div>
+  <div class="abs fio" style="top:110px"></div>
+
+  <div class="abs titulo t1">Ninguém te manda<br>boleto.</div>
+  <div class="abs cartao-foto k1"><div class="janela"><img src="../assets/kicks-papel.png" alt=""></div><div class="leg"><span>Hoje</span><span>R$ 80.000</span></div></div>
+  <div class="abs cartao-foto k2"><div class="janela"><img src="../assets/kicks-papel.png" alt=""></div><div class="leg"><span>Em 1 ano</span><span>R$ 72.000</span></div></div>
+  <div class="abs recibo rec">
+    <div class="ln"><span>05 Depreciação</span><span class="pt"></span><span class="v">R$ 667</span></div><div class="sub">~10% ao ano, média de seminovo na FIPE</div>
+  </div>
+  <div class="abs corpo c1">Mas todo mês o seu carro vale <b class="forte">R$ 667 a menos.</b></div>
+
+  <div class="abs fio" style="top:1180px"></div>
+  <div class="abs odometro">
+    <div class="rot">Acumulado<br>R$ / mês</div>
+    <div class="digitos" data-valor="1.989"></div>
+  </div>
+  <div class="abs rodape">@victornaito.financas</div>
+</div>
+<script src="base.js"></script>
+</body>
+</html>
