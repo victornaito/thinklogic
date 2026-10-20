@@ -245,7 +245,7 @@ depreciação 10% a.a., dinheiro investido a 0,8% a.m. líquido.
 ---
 
 ## 6. Dependências antes de publicar
-- [ ] A planilha do CTA (3 campos → total mensal + 10 anos). Posso montar a partir do `contas.py`.
+- [x] O extrato do CTA: `calculadora.html` (publicada como página; compartilhe o link pelo menu Share antes de mandar por DM).
 - [ ] Automação de DM pra palavra EXTRATO (ManyChat ou similar).
 - [ ] Fotos do `IMAGENS.md`: gerar no Higgsfield com os prompts prontos (~24 créditos; a conta está com 0) ou fotografar o próprio carro.
 - [ ] Rodar `contas.py` com gasolina, CDI e FIPE do mês.
