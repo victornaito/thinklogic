@@ -90,6 +90,25 @@ A etiqueta de preço "R$ 80.000" que desce do chaveiro é desenhada em código.
 ## O que não usa foto
 Os slides 2, 5, 8 e 9 são papel, marinho e linho, com texto e desenho em código. Isso cria o ritmo foto, papel, foto, papel, e deixa o slide 8 (o de print) limpo pra ser repostado.
 
+## Fotos reais da internet (candidatas, licença livre)
+
+A rede desta sessão bloqueia `images.unsplash.com`, `images.pexels.com` e `upload.wikimedia.org`, então eu achei as fotos pela busca mas ainda **não consegui baixar nem olhar nenhuma**. Elas precisam passar pelo olho antes de entrar no carrossel.
+
+| Cena | Primeira opção | Alternativas | Licença |
+|---|---|---|---|
+| F1 · capa, slides 3, 6, 10 | [carro prata numa garagem escura](https://unsplash.com/photos/a-silver-car-parked-in-a-dark-garage-qvfSbpqY9sk) (Kia K8, Hyundai Motor Group) | [carro prata em garagem](https://unsplash.com/photos/silver-car-parked-in-garage-hPeahMW3Z-M) · [carro em garagem à noite](https://unsplash.com/photos/a-car-parked-in-a-parking-garage-at-night-_SYkjw8i8rA) | Unsplash |
+| F2 · painel (slide 4) | [velocímetro aceso](https://www.pexels.com/photo/close-up-photo-of-illuminated-speedometer-4141872/) | [velocímetro, conta-giros e hodômetro](https://www.pexels.com/photo/photo-of-a-car-speedometer-a-rev-counter-and-a-odometer-14992303/) · [velocímetro iluminado](https://www.pexels.com/photo/illuminated-car-speedometer-18031874/) | Pexels |
+| F3 · bomba (slide 4) | [abastecendo à noite](https://www.pexels.com/photo/close-up-of-a-person-refueling-the-car-at-a-gas-station-20500733/) | [abastecendo um carro](https://www.pexels.com/photo/fueling-a-vehicle-at-a-gas-station-29370543/) · [bico no tanque](https://www.pexels.com/photo/person-refilling-gasoline-on-gas-tank-3784137/) | Pexels |
+| F4 · chave (slide 7) | [chave na mão, foco raso](https://www.pexels.com/photo/shallow-focus-car-key-held-by-a-man-97075/) | [chave na mão](https://www.pexels.com/photo/car-key-on-hand-6097/) · [pessoa segurando chave](https://www.pexels.com/photo/person-holding-a-car-key-12969398/) | Pexels |
+
+Cuidados com essas fotos:
+- **A F1 é um Kia K8, um sedã mais caro que R$ 80 mil.** Funciona pelo clima (prata, garagem escura), mas se alguém reconhecer o modelo, a identificação com "carro de R$ 80 mil" enfraquece. Se uma das alternativas for um hatch compacto, ela ganha.
+- As fotos vão ser de carros diferentes. O slide 6 continua funcionando, porque a comparação é a F1 colorida contra ela mesma desbotada.
+- Borrar placas e evitar logo em destaque. As licenças da Unsplash e da Pexels permitem uso comercial, mas não permitem sugerir que a marca apoia o post.
+- Wikimedia tem fotos reais do Onix brasileiro (por exemplo, [Onix LT 2015](https://commons.wikimedia.org/wiki/File:Chevrolet_Onix_20150814-DSC05650.JPG)). Mas a licença CC BY-SA exige crédito e que a arte derivada use a mesma licença, então fica como última opção.
+
+**Para eu baixar e montar:** libere `images.unsplash.com`, `images.pexels.com` e `unsplash.com` em Network access, nas configurações do ambiente. Ou baixe as fotos e envie aqui.
+
 ## Plano B, sem créditos
 Fotos reais de banco com licença livre pra uso comercial (Unsplash, Pexels), todas de uma mesma sessão de um fotógrafo só, pra que seja o mesmo carro.
 Buscas: `hatchback garage night`, `car parked garage dark`, `car key hand`, `car dashboard night`, `fuel nozzle car`.
