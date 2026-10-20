@@ -1,20 +1,43 @@
 Quitar o carro tira a parcela. Não tira o custo.
 
-Fiz o extrato de um carro de R$ 80 mil, sem dívida nenhuma:
-IPVA, seguro, manutenção e gasolina dão R$ 1.322 por mês.
-Isso você vê sair da conta.
+Fiz o extrato de um carro de R$ 80 mil, sem 1 real de dívida:
 
-Depreciação e o dinheiro parado no carro somam mais R$ 1.307.
-Isso você não vê. Mas paga igual.
+IPVA + licenciamento: R$ 280
+Seguro: R$ 300
+Manutenção: R$ 200
+Combustível: R$ 542
+→ R$ 1.322 por mês que você vê sair da conta.
 
-Não é pra vender o carro. Às vezes ele vale cada centavo.
-É pra decidir sabendo o preço.
+Depreciação: R$ 667
+Custo de oportunidade: R$ 640
+→ R$ 1.307 por mês que você não vê. Mas perde igual.
 
-Comenta EXTRATO que eu te mando a planilha.
-Você põe a FIPE do seu carro, quantos km roda e o seu estado,
-e ela devolve o seu número.
+Total: R$ 2.629 por mês.
 
-E manda pra quem fala "meu carro já tá pago".
+A linha que mais gera dúvida é o custo de oportunidade. Funciona assim:
 
-Premissas: carro de R$ 80 mil, 1.000 km/mês, SP, gasolina R$ 6,50,
-depreciação 10% a.a., dinheiro investido a 0,8% a.m. líquido.
+Custo de oportunidade é o que você deixa de ganhar quando escolhe uma coisa em vez de outra. Não sai da sua conta. É o rendimento que não entra.
+
+Quem tem um carro quitado de R$ 80 mil tem R$ 80 mil parados na garagem. Se esse dinheiro estivesse investido a 0,8% ao mês, já descontado o imposto, renderia R$ 640. E isso já no primeiro mês, não daqui a anos. É só a conta: 80.000 × 0,8% = 640.
+
+Pensa em quem financiou o mesmo carro. Ele paga juros pro banco, e todo mundo chama isso de custo. Quem pagou à vista não paga juros, mas abre mão do rendimento. É o mesmo dinheiro, só que do outro lado da conta.
+
+E não é a mesma coisa que depreciação:
+• Depreciação é o carro valendo menos todo mês.
+• Custo de oportunidade é o dinheiro preso nele sem render.
+São duas perdas diferentes sobre os mesmos R$ 80 mil.
+
+Agora o efeito em 10 anos:
+Sem o carro, investindo os R$ 80 mil e os R$ 1.322 do mês: R$ 473 mil.
+Com o carro: um carro de 10 anos, valendo uns R$ 28 mil.
+Diferença: R$ 445 mil.
+
+Não é pra vender o carro. Às vezes ele vale cada centavo: trabalho, filho, cidade sem transporte. É pra decidir sabendo o preço.
+
+Comenta EXTRATO que eu te mando a calculadora. Você coloca a FIPE do seu carro, quantos km roda e o seu estado, e ela mostra o seu extrato e quanto esse dinheiro viraria investido.
+
+Manda pra quem fala "meu carro já tá pago".
+
+Premissas: carro de R$ 80 mil, 1.000 km/mês, SP (IPVA 4%), gasolina a R$ 6,50, depreciação de 10% ao ano, rendimento de 0,8% ao mês líquido (abaixo do CDI atual). Simulação educativa, não é recomendação de investimento.
+
+#financaspessoais #educacaofinanceira #investimentos #carro #custodeoportunidade
