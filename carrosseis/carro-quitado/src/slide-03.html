@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Slide 03 · carro quitado</title>
+<link rel="stylesheet" href="base.css">
+<style>
+.t1 { top: 150px; font-size: 120px; }
+.car { left: 420px; top: 318px; width: 620px; }
+.rec { left: 72px; top: 830px; width: 936px; }
+.p1 { left: 72px; top: 1092px; font-size: 46px; }
+</style>
+</head>
+<body>
+<div id="quadro" class="papel">
+  <canvas id="grao" width="1080" height="1350" data-semente="03"></canvas>
+  <div class="abs cabecalho">Linhas 01 e 02 · custos fixos</div>
+  <div class="abs fio" style="top:110px"></div>
+
+  <div class="abs titulo t1">Ele cobra<br>até parado.</div>
+  <img class="abs carro-papel car" src="../assets/kicks-papel.png" alt="">
+  <div class="abs recibo rec">
+    <div class="ln"><span>01 IPVA + licenciamento</span><span class="pt"></span><span class="v">R$ 280</span></div><div class="sub">4% do valor todo ano em SP + taxa do Detran</div>
+    <div class="ln"><span>02 Seguro</span><span class="pt"></span><span class="v">R$ 300</span></div><div class="sub">média de R$ 3.600 por ano</div>
+  </div>
+  <div class="abs serifa p1">O carro dorme na garagem. O boleto, não.</div>
+
+  <div class="abs fio" style="top:1180px"></div>
+  <div class="abs odometro">
+    <div class="rot">Acumulado<br>R$ / mês</div>
+    <div class="digitos" data-valor="0.580"></div>
+  </div>
+  <div class="abs rodape">@victornaito.financas</div>
+</div>
+<script src="base.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Slide 09 · carro quitado</title>
+<link rel="stylesheet" href="base.css">
+<style>
+.t1 { top: 150px; font-size: 100px; }
+.grade { left: 72px; top: 410px; width: 936px; display: grid; grid-template-columns: repeat(11, 76px); column-gap: 10px; row-gap: 14px; color: var(--tinta); }
+.grade svg { width: 76px; height: 36px; display: block; }
+.c1 { top: 880px; font-size: 44px; font-weight: 600; }
+.c1 .tres { box-shadow: inset 0 -16px 0 rgba(242,81,31,.85); }
+.p1 { left: 72px; top: 980px; font-size: 54px; color: var(--mudo); }
+</style>
+</head>
+<body>
+<div id="quadro" class="papel">
+  <canvas id="grao" width="1080" height="1350" data-semente="09"></canvas>
+  <div class="abs cabecalho">Traduzindo</div>
+  <div class="abs fio" style="top:110px"></div>
+
+  <svg width="0" height="0" style="position:absolute"><defs><symbol id="c" viewBox="0 0 76 36">
+<path d="M3 26 V19 Q4 14 11 13 L21 5 Q24 3 29 3 H49 Q54 3 57 7 L63 13 Q72 14 73 19 V26 Z" fill="currentColor"/>
+<path d="M24 7 H36 V13 H17 Z M40 7 H50 Q53 7 55 10 L58 13 H40 Z" fill="#EDE9E1"/>
+<circle cx="19" cy="27" r="6.5" fill="#EDE9E1" stroke="currentColor" stroke-width="3.5"/>
+<circle cx="58" cy="27" r="6.5" fill="#EDE9E1" stroke="currentColor" stroke-width="3.5"/>
+</symbol></defs></svg>
+  <div class="abs titulo t1">R$ 2.629 =<br>88 corridas de app.</div>
+  <div class="abs grade"><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg><svg><use href="#c"/></svg></div>
+  <div class="abs corpo c1">A R$ 30 cada. <span class="tres">Quase 3 por dia.</span> Todo dia.</div>
+  <div class="abs serifa p1">Não é pra vender o carro.<br>É pra saber quanto ele custa.</div>
+
+  <div class="abs fio" style="top:1180px"></div>
+  <div class="abs odometro">
+    <div class="rot">Acumulado<br>R$ / mês</div>
+    <div class="digitos" data-valor="2.629"></div>
+  </div>
+  <div class="abs rodape">@victornaito.financas</div>
+</div>
+<script src="base.js"></script>
+</body>
+</html>

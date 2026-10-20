@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Slide 08 · carro quitado</title>
+<link rel="stylesheet" href="base.css">
+<style>
+.rec { left: 120px; top: 150px; width: 840px; transform: rotate(-1.5deg); }
+.stamp { left: 610px; top: 684px; transform: rotate(-6deg); font-size: 72px; }
+.par { left: 72px; width: 936px; display: flex; align-items: baseline; gap: 16px; font: 600 28px/1 'Geist Mono'; letter-spacing: .04em; white-space: nowrap; }
+.par .pt { flex: 1; border-bottom: 3px dotted var(--fio); transform: translateY(-6px); }
+.par .m { width: 22px; height: 22px; background: var(--creme); align-self: center; }
+.par.b .m { background: var(--laranja); }
+.par1 { top: 830px; } .par2 { top: 886px; }
+.p1 { left: 72px; top: 974px; font-size: 68px; }
+</style>
+</head>
+<body>
+<div id="quadro" class="marinho">
+  <canvas id="grao" width="1080" height="1350" data-semente="08"></canvas>
+  <div class="abs cabecalho">O extrato completo</div>
+  <div class="abs fio" style="top:110px"></div>
+
+  <div class="abs recibo rec">
+    <div class="cab">Extrato mensal · carro quitado<br>FIPE R$ 80.000 · 1.000 km/mês · SP</div>
+    <div class="div"></div>
+    <div class="ln"><span>01 IPVA + licenciamento</span><span class="pt"></span><span class="v">R$ 280</span></div>
+    <div class="ln"><span>02 Seguro</span><span class="pt"></span><span class="v">R$ 300</span></div>
+    <div class="ln"><span>03 Manutenção</span><span class="pt"></span><span class="v">R$ 200</span></div>
+    <div class="ln"><span>04 Combustível</span><span class="pt"></span><span class="v">R$ 542</span></div>
+    <div class="ln"><span>05 Depreciação</span><span class="pt"></span><span class="v">R$ 667</span></div>
+    <div class="ln"><span>06 Custo de oportunidade</span><span class="pt"></span><span class="v">R$ 640</span></div>
+    <div class="dupla"></div>
+    <div class="ln tot"><span>TOTAL MENSAL</span><span class="pt"></span><span class="v">R$ 2.629</span></div>
+  </div>
+  <div class="abs carimbo stamp">TODO MÊS</div>
+  <div class="abs par a par1"><span class="m"></span><span>01–04 · você paga</span><span class="pt"></span><span>R$ 1.322</span></div>
+  <div class="abs par b par2"><span class="m"></span><span>05–06 · você perde sem ver</span><span class="pt"></span><span>R$ 1.307</span></div>
+  <div class="abs serifa p1">Metade você paga.<br>A outra metade, perde sem ver.</div>
+
+  <div class="abs fio" style="top:1180px"></div>
+  <div class="abs odometro">
+    <div class="rot">Acumulado<br>R$ / mês</div>
+    <div class="digitos" data-valor="2.629"></div>
+  </div>
+  <div class="abs rodape">@victornaito.financas</div>
+</div>
+<script src="base.js"></script>
+</body>
+</html>

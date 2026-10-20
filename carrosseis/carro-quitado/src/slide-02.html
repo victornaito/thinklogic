@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Slide 02 · carro quitado</title>
+<link rel="stylesheet" href="base.css">
+<style>
+.t1 { top: 150px; font-size: 128px; }
+.t1 .nao { color: var(--laranja); }
+.rec { left: 72px; top: 470px; width: 760px; transform: rotate(-2deg); }
+.c1 { top: 860px; width: 900px; }
+.c2 { top: 1000px; width: 900px; font-weight: 800; }
+.c2 span { box-shadow: inset 0 -14px 0 rgba(242,81,31,.85); }
+</style>
+</head>
+<body>
+<div id="quadro" class="marinho">
+  <canvas id="grao" width="1080" height="1350" data-semente="02"></canvas>
+  <div class="abs cabecalho">Extrato mensal · carro quitado</div>
+  <div class="abs fio" style="top:110px"></div>
+
+  <div class="abs titulo t1">Parcela zero.<br>Custo, <span class="nao">não.</span></div>
+  <div class="abs recibo rec">
+    <div class="cab">Extrato mensal · carro quitado<br>FIPE R$ 80.000 · 1.000 km/mês · SP</div>
+    <div class="div"></div>
+    <div class="ln"><span>PARCELA</span><span class="pt"></span><span class="v">R$ 0,00</span></div>
+    <div class="ln"><span>OUTRAS COBRANÇAS</span><span class="pt"></span><span class="v">6 LINHAS</span></div>
+  </div>
+  <div class="abs corpo c1">Fiz o extrato de um carro de R$ 80 mil, sem 1&nbsp;real de dívida. Deu 6 linhas.</div>
+  <div class="abs corpo c2"><span>Duas delas não aparecem em app de banco nenhum.</span></div>
+
+  <div class="abs fio" style="top:1180px"></div>
+  <div class="abs odometro">
+    <div class="rot">Acumulado<br>R$ / mês</div>
+    <div class="digitos" data-valor="0.000"></div>
+  </div>
+  <div class="abs rodape">@victornaito.financas</div>
+</div>
+<script src="base.js"></script>
+</body>
+</html>

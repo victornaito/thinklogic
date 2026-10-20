@@ -1,0 +1,20 @@
+Quitar o carro tira a parcela. Não tira o custo.
+
+Fiz o extrato de um carro de R$ 80 mil, sem dívida nenhuma:
+IPVA, seguro, manutenção e gasolina dão R$ 1.322 por mês.
+Isso você vê sair da conta.
+
+Depreciação e o dinheiro parado no carro somam mais R$ 1.307.
+Isso você não vê. Mas paga igual.
+
+Não é pra vender o carro. Às vezes ele vale cada centavo.
+É pra decidir sabendo o preço.
+
+Comenta EXTRATO que eu te mando a planilha.
+Você põe a FIPE do seu carro, quantos km roda e o seu estado,
+e ela devolve o seu número.
+
+E manda pra quem fala "meu carro já tá pago".
+
+Premissas: carro de R$ 80 mil, 1.000 km/mês, SP, gasolina R$ 6,50,
+depreciação 10% a.a., dinheiro investido a 0,8% a.m. líquido.

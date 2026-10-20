@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Slide 05 · carro quitado</title>
+<link rel="stylesheet" href="base.css">
+<style>
+.metade { left: 0; top: 0; width: 1080px; height: 720px; background: var(--laranja); }
+.cabecalho, .fio { z-index: 2; }
+#grao { z-index: 3; }
+#quadro.laranja .cabecalho { color: rgba(21,19,15,.7); }
+.fio.topo { border-top-color: rgba(21,19,15,.3) !important; }
+.t1 { top: 170px; font-size: 112px; color: var(--tinta); }
+.rec { left: 72px; top: 780px; width: 936px; }
+.rec .fantasma { color: rgba(21,19,15,.14); }
+.rec .fantasma .pt { border-bottom-color: rgba(21,19,15,.12); }
+.c1 { top: 975px; }
+.p1 { left: 72px; top: 1036px; font-size: 76px; }
+</style>
+</head>
+<body>
+<div id="quadro" class="laranja">
+  <canvas id="grao" width="1080" height="1350" data-semente="05"></canvas>
+  <div class="abs cabecalho">A virada</div>
+  <div class="abs fio topo" style="top:110px"></div>
+
+  <div class="abs metade"></div>
+  <div class="abs titulo t1">Agora as duas<br>linhas que o banco<br>não mostra.</div>
+  <div class="abs recibo rec">
+    <div class="fantasma"><div class="ln"><span>05 ██████████</span><span class="pt"></span><span class="v">R$ ???</span></div><div class="ln"><span>06 ████████████████</span><span class="pt"></span><span class="v">R$ ???</span></div></div>
+  </div>
+  <div class="abs corpo c1">Elas não saem da sua conta.</div>
+  <div class="abs serifa p1">Saem do seu patrimônio.</div>
+
+  <div class="abs fio" style="top:1180px"></div>
+  <div class="abs odometro">
+    <div class="rot">Acumulado<br>R$ / mês</div>
+    <div class="digitos" data-valor="?.???"></div>
+  </div>
+  <div class="abs rodape">@victornaito.financas</div>
+</div>
+<script src="base.js"></script>
+</body>
+</html>

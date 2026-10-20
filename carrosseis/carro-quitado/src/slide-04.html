@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Slide 04 · carro quitado</title>
+<link rel="stylesheet" href="base.css">
+<style>
+.t1 { top: 150px; font-size: 120px; }
+.rec { left: 72px; top: 470px; width: 936px; }
+.p1 { left: 72px; top: 940px; font-size: 64px; }
+</style>
+</head>
+<body>
+<div id="quadro" class="marinho">
+  <canvas id="grao" width="1080" height="1350" data-semente="04"></canvas>
+  <div class="abs cabecalho">Linhas 03 e 04 · custos de rodar</div>
+  <div class="abs fio" style="top:110px"></div>
+
+  <div class="abs titulo t1">E cobra mais<br>quando anda.</div>
+  <div class="abs recibo rec">
+    <div class="ln"><span>03 Manutenção</span><span class="pt"></span><span class="v">R$ 200</span></div><div class="sub">revisão, pneu, freio, imprevisto</div>
+    <div class="ln"><span>04 Combustível</span><span class="pt"></span><span class="v">R$ 542</span></div><div class="sub">83 litros a R$ 6,50 (1.000 km a 12 km/l)</div>
+    <div class="div"></div>
+    <div class="ln tot"><span>O QUE SAI DA CONTA</span><span class="pt"></span><span class="v">R$ 1.322</span></div>
+  </div>
+  <div class="abs serifa p1">Até aqui, é o custo<br>que você vê.</div>
+
+  <div class="abs fio" style="top:1180px"></div>
+  <div class="abs odometro">
+    <div class="rot">Acumulado<br>R$ / mês</div>
+    <div class="digitos" data-valor="1.322"></div>
+  </div>
+  <div class="abs rodape">@victornaito.financas</div>
+</div>
+<script src="base.js"></script>
+</body>
+</html>
