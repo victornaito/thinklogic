@@ -41,6 +41,8 @@ def add(buf, sig, t, gain=1.0):
     i = int(t * SR)
     if i < 0:
         sig, i = sig[-i:], 0
+    if i >= len(buf):
+        return
     j = min(len(buf), i + len(sig))
     buf[i:j] += sig[: j - i] * gain
 

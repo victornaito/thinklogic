@@ -100,3 +100,29 @@ Resultado: R$ 177.100 de diferença, ou cerca de R$ 1.340 por mês pelo carro no
 
 ## Ponto de honestidade (entra na legenda)
 Quem troca anda sempre de carro quase novo, com garantia e mais tecnologia. A conta mostra quanto isso custa. Não diz que é errado pagar por isso.
+
+## Legenda
+
+Trocar de carro a cada 3 anos parece "manter o patrimônio em dia". Fiz a conta de 10 anos e ela diz outra coisa.
+
+Mesmo carro de R$ 120 mil. Uma pessoa troca nos anos 3, 6 e 9, pagando a diferença em 36x. A outra fica 10 anos com o mesmo carro e investe todo mês o que a primeira gasta a mais.
+
+Em cada troca, a diferença cresce: R$ 45,6 mil, depois R$ 51,3 mil, depois R$ 57,7 mil. E a concessionária paga uns 8% abaixo da tabela pelo seu usado, o que dá R$ 26 mil perdidos só nisso.
+
+Quem troca ganha em manutenção, porque carro novo quebra menos. Mesmo assim, gasta em média R$ 1.340 por mês a mais.
+
+Investidos a 10% ao ano, esses R$ 1.340 viram R$ 214 mil, já descontado o IR.
+
+No ano 10:
+🔁 Quem troca: carro de R$ 151 mil, ainda devendo R$ 42 mil
+🚗 Quem fica: carro de R$ 71 mil + R$ 214 mil investidos
+
+R$ 177 mil de diferença.
+
+Andar sempre de carro novo, com garantia e tecnologia, tem valor. Só vale saber o preço antes de pagar: R$ 1.340 por mês.
+
+📌 Salva esse extrato e segue pra ver o Extrato #3: Uber x carro próprio.
+
+Premissas da simulação: carro flex de R$ 120 mil; carro novo subindo 4% ao ano; revenda de 72% do preço de um novo aos 3 anos, 58% aos 6 e 40% aos 10; concessionária pagando 8% abaixo da tabela; diferença financiada em 36x com CET de cerca de 1,83% a.m.; IPVA de 4% e seguro de 3,5% do valor do carro; manutenção de R$ 1.200 a R$ 4.500 por ano conforme a idade do carro; combustível igual nos dois cenários; investimento a 10% a.a., com IR descontado. Os valores variam por carro, estado e uso.
+
+#financaspessoais #educacaofinanceira #carronovo #carrousado #trocadecarro #investimentos #financiamento #dinheiro #investidordocerrado
