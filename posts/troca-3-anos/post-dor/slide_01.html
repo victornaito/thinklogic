@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Archivo:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --paper:#fbf9f3; --ink:#1c1c1c; --muted:#7a766c; --stamp:#b5442e; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { width:1080px; height:1440px; overflow:hidden; background:#e8e4d8; font-family:'Courier Prime', monospace; }
+  .slide { width:1080px; height:1440px; display:flex; align-items:center; justify-content:center; }
+  .receipt {
+    position:relative; width:860px; background:var(--paper); padding:60px 64px 44px; color:var(--ink);
+    box-shadow:0 30px 60px rgba(0,0,0,.18);
+    -webkit-mask-image:
+      radial-gradient(circle 14px at 24px 0px, transparent 13px, black 15px),
+      radial-gradient(circle 14px at 836px 0px, transparent 13px, black 15px);
+  }
+  .header { text-align:center; }
+  .brand { font-family:'Archivo',sans-serif; font-weight:800; font-size:36px; letter-spacing:1px; }
+  .sub { margin-top:8px; font-size:20px; color:var(--muted); letter-spacing:2px; text-transform:uppercase; }
+  .dashed { border-top:2.5px dashed #c9c4b4; margin:30px 0; }
+  .h { font-family:'Archivo',sans-serif; font-weight:800; font-size:26px; margin-bottom:18px; letter-spacing:.5px; }
+  .line { display:flex; justify-content:space-between; font-size:27px; margin-bottom:14px; }
+  .line .k { color:var(--muted); }
+  .line .v { font-weight:700; }
+  .line.total { font-size:30px; margin-top:20px; margin-bottom:18px; }
+  .line.total .k { color:var(--ink); font-family:'Archivo',sans-serif; font-weight:800; font-size:28px; }
+  .stamp {
+    display:inline-block; margin-top:6px;
+    border:4px solid var(--stamp); color:var(--stamp); padding:8px 20px;
+    font-family:'Archivo',sans-serif; font-weight:800; font-size:30px; letter-spacing:1px; line-height:1.1; text-align:center;
+    transform:rotate(-7deg); background:rgba(251,249,243,.85);
+  }
+  .k2 { font-size:22px; color:var(--muted); letter-spacing:2px; text-transform:uppercase; text-align:center; }
+  .quote { margin-top:16px; font-size:29px; line-height:1.4; text-align:center; font-weight:700; }
+  .q { text-align:center; }
+  .q .ql { font-size:21px; color:var(--muted); letter-spacing:2px; }
+  .q .qt { font-family:'Archivo',sans-serif; font-weight:800; font-size:44px; line-height:1.15; margin-top:14px; letter-spacing:-.3px; }
+  .q .qt u { text-decoration-thickness:5px; text-underline-offset:7px; }
+  .barcode { margin-top:36px; height:56px; background-image:repeating-linear-gradient(90deg, var(--ink) 0, var(--ink) 3px, transparent 3px, transparent 8px, var(--ink) 8px, var(--ink) 9px, transparent 9px, transparent 14px); }
+  .footer-line { margin-top:18px; text-align:center; font-size:20px; color:var(--muted); letter-spacing:1px; }
+</style>
+</head>
+<body>
+  <div class="slide">
+    <div class="receipt">
+
+      <div class="header">
+        <div class="brand">A PARCELA QUE NUNCA ACABA</div>
+        <div class="sub">quem troca de carro a cada 3 anos</div>
+      </div>
+
+      <div class="dashed"></div>
+
+      <div class="h">Parcelas de carro</div>
+      <div class="line"><span class="k">Ano 3 ao 6 ........</span><span class="v">36x R$ 1.739</span></div>
+      <div class="line"><span class="k">Ano 6 ao 9 ........</span><span class="v">36x R$ 1.957</span></div>
+      <div class="line"><span class="k">Ano 9 ao 12 .......</span><span class="v">36x R$ 2.201</span></div>
+      <div class="line total"><span class="k">Total em parcelas</span><span class="v">R$ 212.300</span></div>
+            <div style="text-align:center"><div class="stamp">0 MESES SEM PARCELA</div></div>
+
+      <div class="dashed"></div>
+
+      <div class="k2">Falta 1 parcela. O telefone toca:</div>
+      <div class="quote">"Seu usado tem ótima avaliação aqui.<br>Bora pegar o novo?"</div>
+
+      <div class="dashed"></div>
+
+      <div class="q">
+        <div class="ql">UMA PERGUNTA QUE VOCÊ JÁ SABE A RESPOSTA</div>
+        <div class="qt">Se trocar de carro fosse bom negócio <u>pra você</u>, por que é a concessionária que te liga?</div>
+      </div>
+
+      <div class="barcode"></div>
+      <div class="footer-line">INVESTIDOR DO CERRADO · COMENTA SUA RESPOSTA</div>
+
+    </div>
+  </div>
+</body>
+</html>
