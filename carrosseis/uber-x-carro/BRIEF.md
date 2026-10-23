@@ -199,7 +199,7 @@ PARTE FIXA / MÊS            R$ 1.887
   - **Acima:** o carro é economia.
 - metade de baixo em marinho:
   - serifa: *Não existe resposta certa. Existe o seu número.*
-  - faixa CTA: Comenta **KM** e eu te mando o site pra você calcular o seu ponto de virada.
+  - faixa de fecho (pergunta reflexiva, sem pedir comentário em troca): **Você roda o suficiente pro seu carro valer o que ele te cobra?**
 
 ✂ "Não existe resposta certa. Existe o seu número."
 
@@ -229,7 +229,7 @@ Pra ter ideia:
 
 Não é pra vender o carro amanhã. Filho, estrada e cidade sem app pesam do lado do carro. Estacionamento, multa e tempo livre pesam do lado do app. É pra decidir sabendo o seu número.
 
-Comenta KM que eu te mando o site pra você calcular o seu ponto de virada com o seu carro e o preço do app na sua cidade.
+Você roda o suficiente pro seu carro valer o que ele te cobra?
 
 E manda pra quem diz que Uber é caro.
 

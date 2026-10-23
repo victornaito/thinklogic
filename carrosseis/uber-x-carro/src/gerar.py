@@ -344,14 +344,14 @@ SLIDES = {
 .v .d { font: 500 42px/1.2 'Geist'; letter-spacing: -0.015em; margin-top: 14px; }
 .v1 { top: 168px; } .v2 { top: 430px; }
 .p1 { left: 72px; top: 730px; font-size: 76px; }
-.cta { left: 72px; top: 1060px; width: 936px; height: 80px; background: var(--creme); color: var(--tinta); display: flex; align-items: center; padding: 0 24px; gap: 12px; font: 500 25px/1 'Geist'; letter-spacing: -0.01em; white-space: nowrap; }
+.cta { left: 72px; top: 1060px; width: 936px; height: 80px; background: var(--creme); color: var(--tinta); display: flex; align-items: center; padding: 0 28px; gap: 12px; font: 700 30px/1 'Geist'; letter-spacing: -0.015em; white-space: nowrap; }
 .cta b { font-weight: 900; background: var(--laranja); padding: 8px 14px; letter-spacing: .04em; }
 """, corpo="""
   <div class="abs metade"></div>
   <div class="abs v v1"><div class="h">Abaixo do seu ponto de virada:</div><div class="d">o carro é conforto. Pode valer, mas tem preço.</div></div>
   <div class="abs v v2"><div class="h">Acima:</div><div class="d">o carro é economia.</div></div>
   <div class="abs serifa p1">Não existe resposta certa.<br>Existe o seu número.</div>
-  <div class="abs cta">Comenta <b>KM</b> e eu te mando o site pra calcular o seu ponto de virada.</div>
+  <div class="abs cta">Você roda o suficiente pro seu carro valer o que ele te cobra?</div>
 """),
 }
 
