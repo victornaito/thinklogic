@@ -1,0 +1,75 @@
+{
+ "bpm": 120,
+ "slides": [
+  {
+   "slide": 1,
+   "duracao_s": 8,
+   "eventos": [
+    {
+     "t": 1,
+     "tipo": "whoosh",
+     "o_que": "risco de caneta",
+     "gain": 0.8
+    },
+    {
+     "t": 1.5,
+     "tipo": "clique",
+     "o_que": "rolo 1"
+    },
+    {
+     "t": 1.65,
+     "tipo": "clique",
+     "o_que": "rolo 2"
+    },
+    {
+     "t": 1.8,
+     "tipo": "clique",
+     "o_que": "rolo 3"
+    },
+    {
+     "t": 1.95,
+     "tipo": "clique",
+     "o_que": "rolo 4"
+    },
+    {
+     "t": 2.5,
+     "tipo": "land",
+     "o_que": "km pousa",
+     "gain": 0.7
+    },
+    {
+     "t": 3,
+     "tipo": "clique",
+     "o_que": "frase sobe"
+    },
+    {
+     "t": 3.5,
+     "tipo": "pop",
+     "o_que": "etiqueta balança"
+    },
+    {
+     "t": 4,
+     "tipo": "pop",
+     "o_que": "etiqueta balança",
+     "gain": 0.6
+    },
+    {
+     "t": 5,
+     "tipo": "land",
+     "o_que": "tranco do carro",
+     "gain": 0.8
+    },
+    {
+     "t": 6.5,
+     "tipo": "clique",
+     "o_que": "seta"
+    },
+    {
+     "t": 7,
+     "tipo": "clique",
+     "o_que": "seta"
+    }
+   ]
+  }
+ ]
+}

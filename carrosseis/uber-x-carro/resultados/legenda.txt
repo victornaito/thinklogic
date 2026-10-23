@@ -1,0 +1,28 @@
+Todo mundo acha o Uber caro. Pra quem roda pouco, caro é o carro.
+
+A conta tem duas partes.
+
+O carro te cobra antes de andar. IPVA, seguro, depreciação e o dinheiro parado nele somam R$ 1.887 por mês, rodando ou não. Depois, cada km custa mais R$ 0,74 de combustível e manutenção.
+
+O app não tem parte fixa. Só cobra quando você anda: uns R$ 2,50 por km numa corrida urbana.
+
+Por km, o app é 3 vezes mais caro. Mas começa do zero. As duas contas se cruzam em 1.073 km por mês.
+
+Abaixo disso, o app sai mais barato. Acima, o carro compensa.
+
+Pra ter ideia:
+300 km/mês: o app economiza R$ 1.360
+1.000 km/mês: o app ainda economiza R$ 129
+1.500 km/mês: o carro economiza R$ 750
+
+1.073 km é ir e voltar de um trabalho a 24 km de casa, todo dia útil, e não usar o carro pra mais nada.
+
+Não é pra vender o carro amanhã. Filho, estrada e cidade sem app pesam do lado do carro. Estacionamento, multa e tempo livre pesam do lado do app. É pra decidir sabendo o seu número.
+
+Comenta KM que eu te mando o site pra você calcular o seu ponto de virada com o seu carro e o preço do app na sua cidade.
+
+E manda pra quem diz que Uber é caro.
+
+Premissas: carro de R$ 80 mil (o mesmo do post do extrato), 12 km/l, gasolina R$ 6,50, SP, app a R$ 2,50/km em média. Com preço dinâmico de 1,5x, o ponto cai pra 627 km. Simulação educativa.
+
+#financaspessoais #educacaofinanceira #uber #carro #mobilidade

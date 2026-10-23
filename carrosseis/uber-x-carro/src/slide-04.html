@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Slide 04 · Uber x carro</title>
+<link rel="stylesheet" href="base.css">
+<style>
+.taxi { background: #0d0d0d; border-radius: 18px; padding: 22px 26px 26px; box-shadow: 0 24px 50px rgba(0,0,0,.3); color: #f4f1ea; }
+.taxi .rot { font: 500 20px/1.3 'Geist Mono'; letter-spacing: .14em; text-transform: uppercase; color: rgba(244,241,234,.6); }
+.taxi .dig { display: flex; gap: 6px; margin-top: 14px; align-items: flex-end; }
+.taxi .dig span { width: var(--w, 80px); height: var(--h, 112px); background: linear-gradient(#000 0%, #2a2a2a 50%, #000 100%); border-radius: 6px;
+  font: 600 var(--f, 92px)/var(--h, 112px) 'Geist Mono'; text-align: center; }
+.taxi .dig span.sep { width: 26px; background: none; }
+.taxi .dig .un { width: auto; background: none; font: 500 30px/1 'Geist Mono'; color: rgba(244,241,234,.7); margin-left: 10px; padding-bottom: 12px; height: auto; }
+.marca { box-shadow: inset 0 -0.34em 0 rgba(242,81,31,.85); }
+
+.t1 { top: 150px; font-size: 112px; }
+.t1 .ac { color: var(--laranja); }
+.tx { left: 72px; top: 440px; }
+.rec { left: 72px; top: 720px; width: 936px; }
+.c1 { top: 1000px; width: 936px; font-size: 40px; }
+.circ { position: relative; white-space: nowrap; }
+.circ::after { content: ''; position: absolute; left: -16px; right: -16px; top: -10px; bottom: -8px; border: 4px solid var(--laranja); border-radius: 50%; transform: rotate(-3deg); }
+
+</style>
+</head>
+<body>
+<div id="quadro" class="marinho">
+  <canvas id="grao" width="1080" height="1350" data-semente="04"></canvas>
+  <div class="abs cabecalho">Parte por km · carro</div>
+  <div class="abs fio" style="top:110px"></div>
+
+  <div class="abs titulo t1">Cada km de carro:<br><span class="ac">R$ 0,74.</span></div>
+  <div class="abs taxi tx"><div class="rot">Carro · R$ por km</div><div class="dig" style="--w:80px;--h:112px;--f:92px"><span>0</span><span class="sep">,</span><span>7</span><span>4</span><span class="un">/km</span></div></div>
+  <div class="abs recibo rec">
+    <div class="ln"><span>Combustível</span><span class="pt"></span><span class="v">R$ 0,54</span></div><div class="sub">12 km/l a R$ 6,50</div>
+    <div class="ln"><span>Manutenção</span><span class="pt"></span><span class="v">R$ 0,20</span></div><div class="sub">pneu, revisão, freio</div>
+  </div>
+  <div class="abs corpo c1">Parece barato. A pegadinha:<br>os <b class="circ">R$ 1.887</b> já foram antes.</div>
+
+  <div class="abs fio" style="top:1180px"></div>
+  <div class="abs odometro">
+    <div class="rot">Km<br>por mês</div>
+    <div class="digitos" data-valor="0.000"></div>
+  </div>
+  
+  <div class="abs rodape">@victornaito.financas</div>
+</div>
+<script src="base.js"></script>
+</body>
+</html>

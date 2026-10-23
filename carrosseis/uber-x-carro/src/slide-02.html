@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Slide 02 · Uber x carro</title>
+<link rel="stylesheet" href="base.css">
+<style>
+.taxi { background: #0d0d0d; border-radius: 18px; padding: 22px 26px 26px; box-shadow: 0 24px 50px rgba(0,0,0,.3); color: #f4f1ea; }
+.taxi .rot { font: 500 20px/1.3 'Geist Mono'; letter-spacing: .14em; text-transform: uppercase; color: rgba(244,241,234,.6); }
+.taxi .dig { display: flex; gap: 6px; margin-top: 14px; align-items: flex-end; }
+.taxi .dig span { width: var(--w, 80px); height: var(--h, 112px); background: linear-gradient(#000 0%, #2a2a2a 50%, #000 100%); border-radius: 6px;
+  font: 600 var(--f, 92px)/var(--h, 112px) 'Geist Mono'; text-align: center; }
+.taxi .dig span.sep { width: 26px; background: none; }
+.taxi .dig .un { width: auto; background: none; font: 500 30px/1 'Geist Mono'; color: rgba(244,241,234,.7); margin-left: 10px; padding-bottom: 12px; height: auto; }
+.marca { box-shadow: inset 0 -0.34em 0 rgba(242,81,31,.85); }
+
+.t1 { top: 150px; font-size: 120px; }
+.bal { left: 72px; top: 420px; }
+.c1 { top: 870px; width: 936px; }
+.c2 { top: 1036px; width: 936px; font-weight: 800; }
+
+</style>
+</head>
+<body>
+<div id="quadro" class="marinho">
+  <canvas id="grao" width="1080" height="1350" data-semente="02"></canvas>
+  <div class="abs cabecalho">A conta</div>
+  <div class="abs fio" style="top:110px"></div>
+
+  <div class="abs titulo t1">A conta tem<br>duas partes.</div>
+  <svg class="abs bal" width="936" height="420" viewBox="0 0 936 420"><polygon points="468,380 418,410 518,410" fill="#FBF4E8"/><rect x="463" y="90" width="10" height="295" fill="#FBF4E8"/><line x1="150" y1="120" x2="786" y2="52" stroke="#FBF4E8" stroke-width="10" stroke-linecap="round"/><circle cx="468" cy="86" r="12" fill="#F2511F"/><line x1="150" y1="120" x2="40" y2="190" stroke="#FBF4E8" stroke-width="3"/><line x1="150" y1="120" x2="260" y2="190" stroke="#FBF4E8" stroke-width="3"/><rect x="20" y="190" width="260" height="10" rx="5" fill="#FBF4E8"/><rect x="35" y="90" width="230" height="96" rx="6" fill="#F2511F"/><text x="150" y="147.0" text-anchor="middle" font-family="Geist Mono" font-weight="600" font-size="24" letter-spacing="2" fill="#15130F">PARTE FIXA</text><rect x="35" y="42" width="230" height="44" rx="6" fill="#FBF4E8"/><text x="150" y="73.0" text-anchor="middle" font-family="Geist Mono" font-weight="600" font-size="24" letter-spacing="2" fill="#15130F">POR KM</text><text x="150" y="244" text-anchor="middle" font-family="Geist" font-weight="800" font-size="40" fill="#FBF4E8">CARRO</text><line x1="786" y1="52" x2="676" y2="122" stroke="#FBF4E8" stroke-width="3"/><line x1="786" y1="52" x2="896" y2="122" stroke="#FBF4E8" stroke-width="3"/><rect x="656" y="122" width="260" height="10" rx="5" fill="#FBF4E8"/><rect x="671" y="74" width="230" height="44" rx="6" fill="#FBF4E8"/><text x="786" y="105.0" text-anchor="middle" font-family="Geist Mono" font-weight="600" font-size="24" letter-spacing="2" fill="#15130F">POR KM</text><text x="786" y="176" text-anchor="middle" font-family="Geist" font-weight="800" font-size="40" fill="#FBF4E8">APP</text></svg>
+  <div class="abs corpo c1">O carro te cobra antes de andar.<br>O app só cobra quando você anda.</div>
+  <div class="abs corpo c2"><span class="marca">Em algum km, os dois custam igual.</span></div>
+
+  <div class="abs fio" style="top:1180px"></div>
+  <div class="abs odometro">
+    <div class="rot">Km<br>por mês</div>
+    <div class="digitos" data-valor="0.000"></div>
+  </div>
+  
+  <div class="abs rodape">@victornaito.financas</div>
+</div>
+<script src="base.js"></script>
+</body>
+</html>
