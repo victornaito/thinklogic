@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boletim Focus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #070708; }
+  html, body { margin: 0; height: 100%; background: var(--bg); }
+  body { display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  canvas { height: 100vh; max-width: 100vw; aspect-ratio: 9 / 16; object-fit: contain; display: block; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<script src="../shared/base.js"></script>
+<script>
+// Destaques do Relatório Focus de 23/10/2026 (Banco Central do Brasil).
+// trend: variação vs. semana anterior (1 aumento, -1 diminuição, 0 estabilidade)
+const CARDS = [
+  {label: 'IPCA', unit: '(%)', vals: [[5.19, -1], [4.34, 1]]},
+  {label: 'PIB', unit: '(var. %)', vals: [[1.80, -1], [1.31, -1]]},
+  {label: 'CÂMBIO', unit: '(R$/US$)', vals: [[5.05, -1], [5.15, -1]], note: 'fim de período'},
+  {label: 'SELIC', unit: '(% a.a.)', vals: [[13.25, 0], [11.75, -1]], note: 'meta fim de período'},
+];
+const DURATION = 12.5;
+const GX = [48, 554], GY = [600, 1000], CW = 478, CH = 380;
+
+function grid(t) {
+  const pc = easeOut(prog(t, .7, 1.3));
+  if (pc <= 0) return;
+  ctx.save(); ctx.globalAlpha = pc;
+  ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
+  ctx.fillStyle = MUTED; ctx.font = F(700, 26); ctx.letterSpacing = '3px';
+  ctx.fillText('EXPECTATIVAS DO MERCADO · 23/10/2026', 64, 556);
+  ctx.letterSpacing = '0px';
+  ctx.restore();
+
+  CARDS.forEach((c, i) => {
+    const x = GX[i % 2], y = GY[i >> 1], a = 1.2 + i * .4;
+    const p = prog(t, a, a + .55);
+    if (p <= 0) return;
+    const s = .85 + .15 * backOut(p);
+    ctx.save(); ctx.globalAlpha = clamp(p * 1.6);
+    ctx.translate(x + CW / 2, y + CH / 2); ctx.scale(s, s); ctx.translate(-x - CW / 2, -y - CH / 2);
+    card(x, y, CW, CH, 30);
+    ctx.textAlign = 'left'; ctx.fillStyle = GOLD; ctx.font = F(900, 52); ctx.fillText(c.label, x + 36, y + 80);
+    const lw = ctx.measureText(c.label).width;
+    ctx.fillStyle = MUTED; ctx.font = F(600, 24); ctx.fillText(c.unit, x + 44 + lw, y + 80);
+
+    c.vals.forEach(([v, dir], j) => {
+      const cx = x + CW * (j ? .72 : .3);
+      const k = easeOut(prog(t, a + .3 + j * .15, a + 1.4 + j * .15));
+      ctx.textAlign = 'center';
+      ctx.fillStyle = 'rgba(244,239,228,0.7)'; ctx.font = F(700, 32); ctx.fillText(j ? '2027' : '2026', cx, y + 160);
+      ctx.fillStyle = INK; ctx.font = F(900, v >= 10 ? 58 : 66); ctx.fillText(ptBR(v * k), cx, y + 238);
+      const pa = prog(t, a + 1.3 + j * .15, a + 1.75 + j * .15);
+      if (pa > 0) trend(cx, y + 290, dir, backOut(pa));
+    });
+    if (c.note) {
+      ctx.textAlign = 'left'; ctx.fillStyle = MUTED; ctx.font = F(500, 22); ctx.fillText(c.note, x + 36, y + CH - 26);
+    }
+    ctx.restore();
+  });
+
+  // legenda
+  const pl = prog(t, 4.6, 5.2);
+  if (pl > 0) {
+    ctx.save(); ctx.globalAlpha = pl; ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
+    ctx.font = F(600, 26); ctx.fillStyle = MUTED;
+    let lx = 70; const ly = 1436;
+    ctx.fillText('vs. semana anterior:', lx, ly); lx += ctx.measureText('vs. semana anterior:').width + 34;
+    for (const [d, s] of [[1, 'aumento'], [-1, 'queda'], [0, 'estável']]) {
+      trend(lx, ly + (d ? 0 : 1), d, .7); lx += 26;
+      ctx.fillStyle = INK; ctx.fillText(s, lx, ly); lx += ctx.measureText(s).width + 38;
+    }
+    ctx.restore();
+  }
+}
+
+function render(t) {
+  ctx.clearRect(0, 0, W, H);
+  background(t, '%');
+  header(t, 'BOLETIM FOCUS', 'PROJEÇÕES', '@victornaito.financas');
+  grid(t);
+  headline(t, [
+    [{s: 'SELIC: ', c: INK}, {s: '13,25%', c: 'gold'}, {s: ' NO FIM DE 2026', c: INK}],
+    [{s: 'IPCA: ', c: INK}, {s: '5,19%', c: 'gold'}, {s: ' EM 2026', c: INK}],
+    [{s: 'PIB: ', c: INK}, {s: '1,80%', c: 'gold'}, {s: ' EM 2026', c: INK}],
+  ], 1580, 5.4, 56, 76);
+  footnote(t, 'Fonte: Banco Central do Brasil · Relatório Focus de 23/10/2026', 6.6);
+}
+startLoop(render, DURATION);
+</script>
+</body>
+</html>
