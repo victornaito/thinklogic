@@ -1,6 +1,6 @@
 # REEL · "O seu boleto não perdeu"
 
-Vídeo vertical 1080×1920, 48 s, 30 fps, com trilha sintetizada a 120 BPM (−14 LUFS) e efeitos sincronizados ao texto.
+Vídeo vertical 1080×1920, 48 s, 30 fps. Trilha `src/trilha-medo.py` (−14 LUFS): medo até as dicas (estrondo, coração, cluster dissonante, relógio na dúvida), ostinato tenso nas dicas, impacto na virada e acordes maiores com sinos no CTA. Efeitos sincronizados ao texto.
 Fonte: `src/reel.html` (cada cena e cada linha com o seu tempo em `data-a`, `data-b` e `data-t`). Render: `node src/reel.mjs video 4`, depois `python3 src/musica.py` e o mux.
 
 **Objetivo:** furar a bolha. Reel é o formato que o Instagram mais mostra pra quem não segue a conta. O vídeo acolhe a frustração de quem perdeu, mas a cena 3 fala direto com quem ganhou, pra o vídeo não morrer dentro de um lado só.
