@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Reel · o seu boleto não perdeu</title>
+<link rel="stylesheet" href="base.css">
+<style>
+/* Reel 1080x1920. Zona segura do Instagram: texto entre y 260 e y 1500, longe da coluna de ícones à direita. */
+html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--marinho); }
+#tela { position: absolute; inset: 0; overflow: hidden; }
+#grao { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 50; opacity: .28; mix-blend-mode: multiply; pointer-events: none; }
+.cena { position: absolute; inset: 0; overflow: hidden; display: none; }
+.cena.papel { background: var(--papel); color: var(--tinta); --mudo: rgba(21,19,15,.62); --fio: rgba(21,19,15,.18); }
+.cena.marinho { background: var(--marinho); color: var(--creme); --mudo: rgba(251,244,232,.62); --fio: rgba(251,244,232,.22); }
+.cena.cheio { background: var(--laranja); color: var(--tinta); --mudo: rgba(21,19,15,.7); --fio: rgba(21,19,15,.3); }
+
+.pilha { position: absolute; left: 80px; width: 900px; display: flex; flex-direction: column; gap: 14px; }
+.pilha > * { position: relative; }
+.sobe { overflow: hidden; padding-bottom: .16em; margin-bottom: -.16em; }
+.sobe > .in { display: block; }
+.h1 { font: 800 112px/1.02 'Geist'; letter-spacing: -0.045em; text-wrap: balance; }
+.h2 { font: 800 84px/1.05 'Geist'; letter-spacing: -0.04em; text-wrap: balance; }
+.se { font: italic 400 96px/1.05 'DM Serif'; letter-spacing: -0.02em; }
+.cp { font: 500 50px/1.25 'Geist'; letter-spacing: -0.015em; }
+.mono { font: 600 30px/1.3 'Geist Mono'; letter-spacing: .12em; text-transform: uppercase; color: var(--mudo); }
+.ac { color: var(--laranja); }
+.num { font: 900 260px/1 'Geist'; letter-spacing: -0.06em; color: var(--laranja); }
+.cheio .num { color: var(--tinta); }
+.marca { box-shadow: inset 0 -0.34em 0 rgba(242,81,31,.85); }
+
+/* cena 1: fotos */
+.fotos { position: absolute; left: 0; top: 0; width: 1080px; height: 1000px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.fotos img { width: 100%; height: 1000px; object-fit: cover; object-position: 50% 30%; filter: grayscale(.2) contrast(1.06); display: block; }
+.credito { left: 80px; top: 960px; z-index: 2; font: 500 22px/1 'Geist Mono'; color: rgba(251,244,232,.85); text-shadow: 0 1px 8px rgba(0,0,0,.8); }
+
+/* boleto */
+.boleto { width: 900px; }
+.boleto .ln { font-size: 36px; }
+.boleto .cab { font-size: 24px; }
+.carimbo { font-size: 84px; }
+
+/* barras do passo 2 */
+.barra { display: flex; height: 96px; transform-origin: 0 50%; }
+.barra div { display: flex; align-items: center; padding: 0 20px; font: 900 40px/1 'Geist'; overflow: hidden; white-space: nowrap; }
+.s1 { background: var(--tinta); color: var(--creme); } .s2 { background: var(--laranja); color: var(--tinta); } .s3 { background: #B9B2A6; color: var(--tinta); }
+
+.ano { font: 900 300px/1 'Geist'; letter-spacing: -0.06em; font-variant-numeric: tabular-nums; }
+.faixa { background: var(--creme); color: var(--tinta); padding: 28px 34px; font: 800 52px/1.1 'Geist'; letter-spacing: -0.02em; }
+.faixa b { background: var(--laranja); padding: 4px 14px; }
+</style>
+</head>
+<body>
+<div id="tela">
+  <canvas id="grao" width="1080" height="1920"></canvas>
+
+  <!-- 1 · hook -->
+  <section class="cena marinho" data-a="0" data-b="4.4">
+    <div class="fotos"><img src="../assets/foto-lula.jpg" alt=""><img src="../assets/foto-flavio.jpg" alt=""></div>
+    <div class="abs credito">Fotos: [fotógrafo]/Agência Brasil</div>
+    <div class="pilha" style="top:1050px">
+      <div class="h1">O Bolsonaro perdeu.</div>
+      <div class="se ac sobe" data-t="0.8" data-anim="sobe"><span class="in">O seu boleto, não.</span></div>
+      <div class="mono sobe" data-t="2.2" data-anim="sobe" style="margin-top:20px"><span class="in">5 passos pra não depender de eleição</span></div>
+    </div>
+  </section>
+
+  <!-- 2 · a dor -->
+  <section class="cena papel" data-a="4" data-b="10.4">
+    <div class="pilha" style="top:290px">
+      <div class="h1 sobe" data-t="4.4" data-anim="sobe"><span class="in">Eu sei.</span></div>
+      <div class="h2 sobe" data-t="5.0" data-anim="sobe"><span class="in">Dá medo do que vem aí.</span></div>
+      <div class="recibo boleto" data-t="6.6" data-anim="desliza" style="margin-top:50px">
+        <div class="cab">Boleto · novembro</div>
+        <div class="div"></div>
+        <div class="ln"><span>Aluguel</span><span class="pt"></span><span class="v">R$ 1.200</span></div>
+        <div class="ln"><span>Cartão</span><span class="pt"></span><span class="v">R$ 860</span></div>
+        <div class="ln"><span>Luz e água</span><span class="pt"></span><span class="v">R$ 260</span></div>
+      </div>
+      <div class="carimbo" data-t="7.4" data-anim="carimbo" style="align-self:flex-end; margin:-10px 30px 0 0; transform: rotate(-8deg)">VENCE DIA 5</div>
+      <div class="cp sobe" data-t="8.2" data-anim="sobe" style="margin-top:30px"><span class="in"><b>Quem paga as suas contas não é Brasília.</b></span></div>
+    </div>
+  </section>
+
+  <!-- 3 · furar a bolha -->
+  <section class="cena marinho" data-a="10" data-b="14.4">
+    <div class="pilha" style="top:480px">
+      <div class="h1 sobe" data-t="10.4" data-anim="sobe"><span class="in">Ganhou ou perdeu,</span></div>
+      <div class="se ac sobe" data-t="11.0" data-anim="sobe"><span class="in">o boleto chega igual.</span></div>
+      <div class="cp sobe" data-t="12.2" data-anim="sobe" style="margin-top:60px"><span class="in">Isso vale pra quem votou no Lula também.</span></div>
+    </div>
+  </section>
+
+  <!-- 4 · a dúvida -->
+  <section class="cena cheio" data-a="14" data-b="20.4">
+    <div class="pilha" style="top:300px">
+      <div class="h2 sobe" data-t="14.4" data-anim="sobe"><span class="in">Daqui a 4 anos,</span></div>
+      <div class="ano" data-t="14.9" data-anim="conta" data-de="2026" data-ate="2030" data-dur="1.2">2030</div>
+      <div class="h2 sobe" data-t="16.2" data-anim="sobe"><span class="in">a sua vida financeira vai estar melhor?</span></div>
+      <div class="se sobe" data-t="18.0" data-anim="sobe" style="margin-top:50px"><span class="in">Ou você vai esperar a próxima eleição?</span></div>
+    </div>
+  </section>
+
+  <!-- 5 · as 5 dicas -->
+  <section class="cena marinho" data-a="20" data-b="23.9">
+    <div class="pilha" style="top:300px">
+      <div class="num" data-t="20.3" data-anim="carimbo">01</div>
+      <div class="h1 sobe" data-t="20.8" data-anim="sobe"><span class="in">Anote cada gasto.</span></div>
+      <div class="cp sobe" data-t="21.6" data-anim="sobe" style="margin-top:30px"><span class="in">Por 30 dias. Do aluguel ao cafezinho.</span></div>
+    </div>
+  </section>
+
+  <section class="cena papel" data-a="23.5" data-b="28.4">
+    <div class="pilha" style="top:300px">
+      <div class="num" data-t="23.8" data-anim="carimbo">02</div>
+      <div class="h1 sobe" data-t="24.3" data-anim="sobe"><span class="in">Escolha um método.</span></div>
+      <div class="mono sobe" data-t="25.0" data-anim="sobe" style="margin-top:40px"><span class="in">Ganha até R$ 4 mil</span></div>
+      <div class="barra" data-t="25.3" data-anim="barra"><div class="s1" style="width:80%">80</div><div class="s2" style="width:10%">10</div><div class="s3" style="width:10%">10</div></div>
+      <div class="mono sobe" data-t="26.2" data-anim="sobe" style="margin-top:30px"><span class="in">Ganha mais</span></div>
+      <div class="barra" data-t="26.5" data-anim="barra"><div class="s1" style="width:50%">50</div><div class="s3" style="width:30%">30</div><div class="s2" style="width:20%">20</div></div>
+    </div>
+  </section>
+
+  <section class="cena marinho" data-a="28" data-b="31.9">
+    <div class="pilha" style="top:300px">
+      <div class="num" data-t="28.3" data-anim="carimbo">03</div>
+      <div class="h1 sobe" data-t="28.8" data-anim="sobe"><span class="in">Receita − despesa.</span></div>
+      <div class="se ac sobe" data-t="29.6" data-anim="sobe" style="margin-top:20px"><span class="in">Tem que sobrar todo mês.</span></div>
+    </div>
+  </section>
+
+  <section class="cena papel" data-a="31.5" data-b="34.9">
+    <div class="pilha" style="top:300px">
+      <div class="num" data-t="31.8" data-anim="carimbo">04</div>
+      <div class="h1 sobe" data-t="32.3" data-anim="sobe"><span class="in">Reserva de emergência.</span></div>
+      <div class="cp sobe" data-t="33.0" data-anim="sobe" style="margin-top:30px"><span class="in"><span class="marca">6 meses do seu custo de vida.</span></span></div>
+    </div>
+  </section>
+
+  <section class="cena marinho" data-a="34.5" data-b="38.4">
+    <div class="pilha" style="top:300px">
+      <div class="num" data-t="34.8" data-anim="carimbo">05</div>
+      <div class="h1 sobe" data-t="35.3" data-anim="sobe"><span class="in">Invista na sua aposentadoria.</span></div>
+      <div class="se ac sobe" data-t="36.2" data-anim="sobe" style="margin-top:20px"><span class="in">A que não depende de governo.</span></div>
+    </div>
+  </section>
+
+  <!-- 6 · virada -->
+  <section class="cena cheio" data-a="38" data-b="42.4">
+    <div class="pilha" style="top:420px">
+      <div class="h1 sobe" data-t="38.4" data-anim="sobe"><span class="in">Presidente muda a cada 4 anos.</span></div>
+      <div class="se sobe" data-t="39.6" data-anim="sobe" style="margin-top:40px"><span class="in">O seu boleto chega todo mês.</span></div>
+    </div>
+  </section>
+
+  <!-- 7 · CTA -->
+  <section class="cena marinho" data-a="42" data-b="99">
+    <div class="pilha" style="top:300px">
+      <div class="h2 sobe" data-t="42.4" data-anim="sobe"><span class="in">Não sabe por onde começar?</span></div>
+      <div class="h1 sobe" data-t="43.2" data-anim="sobe" style="margin-top:40px"><span class="in">Diagnóstico financeiro comigo.</span></div>
+      <div class="carimbo" data-t="44.2" data-anim="carimbo" style="align-self:flex-start; margin:30px 0 0 20px; transform: rotate(-6deg)">GRATUITO</div>
+      <div class="faixa" data-t="45.2" data-anim="desliza" style="margin-top:60px"><b>Link na bio</b> e começa o seu plano.</div>
+      <div class="mono sobe" data-t="45.8" data-anim="sobe" style="margin-top:30px"><span class="in">@victornaito.financas</span></div>
+    </div>
+  </section>
+</div>
+
+<script>
+(function () {
+  // grão com semente fixa
+  const c = document.getElementById('grao'), x = c.getContext('2d'), d = x.createImageData(c.width, c.height);
+  let s = 11; const r = () => (s = (s * 16807) % 2147483647) / 2147483647;
+  for (let i = 0; i < d.data.length; i += 4) { const v = 200 + r() * 55; d.data[i] = d.data[i + 1] = d.data[i + 2] = v; d.data[i + 3] = 255; }
+  x.putImageData(d, 0, 0);
+
+  const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+  const outC = u => 1 - Math.pow(1 - u, 3);
+  const inOut = u => u < .5 ? 4 * u * u * u : 1 - Math.pow(-2 * u + 2, 3) / 2;
+  const mola = (u, ciclos = 1) => (u <= 0 || u >= 1) ? 0 : Math.exp(-3 * u) * Math.sin(2 * Math.PI * ciclos * u) * (1 - u);
+
+  const cenas = [...document.querySelectorAll('.cena')];
+  cenas.forEach((el, i) => { el.style.zIndex = i + 1; });
+  const els = [...document.querySelectorAll('[data-anim]')];
+  els.forEach(el => { el.dataset.base = el.style.transform || ''; });
+
+  window.DURACAO = 48;
+  // acertos de som, derivados das próprias animações
+  const tipo = { sobe: 'clique', carimbo: 'impacto', desliza: 'whoosh', barra: 'clique', conta: 'clique' };
+  window.CUES = els.map(el => ({ t: +el.dataset.t, tipo: tipo[el.dataset.anim], o_que: el.dataset.anim === 'desliza' ? 'atravessa' : 'frase' }))
+    .concat(cenas.slice(1).map(el => ({ t: +el.dataset.a, tipo: 'whoosh', o_que: 'atravessa a borda', gain: 0.8 })))
+    .concat([15.2, 15.5, 15.8].map(t => ({ t, tipo: 'clique', o_que: 'ano' })));
+
+  window.seek = function (t) {
+    cenas.forEach(el => {
+      const a = +el.dataset.a, b = +el.dataset.b;
+      if (t < a || t >= b) { el.style.display = 'none'; return; }
+      el.style.display = 'block';
+      const u = clamp((t - a) / 0.4);
+      el.style.transform = a > 0 && u < 1 ? `translateX(${(1 - outC(u)) * 100}%)` : '';
+    });
+    els.forEach(el => {
+      const t0 = +el.dataset.t, k = el.dataset.anim, base = el.dataset.base;
+      if (k === 'sobe') {
+        const u = clamp((t - t0) / 0.45);
+        el.firstElementChild.style.transform = u < 1 ? `translateY(${(1 - outC(u)) * 115}%)` : '';
+      } else if (k === 'desliza') {
+        const u = clamp((t - t0) / 0.6);
+        el.style.transform = u < 1 ? `${base} translateY(${(1 - outC(u)) * 1400}px)` : base;
+      } else if (k === 'barra') {
+        const u = clamp((t - t0) / 0.6);
+        el.style.transform = u < 1 ? `scaleX(${outC(u)})` : '';
+      } else if (k === 'carimbo') {
+        if (t < t0) { el.style.visibility = 'hidden'; return; }
+        el.style.visibility = '';
+        const u = clamp((t - t0) / 0.22), m = mola(clamp((t - t0 - 0.22) / 0.35));
+        const sc = u < 1 ? 1.6 - 0.6 * u * u * u : 1 - 0.06 * m;
+        el.style.transform = `${base} scale(${sc})`;
+      } else if (k === 'conta') {
+        const de = +el.dataset.de, ate = +el.dataset.ate, u = inOut(clamp((t - t0) / +el.dataset.dur));
+        el.textContent = String(Math.round(de + (ate - de) * u));
+      }
+    });
+  };
+  window.seek(0);
+})();
+</script>
+</body>
+</html>
