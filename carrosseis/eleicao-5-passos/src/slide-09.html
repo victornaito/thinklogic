@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Slide 09 · 5 passos</title>
+<link rel="stylesheet" href="base.css">
+<style>
+#quadro.cheio { background: var(--laranja); color: var(--tinta); --mudo: rgba(21,19,15,.68); --fio: rgba(21,19,15,.28); }
+.num { left: 72px; top: 140px; font: 900 190px/1 'Geist'; letter-spacing: -0.06em; color: var(--laranja); }
+.marca { box-shadow: inset 0 -0.34em 0 rgba(242,81,31,.85); }
+#quadro.cheio .marca { box-shadow: inset 0 -0.34em 0 rgba(21,19,15,.18); }
+
+.t1 { top: 150px; font-size: 104px; }
+.c1 { top: 410px; width: 936px; font-size: 38px; }
+.lista { left: 72px; top: 650px; display: flex; flex-direction: column; gap: 18px; }
+.lista p { margin: 0; font: 600 36px/1.2 'Geist'; letter-spacing: -0.015em; display: flex; gap: 16px; }
+.lista p::before { content: '✓'; color: var(--laranja); font-weight: 900; }
+.p1 { left: 72px; top: 890px; font-size: 56px; }
+.faixa { left: 72px; top: 1060px; width: 936px; height: 86px; background: var(--creme); color: var(--tinta); display: flex; align-items: center; gap: 16px; padding: 0 28px; font: 800 34px/1 'Geist'; letter-spacing: -0.02em; white-space: nowrap; }
+.faixa b { background: var(--laranja); padding: 8px 14px; font-weight: 900; letter-spacing: .02em; }
+
+</style>
+</head>
+<body>
+<div id="quadro" class="marinho">
+  <canvas id="grao" width="1080" height="1350" data-semente="09"></canvas>
+  <div class="abs cabecalho">Próximo passo</div>
+  <div class="abs fio" style="top:110px"></div>
+
+  <div class="abs titulo t1">O próximo passo<br>é o diagnóstico.</div>
+  <div class="abs corpo c1">Um diagnóstico financeiro gratuito comigo, pra começar o plano da sua liberdade financeira.</div>
+  <div class="abs lista"><p>os seus números na mesa</p><p>o método certo pra sua renda</p><p>o plano da sua aposentadoria</p></div>
+  <div class="abs serifa p1">Sem depender de governo.</div>
+  <div class="abs faixa"><b>GRATUITO</b> Diagnóstico financeiro · link na bio</div>
+
+  <div class="abs fio" style="top:1180px"></div>
+  <div class="abs rodape" style="top:1222px">@victornaito.financas</div>
+</div>
+<script src="base.js"></script>
+</body>
+</html>

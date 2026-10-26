@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Slide 05 · 5 passos</title>
+<link rel="stylesheet" href="base.css">
+<style>
+#quadro.cheio { background: var(--laranja); color: var(--tinta); --mudo: rgba(21,19,15,.68); --fio: rgba(21,19,15,.28); }
+.num { left: 72px; top: 140px; font: 900 190px/1 'Geist'; letter-spacing: -0.06em; color: var(--laranja); }
+.marca { box-shadow: inset 0 -0.34em 0 rgba(242,81,31,.85); }
+#quadro.cheio .marca { box-shadow: inset 0 -0.34em 0 rgba(21,19,15,.18); }
+
+.t1 { top: 340px; font-size: 112px; }
+.rec { left: 72px; top: 610px; width: 936px; font-size: 32px; }
+.rec .tot .v { background: var(--laranja); padding: 2px 12px; }
+.c1 { top: 900px; width: 936px; }
+.c2 { top: 1040px; width: 936px; font-size: 42px; font-weight: 800; }
+
+</style>
+</head>
+<body>
+<div id="quadro" class="marinho">
+  <canvas id="grao" width="1080" height="1350" data-semente="05"></canvas>
+  <div class="abs cabecalho">Passo 3 de 5</div>
+  <div class="abs fio" style="top:110px"></div>
+
+  <div class="abs num">03</div>
+  <div class="abs titulo t1">A conta tem<br>que sobrar.</div>
+  <div class="abs recibo rec">
+    <div class="ln "><span>Receita</span><span class="pt"></span><span class="v">R$ 3.000</span></div>
+    <div class="ln "><span>− Despesa</span><span class="pt"></span><span class="v">R$ 2.700</span></div>
+    <div class="div"></div>
+    <div class="ln tot"><span>= SOBRA</span><span class="pt"></span><span class="v">R$ 300</span></div>
+  </div>
+  <div class="abs corpo c1">Todo mês, antes de qualquer coisa.<br>Sobra negativa é dívida chegando.</div>
+  <div class="abs corpo c2"><span class="marca">Não importa quanto você ganha. Importa quanto sobra.</span></div>
+
+  <div class="abs fio" style="top:1180px"></div>
+  <div class="abs rodape" style="top:1222px">@victornaito.financas</div>
+</div>
+<script src="base.js"></script>
+</body>
+</html>

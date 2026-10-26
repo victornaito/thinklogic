@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Slide 07 · 5 passos</title>
+<link rel="stylesheet" href="base.css">
+<style>
+#quadro.cheio { background: var(--laranja); color: var(--tinta); --mudo: rgba(21,19,15,.68); --fio: rgba(21,19,15,.28); }
+.num { left: 72px; top: 140px; font: 900 190px/1 'Geist'; letter-spacing: -0.06em; color: var(--laranja); }
+.marca { box-shadow: inset 0 -0.34em 0 rgba(242,81,31,.85); }
+#quadro.cheio .marca { box-shadow: inset 0 -0.34em 0 rgba(21,19,15,.18); }
+
+.t1 { top: 340px; font-size: 96px; }
+.c1 { top: 580px; width: 936px; font-size: 34px; }
+.curva { left: 72px; top: 780px; }
+.p1 { left: 72px; top: 1040px; font-size: 46px; width: 936px; }
+
+</style>
+</head>
+<body>
+<div id="quadro" class="marinho">
+  <canvas id="grao" width="1080" height="1350" data-semente="07"></canvas>
+  <div class="abs cabecalho">Passo 5 de 5</div>
+  <div class="abs fio" style="top:110px"></div>
+
+  <div class="abs num">05</div>
+  <div class="abs titulo t1">Crie a sua própria<br>aposentadoria.</div>
+  <div class="abs corpo c1">Os 10% (ou 20%) investidos todo mês viram uma renda que não depende de reforma, de INSS nem de quem estiver no poder.</div>
+  <svg class="abs curva" width="936" height="230" viewBox="0 0 936 230">
+    <line x1="0" y1="200" x2="936" y2="200" stroke="#FBF4E8" stroke-opacity=".25" stroke-width="3"/>
+    <path d="M10 196 C 300 190, 560 160, 720 100 S 880 22, 920 14" fill="none" stroke="#F2511F" stroke-width="9" stroke-linecap="round"/>
+    <circle cx="920" cy="14" r="12" fill="#F2511F"/>
+    <text x="10" y="228" font-family="Geist Mono" font-size="20" fill="#FBF4E8" fill-opacity=".6">HOJE</text>
+    <text x="926" y="228" text-anchor="end" font-family="Geist Mono" font-size="20" fill="#FBF4E8" fill-opacity=".6">APOSENTADORIA</text>
+    <text x="890" y="70" text-anchor="end" font-family="Geist" font-weight="800" font-size="28" fill="#FBF4E8">a sua renda</text>
+  </svg>
+  <div class="abs serifa p1">A sua aposentadoria não precisa passar por Brasília.</div>
+
+  <div class="abs fio" style="top:1180px"></div>
+  <div class="abs rodape" style="top:1222px">@victornaito.financas</div>
+</div>
+<script src="base.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Slide 04 · 5 passos</title>
+<link rel="stylesheet" href="base.css">
+<style>
+#quadro.cheio { background: var(--laranja); color: var(--tinta); --mudo: rgba(21,19,15,.68); --fio: rgba(21,19,15,.28); }
+.num { left: 72px; top: 140px; font: 900 190px/1 'Geist'; letter-spacing: -0.06em; color: var(--laranja); }
+.marca { box-shadow: inset 0 -0.34em 0 rgba(242,81,31,.85); }
+#quadro.cheio .marca { box-shadow: inset 0 -0.34em 0 rgba(21,19,15,.18); }
+
+.t1 { top: 340px; font-size: 100px; }
+.bloco { left: 72px; width: 936px; }
+.b1 { top: 590px; } .b2 { top: 840px; }
+.bloco h3 { margin: 0 0 12px; font: 600 22px/1 'Geist Mono'; letter-spacing: .12em; text-transform: uppercase; }
+.bloco h3 b { color: var(--laranja); }
+.barra { display: flex; height: 78px; }
+.barra div { display: flex; align-items: center; padding: 0 18px; font: 900 34px/1 'Geist'; letter-spacing: -0.03em; overflow: hidden; white-space: nowrap; }
+.s1 { background: var(--tinta); color: var(--creme); } .s2 { background: var(--laranja); color: var(--tinta); } .s3 { background: #B9B2A6; color: var(--tinta); }
+.leg { margin-top: 12px; font: 500 21px/1.45 'Geist Mono'; color: var(--mudo); }
+.leg b { color: var(--tinta); }
+.n1 { top: 1100px; font-size: 22px; }
+
+</style>
+</head>
+<body>
+<div id="quadro" class="papel">
+  <canvas id="grao" width="1080" height="1350" data-semente="04"></canvas>
+  <div class="abs cabecalho">Passo 2 de 5</div>
+  <div class="abs fio" style="top:110px"></div>
+
+  <div class="abs num">02</div>
+  <div class="abs titulo t1">Dê um destino<br>pra cada real.</div>
+  <div class="abs bloco b1"><h3>Ganha até R$ 4 mil · <b>80/10/10</b></h3>
+    <div class="barra"><div class="s1" style="width:80%">80%</div><div class="s2" style="width:10%">10</div><div class="s3" style="width:10%">10</div></div>
+    <div class="leg">custo de vida · reserva e investimento · objetivos<br><b>R$ 3.000 → R$ 2.400 · R$ 300 · R$ 300</b></div></div>
+  <div class="abs bloco b2"><h3>Ganha mais de R$ 4 mil · <b>50/30/20</b></h3>
+    <div class="barra"><div class="s1" style="width:50%">50%</div><div class="s3" style="width:30%">30%</div><div class="s2" style="width:20%">20%</div></div>
+    <div class="leg">necessidades · desejos · investimento<br><b>R$ 6.000 → R$ 3.000 · R$ 1.800 · R$ 1.200</b></div></div>
+  <div class="abs nota n1">Na dúvida entre os dois, o diagnóstico mostra qual é o seu.</div>
+
+  <div class="abs fio" style="top:1180px"></div>
+  <div class="abs rodape" style="top:1222px">@victornaito.financas</div>
+</div>
+<script src="base.js"></script>
+</body>
+</html>

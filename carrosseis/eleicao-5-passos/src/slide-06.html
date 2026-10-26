@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Slide 06 · 5 passos</title>
+<link rel="stylesheet" href="base.css">
+<style>
+#quadro.cheio { background: var(--laranja); color: var(--tinta); --mudo: rgba(21,19,15,.68); --fio: rgba(21,19,15,.28); }
+.num { left: 72px; top: 140px; font: 900 190px/1 'Geist'; letter-spacing: -0.06em; color: var(--laranja); }
+.marca { box-shadow: inset 0 -0.34em 0 rgba(242,81,31,.85); }
+#quadro.cheio .marca { box-shadow: inset 0 -0.34em 0 rgba(21,19,15,.18); }
+
+.t1 { top: 340px; font-size: 112px; }
+.c1 { top: 590px; width: 936px; }
+.meses { left: 72px; top: 730px; width: 936px; display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
+.meses div { background: var(--laranja); padding: 18px 12px 16px; }
+.meses b { display: block; font: 900 30px/1 'Geist'; letter-spacing: -0.03em; }
+.meses span { font: 500 16px/1 'Geist Mono'; letter-spacing: .1em; text-transform: uppercase; color: rgba(21,19,15,.7); }
+.tot { left: 72px; top: 870px; font: 600 40px/1.2 'Geist'; letter-spacing: -0.02em; }
+.tot b { font-weight: 900; }
+.p1 { left: 72px; top: 990px; font-size: 48px; width: 936px; }
+
+</style>
+</head>
+<body>
+<div id="quadro" class="papel">
+  <canvas id="grao" width="1080" height="1350" data-semente="06"></canvas>
+  <div class="abs cabecalho">Passo 4 de 5</div>
+  <div class="abs fio" style="top:110px"></div>
+
+  <div class="abs num">04</div>
+  <div class="abs titulo t1">Monte a sua<br>reserva.</div>
+  <div class="abs corpo c1">6 meses do seu custo de vida, num lugar seguro e com liquidez diária.</div>
+  <div class="abs meses"><div><span>mês 1</span><b>2.400</b></div><div><span>mês 2</span><b>2.400</b></div><div><span>mês 3</span><b>2.400</b></div><div><span>mês 4</span><b>2.400</b></div><div><span>mês 5</span><b>2.400</b></div><div><span>mês 6</span><b>2.400</b></div></div>
+  <div class="abs tot">R$ 2.400 × 6 = <b class="marca">R$ 14.400</b></div>
+  <div class="abs serifa p1">Crise econômica vem com qualquer presidente. A reserva segura a sua.</div>
+
+  <div class="abs fio" style="top:1180px"></div>
+  <div class="abs rodape" style="top:1222px">@victornaito.financas</div>
+</div>
+<script src="base.js"></script>
+</body>
+</html>
