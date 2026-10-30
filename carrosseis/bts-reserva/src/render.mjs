@@ -1,4 +1,4 @@
-// Renderiza src/slide-NN.html em resultados/estatico/slide-NN.png (1080x1350).
+// Renderiza src/slide-NN.html em resultados/estatico/slide-NN.png (1080x1440).
 // Uso: node src/render.mjs [01 02 ...]   (sem argumento: todos)
 import { createRequire } from 'node:module';
 import { readdirSync } from 'node:fs';
@@ -14,7 +14,7 @@ const slides = readdirSync(path.join(raiz, 'src'))
   .filter(f => !pedidos.length || pedidos.includes(f.slice(6, 8)));
 
 const browser = await chromium.launch({ args: ['--disable-gpu', '--force-color-profile=srgb', '--allow-file-access-from-files'] });
-const page = await browser.newPage({ viewport: { width: 1080, height: 1350 }, deviceScaleFactor: 1 });
+const page = await browser.newPage({ viewport: { width: 1080, height: 1440 }, deviceScaleFactor: 1 });
 for (const f of slides) {
   await page.goto('file://' + path.join(raiz, 'src', f));
   await page.evaluate(() => document.fonts.ready);
