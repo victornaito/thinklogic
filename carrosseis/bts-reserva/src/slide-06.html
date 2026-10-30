@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Slide 06 · BTS antes do exército</title>
+<style>
+@font-face { font-family: 'Geist'; src: url('fontes/Geist-Variable.ttf') format('truetype'); font-weight: 100 900; }
+@font-face { font-family: 'Geist Mono'; src: url('fontes/GeistMono-Variable.ttf') format('truetype'); font-weight: 100 900; }
+@font-face { font-family: 'DM Serif'; src: url('fontes/DMSerifDisplay-Italic.ttf') format('truetype'); font-style: italic; }
+:root {
+  --noite: #120B1F; --roxo: #8B3DFF; --lilas: #C9A7FF; --branco: #FFFFFF;
+  --mudo: rgba(255,255,255,.62); --fio: rgba(255,255,255,.16); --margem: 80px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1080px; height: 1350px; overflow: hidden; background: var(--noite); }
+body { -webkit-font-smoothing: antialiased; font-family: 'Geist'; color: var(--branco); }
+#quadro { position: absolute; inset: 0; overflow: hidden;
+  background: radial-gradient(900px 700px at 85% 0%, rgba(139,61,255,.38), transparent 70%), var(--noite); }
+#quadro.roxo { background: radial-gradient(900px 900px at 20% 100%, #5B17C9, transparent 70%), var(--roxo); }
+.abs { position: absolute; }
+.cab { left: var(--margem); right: var(--margem); top: 64px; display: flex; justify-content: space-between;
+  font: 500 22px/1 'Geist Mono'; letter-spacing: .14em; text-transform: uppercase; color: var(--mudo); }
+.rodape { left: var(--margem); right: var(--margem); bottom: 64px; display: flex; justify-content: space-between; align-items: center;
+  font: 600 24px/1 'Geist Mono'; letter-spacing: .04em; color: var(--mudo); }
+.barra { display: flex; gap: 8px; }
+.barra i { width: 34px; height: 6px; border-radius: 3px; background: var(--fio); }
+.barra i.on { background: var(--lilas); }
+.miolo { left: var(--margem); right: var(--margem); top: 170px; bottom: 170px;
+  display: flex; flex-direction: column; justify-content: center; gap: 44px; }
+.titulo { font-weight: 900; font-size: 104px; line-height: .98; letter-spacing: -0.045em; }
+.corpo { font-weight: 500; font-size: 44px; line-height: 1.25; letter-spacing: -0.02em; color: rgba(255,255,255,.88); }
+.corpo b { font-weight: 800; color: var(--branco); }
+.marca { background: var(--roxo); color: var(--branco); padding: 0 .16em; border-radius: .12em;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.lilas { color: var(--lilas); }
+.serifa { font-family: 'DM Serif'; font-style: italic; font-weight: 400; letter-spacing: -0.01em; }
+.seta { font-weight: 800; font-size: 46px; color: var(--lilas); letter-spacing: -0.02em; }
+.cartao { background: rgba(255,255,255,.07); border: 2px solid var(--fio); border-radius: 28px; padding: 40px 48px; }
+.numero { font-weight: 900; font-size: 150px; line-height: .95; letter-spacing: -0.055em; font-variant-numeric: tabular-nums; }
+.nota { font: 500 24px/1.4 'Geist Mono'; color: var(--mudo); }
+
+    .linha { display: flex; justify-content: space-between; align-items: baseline; gap: 30px; padding: 22px 0; border-bottom: 2px solid var(--fio); }
+    .linha .r { font-weight: 800; font-size: 50px; letter-spacing: -0.03em; white-space: nowrap; }
+    .linha .l { font-weight: 500; font-size: 36px; color: rgba(255,255,255,.85); line-height: 1.2; }
+    .falta .l, .falta .r { color: var(--lilas); } .falta { border-bottom: none; }
+    .falta .r { font-size: 76px; font-weight: 900; }
+    .miolo { gap: 36px; }</style>
+</head>
+<body>
+<div id="quadro" class="">
+  <div class="abs cab"><span>A conta</span><span>06/08</span></div>
+  <div class="abs rodape"><span>@victornaito.financas</span><span class="barra"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span></div>
+  <div class="abs miolo">
+    <div class="titulo" style="font-size:96px">Faltam <span class="marca">R$&nbsp;1.400</span> por mês.</div>
+    <div>
+      <div class="linha"><span class="l">Você vai precisar pra viver</span><span class="r">R$&nbsp;3.000</span></div>
+      <div class="linha"><span class="l">A maioria dos aposentados do INSS recebe</span><span class="r">1 salário mínimo</span></div>
+      <div class="linha falta"><span class="l">Diferença, em dinheiro de hoje</span><span class="r">−R$&nbsp;1.400</span></div>
+    </div>
+    <div class="corpo">Durante <b>20 anos</b> de aposentadoria.</div>
+    <div class="titulo" style="font-size:84px">Quem cobre essa diferença <span class="lilas">é você.</span></div>
+  </div>
+</div>
+</body>
+</html>
