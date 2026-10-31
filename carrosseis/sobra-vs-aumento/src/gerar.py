@@ -156,15 +156,17 @@ SLIDES = [
     <div class="nota">Aumento bruto de R$ 350 ≈ R$ 305 líquidos nessa faixa. Simulação simplificada.</div>"""),
 
     ("", "Conclusão", """
-    .palavra { display: inline-block; background: var(--laranja); color: #fff; border-radius: 22px; padding: 16px 40px 22px;
-      font-weight: 900; font-size: 116px; letter-spacing: -0.03em; line-height: 1; box-shadow: 0 20px 50px rgba(242,81,31,.35); }
-    .miolo { gap: 40px; }""", """
-    <div class="t" style="font-size:96px">No emprego atual, <span class="grifo">gastar melhor</span> rende mais por real.</div>
-    <div class="c">E quando o aumento vier, ele vira <b>sobra.</b> Não vira padrão de vida novo.</div>
-    <div class="c">Comenta</div>
-    <div><span class="palavra">SOBRA</span></div>
-    <div class="c">que eu te mando a lista dos gastos que mais escondem dinheiro no mês.</div>
-    <div class="c" style="font-size:36px;color:var(--mudo)">Manda pra quem tá esperando o aumento pra começar a guardar.</div>"""),
+    .miolo { gap: 40px; }
+    .dm { align-self: flex-start; max-width: 860px; background: var(--tinta); color: var(--papel); border-radius: 44px 44px 44px 12px;
+      padding: 34px 44px; font-weight: 600; font-size: 44px; line-height: 1.2; letter-spacing: -0.02em; box-shadow: 0 20px 50px rgba(21,19,15,.18); }
+    .dm small { display: block; margin-bottom: 12px; font: 600 22px/1 'Geist Mono'; letter-spacing: .12em; text-transform: uppercase; color: rgba(237,233,225,.55); }
+    .enviar { display: inline-flex; align-items: center; gap: 22px; background: var(--laranja); color: #fff; border-radius: 22px;
+      padding: 22px 38px 24px; font-weight: 900; font-size: 64px; letter-spacing: -0.03em; line-height: 1; box-shadow: 0 20px 50px rgba(242,81,31,.35); }
+    .enviar svg { width: 60px; height: 60px; }""", """
+    <div class="t" style="font-size:92px">No emprego atual, <span class="grifo">gastar melhor</span> rende mais por real.</div>
+    <div class="c">Manda pro amigo que <b>só pensa em ganhar mais</b> e ainda não entendeu que o jogo pode ser <span class="grifo"><b>gastar melhor.</b></span></div>
+    <div class="dm"><small>Você, no direct dele</small>Lê isso antes de pedir aumento 👀</div>
+    <div><span class="enviar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7Z"/></svg>Envia pra ele</span></div>"""),
 ]
 
 
