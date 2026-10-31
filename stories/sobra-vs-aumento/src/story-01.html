@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Story 1</title>
+<style>
+@font-face { font-family: 'Geist'; src: url('fontes/Geist-Variable.ttf') format('truetype'); font-weight: 100 900; }
+@font-face { font-family: 'Geist Mono'; src: url('fontes/GeistMono-Variable.ttf') format('truetype'); font-weight: 100 900; }
+@font-face { font-family: 'DM Serif'; src: url('fontes/DMSerifDisplay-Italic.ttf') format('truetype'); font-style: italic; }
+:root { --papel: #EDE9E1; --creme: #FBF4E8; --marinho: #181D26; --tinta: #15130F; --laranja: #F2511F;
+  --mudo: rgba(21,19,15,.6); --fio: rgba(21,19,15,.16); --m: 84px; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--papel); }
+body { -webkit-font-smoothing: antialiased; font-family: 'Geist'; color: var(--tinta); }
+#q { position: absolute; inset: 0; background: var(--papel); }
+#q.escuro { background: var(--marinho); color: #fff; --mudo: rgba(255,255,255,.62); --fio: rgba(255,255,255,.16); }
+.abs { position: absolute; }
+.cab { left: var(--m); right: var(--m); top: 250px; display: flex; justify-content: space-between;
+  font: 500 24px/1 'Geist Mono'; letter-spacing: .14em; text-transform: uppercase; color: var(--mudo); }
+.miolo { left: var(--m); right: var(--m); top: 320px; bottom: 300px; display: flex; flex-direction: column; justify-content: center; gap: 48px; }
+.t { font-weight: 900; font-size: 112px; line-height: .98; letter-spacing: -0.045em; }
+.c { font-weight: 500; font-size: 46px; line-height: 1.25; letter-spacing: -0.02em; }
+.c b { font-weight: 800; }
+.la { color: var(--laranja); }
+.serifa { font-family: 'DM Serif'; font-style: italic; font-weight: 400; letter-spacing: -0.01em; }
+.grifo { box-shadow: inset 0 -.32em 0 rgba(242,81,31,.85); }
+.vaga { border: 4px dashed var(--fio); border-radius: 36px; height: 300px; display: grid; place-items: center;
+  font: 500 26px/1 'Geist Mono'; letter-spacing: .12em; text-transform: uppercase; color: var(--mudo); }
+.nota { font: 500 24px/1.45 'Geist Mono'; color: var(--mudo); }
+.arroba { left: var(--m); bottom: 300px; font: 600 26px/1 'Geist Mono'; color: var(--mudo); }
+</style></head>
+<body><div id="q" class="">
+  <div class="abs cab"><span>Enquete</span><span>01/05</span></div>
+  <div class="abs miolo">
+    <div class="c" style="font-family:'Geist Mono';font-size:30px;letter-spacing:.12em;text-transform:uppercase" >No fim do mês, o que deixa mais dinheiro sobrando?</div>
+    <div class="t" style="font-size:150px">Ganhar mais<br><span class="serifa la" style="font-size:130px">ou</span><br>gastar melhor?</div>
+    <div class="vaga">cole a enquete aqui</div>
+    <div class="c">Vota antes de passar. A resposta tá na conta. →</div>
+  </div>
+</div></body></html>
