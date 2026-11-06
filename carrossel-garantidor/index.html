@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Garantidor Não Cobre Tudo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #070708; }
+  html, body { margin: 0; height: 100%; background: var(--bg); }
+  body { display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  canvas { height: 100vh; max-width: 100vw; aspect-ratio: 4 / 5; object-fit: contain; display: block; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1080" height="1350"></canvas>
+<script src="../shared/base.js"></script>
+<script>
+// Carrossel "O garantidor não cobre tudo" (caso Ueno Bank x FGC). 1080x1350, um slide por quadro.
+const T = 99; // tempo "final" para o fundo; os slides são estáticos
+const PAD = 80, TEXT_W = W - PAD * 2;
+
+function para(text, x, y, size, lh, color = INK, weight = 600, maxW = TEXT_W) {
+  ctx.font = F(weight, size); ctx.fillStyle = color; ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
+  const lines = wrap(text, maxW);
+  lines.forEach((l, i) => ctx.fillText(l, x, y + i * lh));
+  return y + lines.length * lh;
+}
+function kicker(text, y = 190) {
+  ctx.font = F(800, 28); ctx.letterSpacing = '4px'; ctx.fillStyle = GOLD; ctx.textAlign = 'left';
+  ctx.fillText(text, PAD, y); ctx.letterSpacing = '0px';
+  ctx.fillStyle = goldGrad(PAD, 0, PAD + 80, 0); ctx.fillRect(PAD, y + 22, 80, 5);
+}
+function frame(i, n) {
+  background(T, i === 0 ? 'R$' : '');
+  ctx.font = F(700, 28); ctx.textBaseline = 'alphabetic';
+  ctx.fillStyle = GOLD; ctx.textAlign = 'left'; ctx.fillText('@victornaito.financas', PAD, H - 60);
+  ctx.fillStyle = MUTED; ctx.textAlign = 'right'; ctx.fillText(`${i + 1}/${n}` + (i < n - 1 ? '  →' : ''), W - PAD, H - 60);
+  ctx.textAlign = 'left';
+}
+function itemCard(y, h, icon, text, size = 38, hi = false) {
+  card(PAD - 10, y, TEXT_W + 20, h, 28);
+  if (hi) { roundRect(PAD - 10, y, TEXT_W + 20, h, 28); ctx.strokeStyle = GOLD; ctx.lineWidth = 3; ctx.stroke(); }
+  icon(PAD + 50, y + h / 2);
+  ctx.font = F(700, size); ctx.fillStyle = INK; ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
+  const lines = wrap(text, TEXT_W - 140);
+  lines.forEach((l, j) => ctx.fillText(l, PAD + 110, y + h / 2 + (j - (lines.length - 1) / 2) * (size * 1.25)));
+  ctx.textBaseline = 'alphabetic';
+}
+const num = n => (x, y) => {
+  ctx.fillStyle = goldGrad(x - 26, y - 26, x + 26, y + 26); ctx.beginPath(); ctx.arc(x, y, 30, 0, 6.29); ctx.fill();
+  ctx.fillStyle = '#0A0907'; ctx.font = F(900, 32); ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(n, x, y + 2);
+};
+
+const SLIDES = [
+  // 1. capa
+  () => {
+    ctx.font = F(900, 34);
+    const band = 'CRISE DO UENO BANK', bw = ctx.measureText(band).width + 100;
+    ctx.fillStyle = goldGrad(0, 230, bw, 300);
+    ctx.beginPath(); ctx.moveTo(0, 240); ctx.lineTo(bw + 20, 240); ctx.lineTo(bw - 10, 300); ctx.lineTo(0, 300); ctx.fill();
+    ctx.fillStyle = '#0A0907'; ctx.textBaseline = 'middle'; ctx.fillText(band, PAD, 272); ctx.textBaseline = 'alphabetic';
+    ctx.font = F(900, 116); ctx.fillStyle = INK;
+    ctx.fillText('O GARANTIDOR', PAD - 6, 470); ctx.fillText('NÃO COBRE', PAD - 6, 610);
+    ctx.fillStyle = goldGrad(0, 640, 0, 760); ctx.fillText('TUDO.', PAD - 6, 750);
+    para('O que o banco que travou o dinheiro de 3 milhões de pessoas no Paraguai ensina sobre o seu dinheiro no Brasil.', PAD, 880, 40, 54, 'rgba(244,239,228,0.8)', 600, 860);
+  },
+  // 2. o que aconteceu
+  () => {
+    kicker('O QUE ACONTECEU');
+    let y = para('Um banco digital travou o dinheiro de 3 milhões de pessoas.', PAD, 320, 62, 76, INK, 900);
+    y += 30;
+    const items = [
+      'O índice de solvência caiu para menos da metade do mínimo exigido.',
+      'O Banco Central do Paraguai interveio e as contas foram bloqueadas.',
+      'Brasileiros da fronteira também ficaram sem acesso ao dinheiro.',
+    ];
+    items.forEach((s, i) => itemCard(y + i * 190, 165, num(i + 1), s, 36));
+  },
+  // 3. garantia paraguaia
+  () => {
+    kicker('NO PARAGUAI');
+    para('A garantia tem limite.', PAD, 320, 70, 84, INK, 900);
+    card(PAD - 10, 390, TEXT_W + 20, 290, 32);
+    ctx.textAlign = 'left'; ctx.fillStyle = MUTED; ctx.font = F(700, 30); ctx.fillText('Cobertura máxima', PAD + 40, 460);
+    ctx.fillStyle = goldGrad(0, 480, 0, 600); ctx.font = F(900, 112); ctx.fillText('≈ US$ 38 mil', PAD + 34, 590);
+    ctx.fillStyle = 'rgba(244,239,228,0.75)'; ctx.font = F(600, 30); ctx.fillText('₲ 228,3 milhões · 75 salários mínimos', PAD + 40, 645);
+    itemCard(720, 150, (x, y) => check(x, y, 1.1), 'Por depositante e por banco, não por conta');
+    itemCard(895, 150, (x, y) => cross(x, y, 1.1), 'Não cobre investimentos como fundos mútuos');
+    para('Acima disso, não há proteção automática.', PAD, 1140, 38, 50, GOLD, 800);
+  },
+  // 4. FGC
+  () => {
+    kicker('E NO BRASIL?');
+    para('O FGC também tem teto.', PAD, 320, 70, 84, INK, 900);
+    const stats = [
+      ['R$ 250 mil', 'por CPF ou CNPJ, por instituição ou conglomerado financeiro'],
+      ['R$ 1 milhão', 'teto total de garantias pagas a cada 4 anos'],
+    ];
+    stats.forEach(([v, s], i) => {
+      const y = 400 + i * 330;
+      card(PAD - 10, y, TEXT_W + 20, 290, 32);
+      ctx.textAlign = 'left'; ctx.fillStyle = goldGrad(0, y + 40, 0, y + 150); ctx.font = F(900, 108); ctx.fillText(v, PAD + 34, y + 140);
+      para(s, PAD + 40, y + 205, 36, 46, INK, 600, TEXT_W - 80);
+    });
+    para('Confira as regras atuais em fgc.org.br.', PAD, 1130, 30, 40, MUTED, 600);
+  },
+  // 5. cobre / não cobre
+  () => {
+    kicker('O QUE O FGC COBRE');
+    para('Nem tudo que está no banco é garantido.', PAD, 320, 58, 72, INK, 900);
+    const colW = (TEXT_W - 30) / 2, top = 480;
+    const cols = [
+      {x: PAD, title: 'COBRE', ok: true, items: ['Conta corrente', 'Poupança', 'CDB e RDB', 'LCI e LCA', 'Letra de câmbio']},
+      {x: PAD + colW + 30, title: 'NÃO COBRE', ok: false, items: ['Fundos de investimento', 'Ações', 'Debêntures', 'CRI e CRA', 'Tesouro Direto*', 'Conta de pagamento de fintech']},
+    ];
+    cols.forEach(c => {
+      card(c.x, top, colW, 580, 30);
+      ctx.textAlign = 'left'; ctx.fillStyle = c.ok ? UP : DOWN; ctx.font = F(900, 40); ctx.fillText(c.title, c.x + 36, top + 74);
+      c.items.forEach((s, i) => {
+        const y = top + 150 + i * 76;
+        (c.ok ? check : cross)(c.x + 56, y - 12, .7);
+        ctx.font = F(700, 29); ctx.fillStyle = INK; ctx.textAlign = 'left';
+        const ls = wrap(s, colW - 120);
+        ls.forEach((l, j) => ctx.fillText(l, c.x + 96, y + j * 34 - (ls.length - 1) * 17));
+      });
+    });
+    para('*O Tesouro Direto é garantido pelo Tesouro Nacional, não pelo FGC.', PAD, 1130, 28, 38, MUTED, 600);
+  },
+  // 6. na prática
+  () => {
+    kicker('NA PRÁTICA');
+    let y = para('3 regras pra não ficar com o dinheiro travado.', PAD, 320, 60, 74, INK, 900);
+    y += 30;
+    const items = [
+      'Passou de R$ 250 mil? Divida entre instituições de conglomerados diferentes.',
+      'Deixe a reserva de emergência em mais de um banco.',
+      'Antes de investir, veja quem é o emissor e se o produto tem cobertura do FGC.',
+    ];
+    items.forEach((s, i) => itemCard(y + i * 200, 175, num(i + 1), s, 36, i === 1));
+  },
+  // 7. CTA
+  () => {
+    ctx.textAlign = 'left'; ctx.font = F(900, 92);
+    ctx.fillStyle = INK; ctx.fillText('Garantia é rede', PAD, 420); ctx.fillText('de segurança.', PAD, 525);
+    ctx.fillStyle = goldGrad(0, 560, 0, 650); ctx.fillText('Não é plano.', PAD, 640);
+    para('Salva esse post e manda pra quem tem tudo num banco só.', PAD, 790, 42, 56, 'rgba(244,239,228,0.85)', 600, 820);
+    const label = 'Siga @victornaito.financas';
+    ctx.font = F(900, 38); const w = ctx.measureText(label).width + 80;
+    roundRect(PAD, 950, w, 86, 43); ctx.fillStyle = goldGrad(PAD, 950, PAD + w, 1036); ctx.fill();
+    ctx.fillStyle = '#0A0907'; ctx.textBaseline = 'middle'; ctx.fillText(label, PAD + 40, 995); ctx.textBaseline = 'alphabetic';
+    para('Fontes: Banco Central do Paraguai, La Nación, Forbes, FGC · nov/2026', PAD, 1160, 24, 32, MUTED, 500);
+  },
+];
+
+function renderSlide(i) {
+  ctx.clearRect(0, 0, W, H); ctx.globalAlpha = 1;
+  frame(i, SLIDES.length); SLIDES[i]();
+}
+window.renderSlide = renderSlide; window.SLIDE_COUNT = SLIDES.length;
+
+// fora da exportação, passa pelos slides a cada 3 s (clique avança)
+if (!new URLSearchParams(location.search).has('capture')) {
+  let cur = 0;
+  const show = () => renderSlide(cur);
+  (document.fonts ? document.fonts.ready : Promise.resolve()).then(show);
+  cv.addEventListener('click', () => { cur = (cur + 1) % SLIDES.length; show(); });
+  setInterval(() => { cur = (cur + 1) % SLIDES.length; show(); }, 3000);
+}
+</script>
+</body>
+</html>

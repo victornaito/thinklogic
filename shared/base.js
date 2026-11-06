@@ -1,6 +1,7 @@
-// Base visual @victornaito.financas: fundo escuro, destaques dourados, canvas 1080x1920.
-const W = 1080, H = 1920;
+// Base visual @victornaito.financas: fundo escuro, destaques dourados.
+// O tamanho vem do canvas (1080x1920 para Reels, 1080x1350 para carrossel).
 const cv = document.getElementById('c'), ctx = cv.getContext('2d');
+const W = cv.width, H = cv.height;
 const GOLD = '#E2B84B', GOLD_HI = '#FFE29A', GOLD_DK = '#9A7424', INK = '#F4EFE4', MUTED = '#8C877C';
 const UP = '#4CC38A', DOWN = '#F0585E';
 const F = (w, s) => `${w} ${s}px Inter, "Inter Display", system-ui, sans-serif`;
@@ -35,12 +36,12 @@ function background(t, mark = 'R$') {
   const g = ctx.createLinearGradient(0, 0, 0, H);
   g.addColorStop(0, '#0C0B0A'); g.addColorStop(.5, '#060607'); g.addColorStop(1, '#100D07');
   ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
-  const rg = ctx.createRadialGradient(W * .5, 980, 40, W * .5, 980, 900);
+  const rg = ctx.createRadialGradient(W * .5, H * .51, 40, W * .5, H * .51, 900);
   rg.addColorStop(0, 'rgba(226,184,75,0.10)'); rg.addColorStop(1, 'rgba(226,184,75,0)');
   ctx.fillStyle = rg; ctx.fillRect(0, 0, W, H);
   ctx.save(); ctx.globalAlpha = .035; ctx.fillStyle = GOLD; ctx.font = F(900, 760);
   ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
-  ctx.fillText(mark, W / 2 + Math.sin(t * .3) * 10, 1500); ctx.restore();
+  ctx.fillText(mark, W / 2 + Math.sin(t * .3) * 10, H * .78); ctx.restore();
   for (const d of DUST) {
     const y = (d.y - t * d.s + H) % H, a = .15 + .25 * (.5 + .5 * Math.sin(t * 1.3 + d.p));
     ctx.fillStyle = `rgba(226,184,75,${a})`; ctx.beginPath(); ctx.arc(d.x, y, d.r, 0, 6.29); ctx.fill();
@@ -99,6 +100,40 @@ function trend(x, y, dir, s = 1) {
     else { ctx.moveTo(0, 16); ctx.lineTo(18, -14); ctx.lineTo(-18, -14); }
     ctx.closePath(); ctx.fill();
   }
+  ctx.restore();
+}
+
+// Quebra texto em linhas que caibam em maxW com a fonte atual
+function wrap(text, maxW) {
+  const out = []; let line = '';
+  for (const w of text.split(' ')) {
+    const test = line ? line + ' ' + w : w;
+    if (ctx.measureText(test).width > maxW && line) { out.push(line); line = w; } else line = test;
+  }
+  if (line) out.push(line);
+  return out;
+}
+
+function check(x, y, s = 1, color = UP) {
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
+  ctx.fillStyle = color; ctx.beginPath(); ctx.arc(0, 0, 26, 0, 6.29); ctx.fill();
+  ctx.strokeStyle = '#0A0907'; ctx.lineWidth = 6; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+  ctx.beginPath(); ctx.moveTo(-11, 1); ctx.lineTo(-3, 10); ctx.lineTo(12, -8); ctx.stroke();
+  ctx.restore();
+}
+function cross(x, y, s = 1, color = DOWN) {
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
+  ctx.fillStyle = color; ctx.beginPath(); ctx.arc(0, 0, 26, 0, 6.29); ctx.fill();
+  ctx.strokeStyle = '#0A0907'; ctx.lineWidth = 6; ctx.lineCap = 'round';
+  ctx.beginPath(); ctx.moveTo(-9, -9); ctx.lineTo(9, 9); ctx.moveTo(9, -9); ctx.lineTo(-9, 9); ctx.stroke();
+  ctx.restore();
+}
+// Ícone de banco (frontão + colunas) centrado em (x, y)
+function bankIcon(x, y, s = 1, color = GOLD) {
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s); ctx.fillStyle = color;
+  ctx.beginPath(); ctx.moveTo(-60, -22); ctx.lineTo(0, -58); ctx.lineTo(60, -22); ctx.closePath(); ctx.fill();
+  for (const cx of [-42, -14, 14, 42]) ctx.fillRect(cx - 7, -14, 14, 52);
+  ctx.fillRect(-64, 42, 128, 14);
   ctx.restore();
 }
 
