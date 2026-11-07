@@ -34,7 +34,10 @@ html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--
 .carimbo { font-size: 60px; align-self: flex-start; }
 .linha3 { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 4px dotted var(--fio); padding-bottom: 18px; }
 .linha3 span { font: 600 34px/1 'Geist Mono'; letter-spacing: .12em; text-transform: uppercase; }
-.linha3 b { font: 900 104px/1 'Geist'; letter-spacing: -0.05em; }
+.linha3 b { font: 900 104px/1 'Geist'; letter-spacing: -0.05em; text-transform: none; }
+.sim { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 30px; }
+.sim b { background: var(--marinho); color: var(--creme); padding: 12px 18px; font: 700 30px/1 'Geist Mono'; letter-spacing: .16em; }
+.sim span { font: 500 30px/1.2 'Geist Mono'; letter-spacing: .02em; color: var(--mudo); }
 .faixa { background: var(--creme); color: var(--tinta); padding: 28px 34px; font: 800 52px/1.1 'Geist'; letter-spacing: -0.02em; }
 .faixa b { background: var(--laranja); padding: 4px 14px; }
 </style>
@@ -46,6 +49,7 @@ html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--
   <!-- 1 · hook: no quadro 0 a frase já está inteira -->
   <section class="cena papel" data-a="0" data-b="4.4">
     <div class="pilha" style="top:280px">
+      <div class="sim"><b>SIMULAÇÃO</b><span>carro de R$ 80 mil · taxas médias de 2026</span></div>
       <div class="h2">Financiar é pagar</div>
       <div class="valor">R$ 41 mil</div>
       <div class="se">pra não esperar 28 meses.</div>
