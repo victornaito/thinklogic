@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Slide 01 · consórcio x financiamento x à vista</title>
+<link rel="stylesheet" href="base.css">
+<style>
+.marca { box-shadow: inset 0 -0.34em 0 rgba(242,81,31,.85); }
+.ac { color: var(--laranja); }
+
+.l1 { left: 72px; top: 150px; font: 800 74px/1 'Geist'; letter-spacing: -0.04em; }
+.numero { left: 62px; top: 236px; font-weight: 900; font-size: 236px; letter-spacing: -0.06em; line-height: 1; white-space: nowrap; }
+.numero small { font-size: 110px; letter-spacing: -0.04em; }
+.numero .rs { font-size: 110px; vertical-align: .95em; margin-right: 12px; }
+.p1 { left: 72px; top: 500px; font-size: 76px; }
+.car { left: 110px; top: 480px; width: 860px; }
+.cordao { left: 432px; top: 790px; width: 4px; height: 66px; background: var(--tinta); transform: rotate(12deg); transform-origin: top center; }
+.etiqueta { left: 330px; top: 846px; transform: rotate(5deg); background: var(--laranja); color: var(--tinta);
+  padding: 16px 30px 16px 58px; font: 900 44px/1 'Geist'; letter-spacing: -0.02em; white-space: nowrap;
+  clip-path: polygon(30px 0, 100% 0, 100% 100%, 30px 100%, 0 50%); }
+.etiqueta::before { content: ''; position: absolute; left: 26px; top: 50%; width: 14px; height: 14px; margin-top: -7px; border-radius: 50%; background: var(--papel); }
+.seta { left: 560px; top: 1222px; font: 600 22px/1 'Geist Mono'; letter-spacing: .14em; text-transform: uppercase; color: var(--tinta); }
+
+</style>
+</head>
+<body>
+<div id="quadro" class="papel">
+  <canvas id="grao" width="1080" height="1350" data-semente="01"></canvas>
+  <div class="abs cabecalho">Consórcio × financiamento × à vista</div>
+  <div class="abs fio" style="top:110px"></div>
+
+  <div class="abs l1">Financiar é pagar</div>
+  <div class="abs numero"><span class="rs">R$</span>41<small> mil</small></div>
+  <div class="abs serifa p1">pra não esperar 28 meses.</div>
+  <img class="abs carro-papel car" src="../../carro-quitado/assets/kicks-papel.png" alt="">
+  <div class="abs cordao"></div>
+  <div class="abs etiqueta">PRA JÁ</div>
+
+  <div class="abs fio" style="top:1180px"></div>
+  <div class="abs seta">3 caminhos, o mesmo bolso ▸</div>
+  <div class="abs rodape" style="top:1222px">@victornaito.financas</div>
+</div>
+<script src="base.js"></script>
+</body>
+</html>

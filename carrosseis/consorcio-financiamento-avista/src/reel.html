@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Reel · consórcio x financiamento x à vista</title>
+<link rel="stylesheet" href="base.css">
+<style>
+/* Reel 1080x1920. Zona segura do Instagram: texto entre y 260 e y 1500, longe da coluna de ícones à direita. */
+html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--marinho); }
+#tela { position: absolute; inset: 0; overflow: hidden; }
+#grao { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 50; opacity: .28; mix-blend-mode: multiply; pointer-events: none; }
+.cena { position: absolute; inset: 0; overflow: hidden; display: none; }
+.cena.papel { background: var(--papel); color: var(--tinta); --mudo: rgba(21,19,15,.62); --fio: rgba(21,19,15,.18); }
+.cena.marinho { background: var(--marinho); color: var(--creme); --mudo: rgba(251,244,232,.62); --fio: rgba(251,244,232,.22); }
+.cena.cheio { background: var(--laranja); color: var(--tinta); --mudo: rgba(21,19,15,.7); --fio: rgba(21,19,15,.3); }
+
+.pilha { position: absolute; left: 80px; width: 900px; display: flex; flex-direction: column; gap: 14px; }
+.pilha > * { position: relative; }
+.sobe { overflow: hidden; padding-bottom: .16em; margin-bottom: -.16em; }
+.sobe > .in { display: block; }
+.h1 { font: 800 112px/1.02 'Geist'; letter-spacing: -0.045em; text-wrap: balance; }
+.h2 { font: 800 84px/1.05 'Geist'; letter-spacing: -0.04em; text-wrap: balance; }
+.se { font: italic 400 92px/1.05 'DM Serif'; letter-spacing: -0.02em; }
+.cp { font: 500 50px/1.25 'Geist'; letter-spacing: -0.015em; }
+.mono { font: 600 30px/1.3 'Geist Mono'; letter-spacing: .12em; text-transform: uppercase; color: var(--mudo); }
+.ac { color: var(--laranja); }
+.num { font: 900 200px/1 'Geist'; letter-spacing: -0.06em; color: var(--laranja); }
+.cheio .num { color: var(--tinta); }
+.valor { font: 900 210px/1 'Geist'; letter-spacing: -0.06em; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.valor.ac { color: var(--laranja); }
+.marca { box-shadow: inset 0 -0.34em 0 rgba(242,81,31,.85); }
+.cheio .marca { box-shadow: inset 0 -0.34em 0 rgba(21,19,15,.18); }
+.carro { width: 980px; margin-left: -40px; mix-blend-mode: multiply; }
+.carimbo { font-size: 60px; align-self: flex-start; }
+.linha3 { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 4px dotted var(--fio); padding-bottom: 18px; }
+.linha3 span { font: 600 34px/1 'Geist Mono'; letter-spacing: .12em; text-transform: uppercase; }
+.linha3 b { font: 900 104px/1 'Geist'; letter-spacing: -0.05em; }
+.faixa { background: var(--creme); color: var(--tinta); padding: 28px 34px; font: 800 52px/1.1 'Geist'; letter-spacing: -0.02em; }
+.faixa b { background: var(--laranja); padding: 4px 14px; }
+</style>
+</head>
+<body>
+<div id="tela">
+  <canvas id="grao" width="1080" height="1920"></canvas>
+
+  <!-- 1 · hook: no quadro 0 a frase já está inteira -->
+  <section class="cena papel" data-a="0" data-b="4.4">
+    <div class="pilha" style="top:280px">
+      <div class="h2">Financiar é pagar</div>
+      <div class="valor">R$ 41 mil</div>
+      <div class="se">pra não esperar 28 meses.</div>
+      <img class="carro" src="../../carro-quitado/assets/kicks-papel.png" alt="" data-t="1.2" data-anim="desliza">
+    </div>
+  </section>
+
+  <!-- 2 · a regra -->
+  <section class="cena marinho" data-a="4" data-b="9.4">
+    <div class="pilha" style="top:340px">
+      <div class="h1 sobe" data-t="4.4" data-anim="sobe"><span class="in">Mesmo carro.</span></div>
+      <div class="h1 sobe" data-t="5.0" data-anim="sobe"><span class="in">Mesmo bolso.</span></div>
+      <div class="cp sobe" data-t="6.0" data-anim="sobe" style="margin-top:40px"><span class="in">R$ 16 mil guardados e R$ 2.044 livres por mês.</span></div>
+      <div class="cp sobe" data-t="7.4" data-anim="sobe" style="margin-top:30px"><span class="in"><b class="marca">Três caminhos.</b></span></div>
+    </div>
+  </section>
+
+  <!-- 3 · financiar -->
+  <section class="cena papel" data-a="9" data-b="15.4">
+    <div class="pilha" style="top:300px">
+      <div class="num" data-t="9.3" data-anim="carimbo">01</div>
+      <div class="h1 sobe" data-t="9.8" data-anim="sobe"><span class="in">Financiar.</span></div>
+      <div class="cp sobe" data-t="10.4" data-anim="sobe"><span class="in">O carro sai hoje. 48x de R$ 2.044.</span></div>
+      <div class="valor" data-t="11.4" data-anim="conta" data-de="80000" data-ate="114126" data-dur="1.4" data-fmt="brl" style="font-size:180px; margin-top:20px">R$ 114.126</div>
+      <div class="carimbo" data-t="13.0" data-anim="carimbo" style="transform: rotate(-6deg); margin-top:10px">+ R$ 34 MIL DE JUROS</div>
+    </div>
+  </section>
+
+  <!-- 4 · consórcio -->
+  <section class="cena marinho" data-a="15" data-b="22.4">
+    <div class="pilha" style="top:300px">
+      <div class="num" data-t="15.3" data-anim="carimbo">02</div>
+      <div class="h1 sobe" data-t="15.8" data-anim="sobe"><span class="in">Consórcio.</span></div>
+      <div class="cp sobe" data-t="16.4" data-anim="sobe"><span class="in">Sem juros. Mas com 20% de taxas, parcela que sobe e sorteio.</span></div>
+      <div class="mono sobe" data-t="17.8" data-anim="sobe" style="margin-top:20px"><span class="in">O carro chega no mês</span></div>
+      <div class="valor ac" data-t="18.0" data-anim="conta" data-de="1" data-ate="60" data-dur="1.6" data-fim="?" style="font-size:180px">?</div>
+      <div class="cp sobe" data-t="19.8" data-anim="sobe"><span class="in"><b>Total: R$ 103.993.</b></span></div>
+    </div>
+  </section>
+
+  <!-- 5 · juntar -->
+  <section class="cena papel" data-a="22" data-b="28.4">
+    <div class="pilha" style="top:300px">
+      <div class="num" data-t="22.3" data-anim="carimbo">03</div>
+      <div class="h1 sobe" data-t="22.8" data-anim="sobe"><span class="in">Juntar.</span></div>
+      <div class="cp sobe" data-t="23.4" data-anim="sobe"><span class="in">Investindo a mesma parcela, você compra à vista no mês 28.</span></div>
+      <div class="valor ac" data-t="24.8" data-anim="conta" data-de="0" data-ate="73240" data-dur="1.4" data-fmt="brl" style="font-size:180px; margin-top:20px">R$ 73.240</div>
+      <div class="cp sobe" data-t="26.4" data-anim="sobe"><span class="in"><b class="marca">Os juros trabalham pra você.</b></span></div>
+    </div>
+  </section>
+
+  <!-- 6 · o placar -->
+  <section class="cena cheio" data-a="28" data-b="34.4">
+    <div class="pilha" style="top:300px; gap: 40px">
+      <div class="h2 sobe" data-t="28.4" data-anim="sobe"><span class="in">O mesmo carro:</span></div>
+      <div class="linha3 sobe" data-t="29.2" data-anim="sobe"><span class="in" style="display:flex; justify-content:space-between; width:100%; align-items:baseline"><span>Financiar</span><b>R$ 114 mil</b></span></div>
+      <div class="linha3 sobe" data-t="30.0" data-anim="sobe"><span class="in" style="display:flex; justify-content:space-between; width:100%; align-items:baseline"><span>Consórcio</span><b>R$ 104 mil</b></span></div>
+      <div class="linha3 sobe" data-t="30.8" data-anim="sobe"><span class="in" style="display:flex; justify-content:space-between; width:100%; align-items:baseline"><span>Juntar</span><b>R$ 73 mil</b></span></div>
+      <div class="se sobe" data-t="32.0" data-anim="sobe" style="font-size:80px"><span class="in">A diferença é quem recebe os juros.</span></div>
+    </div>
+  </section>
+
+  <!-- 7 · meses livres -->
+  <section class="cena marinho" data-a="34" data-b="39.4">
+    <div class="pilha" style="top:340px">
+      <div class="h2 sobe" data-t="34.4" data-anim="sobe"><span class="in">Do mês 29 ao 48, quem financiou ainda paga.</span></div>
+      <div class="cp sobe" data-t="35.4" data-anim="sobe" style="margin-top:20px"><span class="in">Quem juntou, investe:</span></div>
+      <div class="valor ac" data-t="36.0" data-anim="conta" data-de="0" data-ate="44147" data-dur="1.6" data-fmt="brl" style="font-size:180px">R$ 44.147</div>
+    </div>
+  </section>
+
+  <!-- 8 · a regra -->
+  <section class="cena papel" data-a="39" data-b="43.4">
+    <div class="pilha" style="top:420px">
+      <div class="mono sobe" data-t="39.4" data-anim="sobe"><span class="in">A regra</span></div>
+      <div class="h1 sobe" data-t="39.8" data-anim="sobe"><span class="in">Só pague juros por um carro que te dá dinheiro.</span></div>
+    </div>
+  </section>
+
+  <!-- 9 · CTA -->
+  <section class="cena marinho" data-a="43" data-b="99">
+    <div class="pilha" style="top:300px">
+      <div class="h2 sobe" data-t="43.4" data-anim="sobe"><span class="in">Quanto vale ter o carro 28 meses antes?</span></div>
+      <div class="cp sobe" data-t="44.6" data-anim="sobe" style="margin-top:30px"><span class="in">Monte o seu plano pra comprar sem pagar juros.</span></div>
+      <div class="carimbo" data-t="45.4" data-anim="carimbo" style="transform: rotate(-6deg); margin:30px 0 0 20px">DIAGNÓSTICO GRATUITO</div>
+      <div class="faixa" data-t="46.2" data-anim="desliza" style="margin-top:50px"><b>Link na bio</b> @victornaito.financas</div>
+    </div>
+  </section>
+</div>
+
+<script>
+(function () {
+  const c = document.getElementById('grao'), x = c.getContext('2d'), d = x.createImageData(c.width, c.height);
+  let s = 13; const r = () => (s = (s * 16807) % 2147483647) / 2147483647;
+  for (let i = 0; i < d.data.length; i += 4) { const v = 200 + r() * 55; d.data[i] = d.data[i + 1] = d.data[i + 2] = v; d.data[i + 3] = 255; }
+  x.putImageData(d, 0, 0);
+
+  const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+  const outC = u => 1 - Math.pow(1 - u, 3);
+  const inOut = u => u < .5 ? 4 * u * u * u : 1 - Math.pow(-2 * u + 2, 3) / 2;
+  const mola = (u, ciclos = 1) => (u <= 0 || u >= 1) ? 0 : Math.exp(-3 * u) * Math.sin(2 * Math.PI * ciclos * u) * (1 - u);
+  const brl = v => 'R$ ' + Math.round(v).toLocaleString('pt-BR');
+
+  const cenas = [...document.querySelectorAll('.cena')];
+  cenas.forEach((el, i) => { el.style.zIndex = i + 1; });
+  const els = [...document.querySelectorAll('[data-anim]')];
+  els.forEach(el => { el.dataset.base = el.style.transform || ''; });
+
+  window.DURACAO = 50;
+  const tipo = { sobe: 'clique', carimbo: 'impacto', desliza: 'whoosh', conta: 'clique' };
+  window.CUES = els.map(el => ({ t: +el.dataset.t, tipo: tipo[el.dataset.anim], o_que: el.dataset.anim === 'desliza' ? 'atravessa' : 'frase' }))
+    .concat(cenas.slice(1).map(el => ({ t: +el.dataset.a, tipo: 'whoosh', o_que: 'atravessa a borda', gain: 0.8 })))
+    .concat(els.filter(el => el.dataset.anim === 'conta').flatMap(el => {
+      const t0 = +el.dataset.t, dur = +el.dataset.dur;
+      return [0.25, 0.5, 0.75].map(k => ({ t: +(t0 + k * dur).toFixed(2), tipo: 'clique', o_que: 'contador' }))
+        .concat([{ t: +(t0 + dur).toFixed(2), tipo: 'impacto', o_que: 'valor pousa', gain: 0.7 }]);
+    }));
+
+  window.seek = function (t) {
+    cenas.forEach(el => {
+      const a = +el.dataset.a, b = +el.dataset.b;
+      if (t < a || t >= b) { el.style.display = 'none'; return; }
+      el.style.display = 'block';
+      const u = clamp((t - a) / 0.4);
+      el.style.transform = a > 0 && u < 1 ? `translateX(${(1 - outC(u)) * 100}%)` : '';
+    });
+    els.forEach(el => {
+      const t0 = +el.dataset.t, k = el.dataset.anim, base = el.dataset.base;
+      if (k === 'sobe') {
+        const u = clamp((t - t0) / 0.45);
+        el.firstElementChild.style.transform = u < 1 ? `translateY(${(1 - outC(u)) * 115}%)` : '';
+      } else if (k === 'desliza') {
+        const u = clamp((t - t0) / 0.6);
+        el.style.transform = u < 1 ? `${base} translateY(${(1 - outC(u)) * 1400}px)` : base;
+      } else if (k === 'carimbo') {
+        if (t < t0) { el.style.visibility = 'hidden'; return; }
+        el.style.visibility = '';
+        const u = clamp((t - t0) / 0.22), m = mola(clamp((t - t0 - 0.22) / 0.35));
+        el.style.transform = `${base} scale(${u < 1 ? 1.6 - 0.6 * u * u * u : 1 - 0.06 * m})`;
+      } else if (k === 'conta') {
+        const de = +el.dataset.de, ate = +el.dataset.ate, dur = +el.dataset.dur;
+        if (t < t0) { el.style.visibility = 'hidden'; return; }
+        el.style.visibility = '';
+        const u = inOut(clamp((t - t0) / dur)), v = de + (ate - de) * u;
+        if (el.dataset.fim && t >= t0 + dur) { el.textContent = el.dataset.fim; return; }
+        el.textContent = el.dataset.fmt === 'brl' ? brl(v) : String(Math.round(v));
+      }
+    });
+  };
+  window.seek(0);
+})();
+</script>
+</body>
+</html>

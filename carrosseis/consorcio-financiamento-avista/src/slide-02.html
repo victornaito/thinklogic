@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Slide 02 · consórcio x financiamento x à vista</title>
+<link rel="stylesheet" href="base.css">
+<style>
+.marca { box-shadow: inset 0 -0.34em 0 rgba(242,81,31,.85); }
+.ac { color: var(--laranja); }
+
+.t1 { top: 150px; font-size: 120px; }
+.c1 { top: 430px; width: 936px; font-size: 40px; }
+.portas { left: 72px; top: 560px; width: 936px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.portas div { background: var(--creme); color: var(--tinta); height: 300px; padding: 26px 24px; display: flex; flex-direction: column; justify-content: space-between; }
+.portas span { font: 500 18px/1 'Geist Mono'; letter-spacing: .14em; text-transform: uppercase; color: rgba(21,19,15,.6); }
+.portas b { font: 900 46px/1 'Geist'; letter-spacing: -0.04em; }
+.portas .j { background: var(--laranja); }
+.c2 { top: 960px; width: 936px; font-size: 48px; font-weight: 800; }
+
+</style>
+</head>
+<body>
+<div id="quadro" class="marinho">
+  <canvas id="grao" width="1080" height="1350" data-semente="02"></canvas>
+  <div class="abs cabecalho">A regra do jogo</div>
+  <div class="abs fio" style="top:110px"></div>
+
+  <div class="abs titulo t1">Mesmo carro.<br>Mesmo bolso.</div>
+  <div class="abs corpo c1">R$ 16 mil guardados e R$ 2.044 livres por mês.</div>
+  <div class="abs portas"><div><span>caminho 1</span><b>Financiar</b></div><div><span>caminho 2</span><b>Consórcio</b></div><div class="j"><span>caminho 3</span><b>Juntar</b></div></div>
+  <div class="abs corpo c2"><span class="marca">Só muda quem recebe os juros.</span></div>
+
+  <div class="abs fio" style="top:1180px"></div>
+  
+  <div class="abs rodape" style="top:1222px">@victornaito.financas</div>
+</div>
+<script src="base.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Slide 07 · consórcio x financiamento x à vista</title>
+<link rel="stylesheet" href="base.css">
+<style>
+.marca { box-shadow: inset 0 -0.34em 0 rgba(242,81,31,.85); }
+.ac { color: var(--laranja); }
+
+.t1 { top: 150px; font-size: 112px; }
+.placar { left: 72px; top: 450px; width: 936px; display: flex; flex-direction: column; gap: 26px; }
+.pl-cab { display: flex; justify-content: space-between; align-items: baseline; }
+.pl-n { font: 600 24px/1 'Geist Mono'; letter-spacing: .14em; text-transform: uppercase; }
+.pl-t { font: 900 60px/1 'Geist'; letter-spacing: -0.04em; }
+.pl:last-of-type .pl-t { color: var(--laranja); }
+.pl svg { display: block; margin-top: 4px; }
+.pl-leg { font: 500 19px/1 'Geist Mono'; color: var(--mudo); margin-top: 2px; }
+.pl-eixo { display: flex; justify-content: space-between; font: 500 18px/1 'Geist Mono'; color: var(--mudo); border-top: 3px dotted var(--fio); padding-top: 12px; }
+.p1 { left: 72px; top: 1060px; font-size: 60px; }
+
+</style>
+</head>
+<body>
+<div id="quadro" class="papel">
+  <canvas id="grao" width="1080" height="1350" data-semente="07"></canvas>
+  <div class="abs cabecalho">O placar</div>
+  <div class="abs fio" style="top:110px"></div>
+
+  <div class="abs titulo t1">O mesmo carro,<br>três preços.</div>
+  <div class="abs placar"><div class="pl"><div class="pl-cab"><span class="pl-n">Financiar</span><span class="pl-t">R$ 114 mil</span></div><svg width="936" height="58" viewBox="0 0 936 58"><rect x="0" y="22" width="936" height="14" fill="#15130F" fill-opacity=".08"/><rect x="0" y="22" width="748.8" height="14" fill="#15130F"/><circle cx="14.0" cy="29" r="14" fill="#FBF4E8" stroke="#15130F" stroke-width="5"/></svg><div class="pl-leg">carro hoje · paga até o mês 48</div></div><div class="pl"><div class="pl-cab"><span class="pl-n">Consórcio</span><span class="pl-t">R$ 104 mil</span></div><svg width="936" height="58" viewBox="0 0 936 58"><rect x="0" y="22" width="936" height="14" fill="#15130F" fill-opacity=".08"/><rect x="0" y="22" width="936.0" height="14" fill="#7A7468"/><text x="468.0" y="18" text-anchor="middle" font-family="Geist" font-weight="900" font-size="22" fill="#15130F">? ? ?</text></svg><div class="pl-leg">carro no sorteio · paga até o mês 60</div></div><div class="pl"><div class="pl-cab"><span class="pl-n">Juntar</span><span class="pl-t">R$ 73 mil</span></div><svg width="936" height="58" viewBox="0 0 936 58"><rect x="0" y="22" width="936" height="14" fill="#15130F" fill-opacity=".08"/><rect x="0" y="22" width="436.8" height="14" fill="#F2511F"/><circle cx="436.8" cy="29" r="14" fill="#FBF4E8" stroke="#F2511F" stroke-width="5"/></svg><div class="pl-leg">carro no mês 28 · paga até o mês 28</div></div><div class="pl-eixo"><span>hoje</span><span>12</span><span>24</span><span>36</span><span>48</span><span>60 meses</span></div></div>
+  <div class="abs serifa p1">A diferença é quem recebe os juros.</div>
+
+  <div class="abs fio" style="top:1180px"></div>
+  
+  <div class="abs rodape" style="top:1222px">@victornaito.financas</div>
+</div>
+<script src="base.js"></script>
+</body>
+</html>

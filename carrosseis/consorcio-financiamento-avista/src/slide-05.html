@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Slide 05 · consórcio x financiamento x à vista</title>
+<link rel="stylesheet" href="base.css">
+<style>
+.marca { box-shadow: inset 0 -0.34em 0 rgba(242,81,31,.85); }
+.ac { color: var(--laranja); }
+
+.t1 { top: 150px; font-size: 112px; }
+.c1 { top: 410px; width: 936px; font-size: 36px; }
+.roleta { left: 72px; top: 580px; width: 936px; display: grid; grid-template-columns: repeat(12, 1fr); gap: 6px; }
+.roleta span { height: 50px; display: grid; place-items: center; background: var(--creme); font: 600 20px/1 'Geist Mono'; color: var(--mudo); }
+.roleta .sorte { background: var(--laranja); color: var(--tinta); font-weight: 900; }
+.leg { left: 72px; top: 880px; font: 500 21px/1 'Geist Mono'; letter-spacing: .1em; text-transform: uppercase; color: var(--mudo); }
+.c2 { top: 930px; width: 936px; font-size: 40px; font-weight: 800; }
+.n1 { top: 1100px; width: 936px; }
+
+</style>
+</head>
+<body>
+<div id="quadro" class="papel">
+  <canvas id="grao" width="1080" height="1350" data-semente="05"></canvas>
+  <div class="abs cabecalho">Caminho 2 · consórcio</div>
+  <div class="abs fio" style="top:110px"></div>
+
+  <div class="abs titulo t1">Consórcio:<br>sem juros.</div>
+  <div class="abs corpo c1">Mas com 20% de taxas, parcela que sobe todo ano e um sorteio que decide quando o carro chega.</div>
+  <div class="abs roleta"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span>36</span><span class="sorte">37</span><span>38</span><span>39</span><span>40</span><span>41</span><span>42</span><span>43</span><span>44</span><span>45</span><span>46</span><span>47</span><span>48</span><span>49</span><span>50</span><span>51</span><span>52</span><span>53</span><span>54</span><span>55</span><span>56</span><span>57</span><span>58</span><span>59</span><span>60</span></div>
+  <div class="abs leg">O seu carro pode sair em qualquer um desses meses.</div>
+  <div class="abs corpo c2"><span class="marca">Paga como quem financia. Espera como quem junta. Sem saber quanto.</span></div>
+  <div class="abs nota n1">60x a partir de R$ 1.600 · total R$ 103.993 · 18% de administração + 2% de fundo de reserva</div>
+
+  <div class="abs fio" style="top:1180px"></div>
+  
+  <div class="abs rodape" style="top:1222px">@victornaito.financas</div>
+</div>
+<script src="base.js"></script>
+</body>
+</html>
