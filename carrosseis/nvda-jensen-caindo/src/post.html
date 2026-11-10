@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>NVDA caindo</title>
+<style>
+  @font-face { font-family: Bangers; src: url(fontes/bangers-latin-400-normal.woff2) format("woff2"); }
+  @font-face { font-family: Anton; src: url(fontes/anton-latin-400-normal.woff2) format("woff2"); }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1920px; background: #000; overflow: hidden; }
+  .post { position: relative; width: 1080px; height: 1920px; background: #000; }
+
+  /* ---------- metade de cima: o desenho ---------- */
+  .painel { position: absolute; left: 0; top: 0; width: 1080px; height: 900px; overflow: hidden;
+            background: radial-gradient(ellipse at 30% 20%, #16202e 0%, #0a0e15 60%, #05070a 100%); }
+  .painel svg { position: absolute; inset: 0; }
+  .ticker { position: absolute; left: 56px; top: 50px; color: #fff; font-family: Anton; line-height: 1; }
+  .ticker .nome { font-size: 120px; letter-spacing: 2px; }
+  .ticker .nome small { font-size: 46px; color: #9aa4b2; letter-spacing: 1px; margin-left: 12px; vertical-align: 10px; }
+  .ticker .queda { font-size: 92px; color: #ff3b3b; margin-top: 10px; text-shadow: 0 0 26px rgba(255,59,59,.55); }
+  .ticker .preco { font-size: 40px; color: #c9d1db; margin-top: 14px; letter-spacing: 1px; }
+  .nasdaq { position: absolute; right: 52px; top: 70px; text-align: right; font-family: Anton; line-height: 1; }
+  .nasdaq .n1 { font-size: 40px; color: #9aa4b2; letter-spacing: 1px; }
+  .nasdaq .n2 { font-size: 64px; color: #2ee07a; margin-top: 6px; text-shadow: 0 0 22px rgba(46,224,122,.45); }
+  .nasdaq .n3 { font-family: Bangers; font-size: 34px; color: #fff; margin-top: 10px; letter-spacing: 1px; }
+  .balao { position: absolute; left: 44px; top: 600px; width: 450px; padding: 26px 30px 24px;
+           background: #fff; border: 6px solid #0b0b0b; border-radius: 34px;
+           font-family: Bangers; font-size: 50px; line-height: 1.02; color: #0b0b0b; letter-spacing: 1px;
+           transform: rotate(-3deg); box-shadow: 8px 8px 0 #ff3b3b; }
+  .balao b { color: #e01e1e; font-weight: 400; }
+  .fonte { position: absolute; left: 56px; bottom: 22px; font-family: Anton; font-size: 22px;
+           color: #6f7a88; letter-spacing: 1px; }
+
+  /* ---------- divisória ---------- */
+  .faixa { position: absolute; left: 0; top: 900px; width: 1080px; height: 10px; background: #ffd400; }
+
+  /* ---------- legenda do meme ---------- */
+  .legenda { position: absolute; left: 0; top: 910px; width: 1080px; height: 172px; padding: 22px 52px 0;
+             font-family: Bangers; font-size: 66px; line-height: 1.0; color: #fff; letter-spacing: 1.5px; }
+
+  /* ---------- metade de baixo: a foto ---------- */
+  .foto { position: absolute; left: 0; top: 1082px; width: 1080px; height: 838px;
+          background: url(../assets/foto-recorte.jpg) center / cover no-repeat; }
+  .rodape { position: absolute; right: 36px; bottom: 26px; font-family: Anton; font-size: 28px;
+            color: rgba(255,255,255,.85); letter-spacing: 1px; text-shadow: 0 2px 8px rgba(0,0,0,.8); }
+</style>
+</head>
+<body>
+<div class="post">
+
+  <div class="painel">
+    <svg width="1080" height="900" viewBox="0 0 1080 900" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="area" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#ff3b3b" stop-opacity=".35"/>
+          <stop offset="1" stop-color="#ff3b3b" stop-opacity="0"/>
+        </linearGradient>
+        <filter id="brilho" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="7" result="b"/>
+          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+
+      <!-- grade do gráfico -->
+      <g stroke="#ffffff" stroke-opacity=".06" stroke-width="2">
+        <line x1="0" y1="150" x2="1080" y2="150"/><line x1="0" y1="300" x2="1080" y2="300"/>
+        <line x1="0" y1="450" x2="1080" y2="450"/><line x1="0" y1="600" x2="1080" y2="600"/>
+        <line x1="0" y1="750" x2="1080" y2="750"/>
+        <line x1="180" y1="0" x2="180" y2="900"/><line x1="360" y1="0" x2="360" y2="900"/>
+        <line x1="540" y1="0" x2="540" y2="900"/><line x1="720" y1="0" x2="720" y2="900"/>
+        <line x1="900" y1="0" x2="900" y2="900"/>
+      </g>
+
+      <!-- NVDA despencando -->
+      <path d="M0,360 L90,340 L170,372 L250,350 L330,420 L400,404 L470,520 L530,500 L610,660 L670,640 L760,800 L820,786 L900,900 L0,900 Z"
+            fill="url(#area)"/>
+      <polyline points="0,360 90,340 170,372 250,350 330,420 400,404 470,520 530,500 610,660 670,640 760,800 820,786 900,900"
+                fill="none" stroke="#ff3b3b" stroke-width="11" stroke-linejoin="round" stroke-linecap="round" filter="url(#brilho)"/>
+
+      <!-- linhas de velocidade (ele vem caindo de cima) -->
+      <g stroke="#ffffff" stroke-linecap="round" opacity=".5">
+        <line x1="700" y1="250" x2="722" y2="340" stroke-width="6"/>
+        <line x1="790" y1="236" x2="810" y2="320" stroke-width="7"/>
+        <line x1="880" y1="250" x2="898" y2="326" stroke-width="6"/>
+      </g>
+
+      <!-- Jensen em miniatura, caindo junto (caricatura) -->
+      <g transform="translate(790,560) rotate(-24) scale(1.18)">
+        <!-- sombra de contorno geral -->
+        <g stroke="#0b0b0b" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+          <!-- pernas (jeans) se debatendo -->
+          <path d="M-30,90 Q-62,130 -88,168 L-62,186 Q-30,148 -6,108 Z" fill="#2f4a73"/>
+          <path d="M22,92 Q48,140 92,150 L96,122 Q62,116 44,86 Z" fill="#2f4a73"/>
+          <!-- sapatos -->
+          <ellipse cx="-84" cy="184" rx="30" ry="15" transform="rotate(-30 -84 184)" fill="#141414"/>
+          <ellipse cx="106" cy="138" rx="28" ry="15" transform="rotate(-70 106 138)" fill="#141414"/>
+          <!-- braço esquerdo erguido -->
+          <path d="M-48,8 Q-96,-30 -110,-88 L-84,-98 Q-70,-50 -30,-14 Z" fill="#161616"/>
+          <circle cx="-102" cy="-106" r="19" fill="#f2c7a1"/>
+          <!-- braço direito abanando -->
+          <path d="M46,6 Q100,-8 128,-62 L150,-46 Q122,14 56,34 Z" fill="#161616"/>
+          <circle cx="146" cy="-62" r="19" fill="#f2c7a1"/>
+          <!-- tronco: jaqueta de couro -->
+          <path d="M-52,-2 Q0,-26 54,-2 L46,100 Q0,114 -42,100 Z" fill="#161616"/>
+        </g>
+        <!-- camiseta preta por dentro + gola da jaqueta -->
+        <path d="M-14,-12 L14,-12 L10,98 L-10,98 Z" fill="#050505"/>
+        <path d="M-40,-6 L-14,-12 L-6,40 Z" fill="#2c2c2c" stroke="#0b0b0b" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M42,-6 L14,-12 L6,40 Z" fill="#2c2c2c" stroke="#0b0b0b" stroke-width="4" stroke-linejoin="round"/>
+        <line x1="22" y1="40" x2="26" y2="98" stroke="#b9bec6" stroke-width="3"/>
+        <!-- brilho do couro -->
+        <path d="M-40,20 Q-44,60 -36,90" stroke="#4a4a4a" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <path d="M38,24 Q42,58 36,86" stroke="#4a4a4a" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+        <!-- cabeça grande (miniatura/chibi) -->
+        <g stroke="#0b0b0b" stroke-width="5" stroke-linejoin="round">
+          <ellipse cx="-62" cy="-78" rx="12" ry="17" fill="#eebd95"/>
+          <ellipse cx="62" cy="-78" rx="12" ry="17" fill="#eebd95"/>
+          <ellipse cx="0" cy="-80" rx="64" ry="70" fill="#f2c7a1"/>
+          <!-- cabelo grisalho penteado pra trás -->
+          <path d="M-64,-96 Q-70,-162 -4,-166 Q62,-168 66,-100 Q50,-130 18,-134 Q-14,-140 -36,-124 Q-52,-114 -64,-96 Z" fill="#d6dade"/>
+        </g>
+        <path d="M-40,-140 Q-6,-158 40,-142" stroke="#a7adb5" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <path d="M-50,-122 Q-10,-146 48,-124" stroke="#a7adb5" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <!-- sobrancelhas levantadas -->
+        <path d="M-44,-104 Q-30,-116 -14,-106" stroke="#7d838b" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <path d="M14,-106 Q30,-116 44,-104" stroke="#7d838b" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <!-- óculos de armação preta -->
+        <g fill="#ffffff" fill-opacity=".25" stroke="#0b0b0b" stroke-width="6" stroke-linejoin="round">
+          <rect x="-52" y="-96" width="42" height="30" rx="8"/>
+          <rect x="10" y="-96" width="42" height="30" rx="8"/>
+        </g>
+        <line x1="-10" y1="-84" x2="10" y2="-84" stroke="#0b0b0b" stroke-width="5"/>
+        <!-- olhos arregalados -->
+        <circle cx="-31" cy="-81" r="7" fill="#0b0b0b"/>
+        <circle cx="31" cy="-81" r="7" fill="#0b0b0b"/>
+        <circle cx="-29" cy="-84" r="2.4" fill="#fff"/>
+        <circle cx="33" cy="-84" r="2.4" fill="#fff"/>
+        <!-- sorriso de "tá tudo sob controle" -->
+        <path d="M-30,-42 Q0,-8 30,-42 Q0,-30 -30,-42 Z" fill="#7a1d1d" stroke="#0b0b0b" stroke-width="5" stroke-linejoin="round"/>
+        <path d="M-24,-40 Q0,-32 24,-40 L22,-36 Q0,-28 -22,-36 Z" fill="#ffffff"/>
+        <!-- bochechas -->
+        <ellipse cx="-44" cy="-50" rx="10" ry="6" fill="#e88f7a" opacity=".55"/>
+        <ellipse cx="44" cy="-50" rx="10" ry="6" fill="#e88f7a" opacity=".55"/>
+        <!-- gotas de suor -->
+        <path d="M72,-132 Q84,-112 76,-100 Q62,-104 72,-132 Z" fill="#7fd3ff" stroke="#0b0b0b" stroke-width="3"/>
+        <path d="M92,-100 Q102,-84 95,-74 Q84,-78 92,-100 Z" fill="#7fd3ff" stroke="#0b0b0b" stroke-width="3"/>
+      </g>
+
+      <!-- rabicho do balão apontando pro Jensen -->
+      <path d="M470,640 L640,560 L486,700 Z" fill="#fff" stroke="#0b0b0b" stroke-width="6" stroke-linejoin="round"/>
+    </svg>
+
+    <div class="ticker">
+      <div class="nome">NVDA <small>NVIDIA</small></div>
+      <div class="queda">▼ 4,27%</div>
+      <div class="preco">US$ 178,67 · MÍNIMA DO DIA US$ 170,24</div>
+    </div>
+
+    <div class="nasdaq">
+      <div class="n1">NASDAQ</div>
+      <div class="n2">▲ 2,7%</div>
+      <div class="n3">(TODO MUNDO SUBINDO)</div>
+    </div>
+
+    <div class="balao">QUANTO MAIS CAI,<br>MAIS VOCÊ <b>ECONOMIZA!</b></div>
+
+    <div class="fonte">FECHAMENTO DE 09/11/2026</div>
+  </div>
+
+  <div class="faixa"></div>
+
+  <div class="legenda">EU EXPLICANDO PRA FAMÍLIA QUE FOI<br>SÓ UMA "CORREÇÃO SAUDÁVEL":</div>
+
+  <div class="foto"></div>
+  <div class="rodape">@victornaito.financas</div>
+</div>
+</body>
+</html>
