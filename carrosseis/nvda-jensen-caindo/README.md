@@ -1,6 +1,6 @@
 # Post · Jensen caindo junto com a NVDA
 
-Meme vertical 1080x1920, tela dividida: em cima, o Jensen em miniatura (caricatura desenhada em SVG) caindo junto com o gráfico; embaixo, a foto de reação com a legenda.
+Meme vertical 1080x1920, tela dividida: em cima, o Jensen em miniatura (caricatura desenhada em SVG) caindo junto com o gráfico, de mãos dadas com uma acompanhante de blazer vermelho (personagem genérica); embaixo, a foto de reação com a legenda.
 
 - Arte final: `resultados/post-nvda-jensen.png`
 - Legenda do post: `resultados/legenda.txt`

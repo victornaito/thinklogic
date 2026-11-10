@@ -23,7 +23,7 @@
   .nasdaq .n1 { font-size: 40px; color: #9aa4b2; letter-spacing: 1px; }
   .nasdaq .n2 { font-size: 64px; color: #2ee07a; margin-top: 6px; text-shadow: 0 0 22px rgba(46,224,122,.45); }
   .nasdaq .n3 { font-family: Bangers; font-size: 34px; color: #fff; margin-top: 10px; letter-spacing: 1px; }
-  .balao { position: absolute; left: 44px; top: 600px; width: 450px; padding: 26px 30px 24px;
+  .balao { position: absolute; left: 44px; top: 380px; width: 430px; padding: 26px 30px 24px;
            background: #fff; border: 6px solid #0b0b0b; border-radius: 34px;
            font-family: Bangers; font-size: 50px; line-height: 1.02; color: #0b0b0b; letter-spacing: 1px;
            transform: rotate(-3deg); box-shadow: 8px 8px 0 #ff3b3b; }
@@ -79,13 +79,56 @@
 
       <!-- linhas de velocidade (ele vem caindo de cima) -->
       <g stroke="#ffffff" stroke-linecap="round" opacity=".5">
-        <line x1="700" y1="250" x2="722" y2="340" stroke-width="6"/>
-        <line x1="790" y1="236" x2="810" y2="320" stroke-width="7"/>
-        <line x1="880" y1="250" x2="898" y2="326" stroke-width="6"/>
+        <line x1="730" y1="250" x2="752" y2="340" stroke-width="6"/>
+        <line x1="820" y1="236" x2="840" y2="320" stroke-width="7"/>
+        <line x1="910" y1="250" x2="928" y2="326" stroke-width="6"/>
+      </g>
+
+      <!-- a acompanhante, de mãos dadas com ele na queda (personagem genérica, sem caricatura de ninguém real) -->
+      <g transform="translate(557,584) rotate(12) scale(0.9)">
+        <g stroke="#0b0b0b" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+          <!-- pernas -->
+          <path d="M-26,92 Q-52,140 -70,176 L-46,188 Q-26,150 -4,104 Z" fill="#1d2433"/>
+          <path d="M18,94 Q30,146 58,180 L80,166 Q52,140 40,90 Z" fill="#1d2433"/>
+          <ellipse cx="-60" cy="190" rx="24" ry="12" transform="rotate(-20 -60 190)" fill="#141414"/>
+          <ellipse cx="76" cy="180" rx="24" ry="12" transform="rotate(-50 76 180)" fill="#141414"/>
+          <!-- braço esquerdo se debatendo -->
+          <path d="M-44,10 Q-90,30 -118,4 L-104,-16 Q-80,8 -36,-12 Z" fill="#d7262b"/>
+          <circle cx="-120" cy="-6" r="16" fill="#f3d3b2"/>
+          <!-- braço direito segurando a mão dele -->
+          <path d="M40,-6 Q70,-50 82,-104 L104,-98 Q96,-40 56,14 Z" fill="#d7262b"/>
+          <circle cx="94" cy="-116" r="16" fill="#f3d3b2"/>
+          <!-- blazer vermelho -->
+          <path d="M-46,-4 Q0,-24 48,-4 L42,98 Q0,110 -40,98 Z" fill="#d7262b"/>
+        </g>
+        <path d="M-14,-12 L14,-12 L0,36 Z" fill="#f4f4f4"/>
+        <path d="M-38,-4 L-14,-12 L-4,44 Z" fill="#a81c20" stroke="#0b0b0b" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M40,-4 L14,-12 L4,44 Z" fill="#a81c20" stroke="#0b0b0b" stroke-width="4" stroke-linejoin="round"/>
+        <circle cx="0" cy="62" r="5" fill="#f2c14e" stroke="#0b0b0b" stroke-width="2"/>
+        <circle cx="0" cy="82" r="5" fill="#f2c14e" stroke="#0b0b0b" stroke-width="2"/>
+        <!-- cabeça: cabelo chanel preto -->
+        <g stroke="#0b0b0b" stroke-width="5" stroke-linejoin="round">
+          <path d="M-66,-70 Q-74,-152 0,-154 Q74,-152 66,-70 L64,-18 Q50,-12 40,-30 L-40,-30 Q-50,-12 -64,-18 Z" fill="#141414"/>
+          <ellipse cx="0" cy="-78" rx="52" ry="58" fill="#f3d3b2"/>
+          <path d="M-54,-94 Q-50,-146 0,-146 Q50,-146 54,-94 Q34,-116 0,-110 Q-30,-116 -54,-94 Z" fill="#141414"/>
+        </g>
+        <!-- sobrancelhas, olhos, boca de susto -->
+        <path d="M-34,-100 Q-22,-110 -10,-102" stroke="#141414" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <path d="M10,-102 Q22,-110 34,-100" stroke="#141414" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <circle cx="-22" cy="-80" r="8" fill="#0b0b0b"/>
+        <circle cx="22" cy="-80" r="8" fill="#0b0b0b"/>
+        <circle cx="-19" cy="-83" r="2.6" fill="#fff"/>
+        <circle cx="25" cy="-83" r="2.6" fill="#fff"/>
+        <ellipse cx="0" cy="-46" rx="9" ry="12" fill="#7a1d1d" stroke="#0b0b0b" stroke-width="4"/>
+        <ellipse cx="-34" cy="-58" rx="9" ry="5" fill="#e88f7a" opacity=".6"/>
+        <ellipse cx="34" cy="-58" rx="9" ry="5" fill="#e88f7a" opacity=".6"/>
+        <circle cx="-53" cy="-56" r="5" fill="#f2c14e" stroke="#0b0b0b" stroke-width="2"/>
+        <circle cx="53" cy="-56" r="5" fill="#f2c14e" stroke="#0b0b0b" stroke-width="2"/>
+        <path d="M-70,-128 Q-60,-110 -68,-98 Q-80,-104 -70,-128 Z" fill="#7fd3ff" stroke="#0b0b0b" stroke-width="3"/>
       </g>
 
       <!-- Jensen em miniatura, caindo junto (caricatura) -->
-      <g transform="translate(790,560) rotate(-24) scale(1.18)">
+      <g transform="translate(820,560) rotate(-24) scale(1.18)">
         <!-- sombra de contorno geral -->
         <g stroke="#0b0b0b" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
           <!-- pernas (jeans) se debatendo -->
@@ -148,7 +191,7 @@
       </g>
 
       <!-- rabicho do balão apontando pro Jensen -->
-      <path d="M470,640 L640,560 L486,700 Z" fill="#fff" stroke="#0b0b0b" stroke-width="6" stroke-linejoin="round"/>
+      <path d="M462,396 L702,438 L462,430 Z" fill="#fff" stroke="#0b0b0b" stroke-width="6" stroke-linejoin="round"/>
     </svg>
 
     <div class="ticker">
