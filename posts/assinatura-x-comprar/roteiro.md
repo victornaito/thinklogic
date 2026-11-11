@@ -133,3 +133,48 @@ A foto entra recortada, em preto e branco com granulação, para combinar com o 
 - Juros médios de veículos (BC): https://dadosabertos.bcb.gov.br/eu/dataset/20749-taxa-media-de-juros-das-operacoes-de-credito-com-recursos-livres---pessoas-fisicas---aquisica e https://www.guardardinheiro.com.br/blog/menores-taxas-financiamento-de-veiculos
 - Revisões (referência HB20S): https://garagem360.com.br/?p=321516
 - Faixa de seguro: https://www.seguroauto.org/seguro-do-hyundai-hb20-2026/
+
+## Notas da produção (v1 animada)
+- Foto do HB20 enviada pelo autor. O fundo foi removido, a placa (que tinha a logo de uma empresa) foi coberta com uma placa neutra e a imagem foi convertida para tons de cinza.
+- Duração final: 66 s. O ritmo mais lento pedido pela audiência, de 2,5 s por linha, aumentou a duração prevista.
+- Efeitos sonoros com ganho de 0,5 (−6 dB) em relação ao Extrato #2.
+
+## Legenda
+
+Assinar um carro parece "jogar dinheiro fora". Fiz a conta com o mesmo carro, em São Paulo, com preços de novembro de 2026, e ela surpreende.
+
+O carro: Hyundai HB20 Comfort 1.0 2027.
+🛒 Comprar: R$ 91.140 (0 km em SP), com entrada de 20% e 36x na taxa média do Banco Central (26,4% a.a.)
+🔑 Assinar: R$ 2.049,99/mês por 36 meses, com IPVA, seguro, revisões e emplacamento inclusos
+
+Por mês, quem compra gasta R$ 3.532: parcela de R$ 2.848 + R$ 684 de IPVA, seguro e revisões. Quem assina gasta R$ 2.050.
+
+Se quem assina investir a entrada e a diferença a 10% ao ano, em 3 anos tem R$ 85,7 mil. O carro de quem comprou vale R$ 72,2 mil. A assinatura fica R$ 13 mil na frente.
+
+Um dos motivos: em SP, a locadora paga 1% de IPVA, e você paga 4%.
+
+Mas tem uma pegadinha. Depende de quanto tempo você fica com o carro:
+• Ia financiar e fica 3 anos: assinar ganha (+R$ 13,5 mil)
+• Tem dinheiro à vista: comprar ganha (+R$ 7,7 mil)
+• Fica 6 anos: comprar ganha (+R$ 11,7 mil)
+• Fica 10 anos: comprar ganha (+R$ 78,6 mil)
+• Roda mais de 1.000 km por mês: a assinatura encarece
+
+👇 Comenta: quanto tempo você costuma ficar com um carro?
+
+📌 Salva esse extrato e segue pro Extrato #4: Uber x carro próprio.
+
+Premissas (simulação em São Paulo, nov/2026):
+- Preço 0 km de oferta em SP (Webmotors).
+- Assinatura Unidas Livre, 36 meses e 1.000 km/mês.
+- FIPE out/2026: o HB20 Comfort 2023 vale R$ 63.680, ou 70% do 0 km. A mesma proporção foi usada para a revenda futura.
+- IPVA SP de 4%; licenciamento de R$ 174,08.
+- Juros médios do BC (ago/2026) de 26,42% a.a.
+- Revisões pela referência de mercado; seguro estimado em R$ 3.800/ano.
+- Revenda aos 6 e 10 anos estimada.
+- Inflação de 4% a.a. no preço dos carros e da assinatura.
+- Investimento a 10% a.a. líquido.
+- Combustível igual nos dois cenários.
+Os valores variam conforme perfil, CEP e contrato. Confira a cotação antes de decidir.
+
+#financaspessoais #educacaofinanceira #carroporassinatura #carronovo #hb20 #financiamento #investimentos #saopaulo #investidordocerrado
