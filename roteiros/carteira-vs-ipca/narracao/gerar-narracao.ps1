@@ -16,11 +16,11 @@ New-Item -ItemType Directory -Force -Path $saida | Out-Null
 
 Get-ChildItem (Join-Path $PSScriptRoot "bloco-*.txt") | Sort-Object Name | ForEach-Object {
   $nome = $_.BaseName
-  $args = @("--model", $MODEL, "--ckpt_file", $CKPT,
+  $params = @("--model", $MODEL, "--ckpt_file", $CKPT,
             "--ref_audio", $REF_AUDIO, "--ref_text", $REF_TEXT,
             "--gen_file", $_.FullName, "--output_dir", $saida,
             "--output_file", "$nome.wav", "--remove_silence")
-  if ($VOCAB -ne "") { $args += @("--vocab_file", $VOCAB) }
+  if ($VOCAB -ne "") { $params += @("--vocab_file", $VOCAB) }
   Write-Host "Gerando $nome..."
   f5-tts_infer-cli @args
 }
