@@ -1,0 +1,398 @@
+[
+ {
+  "ini": 0.25,
+  "fim": 2.043,
+  "texto": "Minha carteira começou no vermelho.",
+  "orig": [
+   0.9,
+   2.7
+  ]
+ },
+ {
+  "ini": 2.363,
+  "fim": 2.923,
+  "texto": "Hoje",
+  "orig": [
+   3.22,
+   3.78
+  ]
+ },
+ {
+  "ini": 3.149,
+  "fim": 5.035,
+  "texto": "ela rende quase o dobro da inflação",
+  "orig": [
+   4.01,
+   5.89
+  ]
+ },
+ {
+  "ini": 5.355,
+  "fim": 6.772,
+  "texto": "mas isso é bom ou ruim?",
+  "orig": [
+   6.29,
+   7.7
+  ]
+ },
+ {
+  "ini": 7.092,
+  "fim": 11.906,
+  "texto": "Pra responder, você precisa saber quanto uma carteira diversificada rende de verdade.",
+  "orig": [
+   8.36,
+   13.18
+  ]
+ },
+ {
+  "ini": 12.226,
+  "fim": 13.491,
+  "texto": "E quase ninguém sabe.",
+  "orig": [
+   13.84,
+   15.11
+  ]
+ },
+ {
+  "ini": 13.681,
+  "fim": 19.66,
+  "texto": "Em um ano, uma carteira bem montada, com renda fixa, ações, fundos imobiliários e um pouco de exterior,",
+  "orig": [
+   15.3,
+   21.28
+  ]
+ },
+ {
+  "ini": 19.98,
+  "fim": 21.873,
+  "texto": "rende em média uns 10%.",
+  "orig": [
+   21.79,
+   23.69
+  ]
+ },
+ {
+  "ini": 22.193,
+  "fim": 23.733,
+  "texto": "10 mil viram 11 mil.",
+  "orig": [
+   24.27,
+   25.81
+  ]
+ },
+ {
+  "ini": 23.97,
+  "fim": 25.036,
+  "texto": "Parece pouco, né?",
+  "orig": [
+   26.04,
+   27.11
+  ]
+ },
+ {
+  "ini": 25.356,
+  "fim": 27.035,
+  "texto": "E tem ano que fica no negativo.",
+  "orig": [
+   27.66,
+   29.34
+  ]
+ },
+ {
+  "ini": 27.311,
+  "fim": 28.464,
+  "texto": "A minha ficou também.",
+  "orig": [
+   29.62,
+   30.77
+  ]
+ },
+ {
+  "ini": 28.784,
+  "fim": 30.896,
+  "texto": "Em dois anos, uns 20%.",
+  "orig": [
+   31.2,
+   33.31
+  ]
+ },
+ {
+  "ini": 31.216,
+  "fim": 32.255,
+  "texto": "Agora olha a minha.",
+  "orig": [
+   33.98,
+   35.02
+  ]
+ },
+ {
+  "ini": 32.575,
+  "fim": 33.742,
+  "texto": "23",
+  "orig": [
+   35.86,
+   37.03
+  ]
+ },
+ {
+  "ini": 33.792,
+  "fim": 35.374,
+  "texto": "vírgula 3%.",
+  "orig": [
+   37.18,
+   38.76
+  ]
+ },
+ {
+  "ini": 35.606,
+  "fim": 37.142,
+  "texto": "Um pouco acima do esperado.",
+  "orig": [
+   39.0,
+   40.53
+  ]
+ },
+ {
+  "ini": 37.462,
+  "fim": 38.405,
+  "texto": "Nada de milagre.",
+  "orig": [
+   40.89,
+   41.83
+  ]
+ },
+ {
+  "ini": 38.725,
+  "fim": 40.864,
+  "texto": "Carteira montada e paciência.",
+  "orig": [
+   42.36,
+   44.5
+  ]
+ },
+ {
+  "ini": 41.184,
+  "fim": 42.945,
+  "texto": "Só que o número sozinho engana.",
+  "orig": [
+   45.26,
+   47.02
+  ]
+ },
+ {
+  "ini": 43.167,
+  "fim": 45.171,
+  "texto": "A régua certa é a inflação.",
+  "orig": [
+   47.25,
+   49.25
+  ]
+ },
+ {
+  "ini": 45.324,
+  "fim": 46.081,
+  "texto": "O IPCA.",
+  "orig": [
+   49.4,
+   50.16
+  ]
+ },
+ {
+  "ini": 46.401,
+  "fim": 51.342,
+  "texto": "É ele que mede quanto seu dinheiro perde de valor no mercado, na gasolina, no aluguel.",
+  "orig": [
+   51.01,
+   55.95
+  ]
+ },
+ {
+  "ini": 51.662,
+  "fim": 55.154,
+  "texto": "No mesmo período, o IPCA subiu 12,6%.",
+  "orig": [
+   56.64,
+   60.14
+  ]
+ },
+ {
+  "ini": 55.474,
+  "fim": 57.723,
+  "texto": "Eu fiz 23,3.",
+  "orig": [
+   60.54,
+   62.79
+  ]
+ },
+ {
+  "ini": 57.99,
+  "fim": 58.799,
+  "texto": "Quase o dobro.",
+  "orig": [
+   63.06,
+   63.87
+  ]
+ },
+ {
+  "ini": 59.119,
+  "fim": 61.031,
+  "texto": "E aqui é onde fica interessante.",
+  "orig": [
+   64.66,
+   66.57
+  ]
+ },
+ {
+  "ini": 61.351,
+  "fim": 65.385,
+  "texto": "Em 5 anos, a mesma carteira faz uns 60%.",
+  "orig": [
+   67.08,
+   71.11
+  ]
+ },
+ {
+  "ini": 65.667,
+  "fim": 68.462,
+  "texto": "10 mil viram quase 16.",
+  "orig": [
+   71.39,
+   74.19
+  ]
+ },
+ {
+  "ini": 68.782,
+  "fim": 69.946,
+  "texto": "Em 10 anos,",
+  "orig": [
+   74.73,
+   75.9
+  ]
+ },
+ {
+  "ini": 70.266,
+  "fim": 72.299,
+  "texto": "mais de 150%.",
+  "orig": [
+   76.24,
+   78.27
+  ]
+ },
+ {
+  "ini": 72.619,
+  "fim": 74.626,
+  "texto": "10 mil viram 25 mil.",
+  "orig": [
+   78.84,
+   80.85
+  ]
+ },
+ {
+  "ini": 74.933,
+  "fim": 76.763,
+  "texto": "A inflação, nesse tempo,",
+  "orig": [
+   81.15,
+   82.98
+  ]
+ },
+ {
+  "ini": 77.083,
+  "fim": 81.346,
+  "texto": "levou só uns 55%. Os primeiros anos parecem lentos.",
+  "orig": [
+   83.35,
+   87.61
+  ]
+ },
+ {
+  "ini": 81.666,
+  "fim": 82.816,
+  "texto": "Mas é no final que os",
+  "orig": [
+   89.73,
+   90.88
+  ]
+ },
+ {
+  "ini": 82.836,
+  "fim": 84.696,
+  "texto": "juros sobre juros aparecem.",
+  "orig": [
+   92.54,
+   94.4
+  ]
+ },
+ {
+  "ini": 85.016,
+  "fim": 89.115,
+  "texto": "A diferença entre quem chega lá e quem desiste no caminho não é sorte.",
+  "orig": [
+   94.75,
+   98.85
+  ]
+ },
+ {
+  "ini": 89.435,
+  "fim": 91.053,
+  "texto": "É saber o que esperar.",
+  "orig": [
+   101.6,
+   103.22
+  ]
+ },
+ {
+  "ini": 91.373,
+  "fim": 95.557,
+  "texto": "Quem acha que vai dobrar em um ano larga tudo no primeiro mês no vermelho.",
+  "orig": [
+   103.74,
+   107.92
+  ]
+ },
+ {
+  "ini": 95.877,
+  "fim": 97.3,
+  "texto": "Eu quase larguei.",
+  "orig": [
+   108.61,
+   110.03
+  ]
+ },
+ {
+  "ini": 97.62,
+  "fim": 98.754,
+  "texto": "Então eu te pergunto.",
+  "orig": [
+   110.55,
+   111.68
+  ]
+ },
+ {
+  "ini": 99.074,
+  "fim": 102.995,
+  "texto": "Você se sente preparado para planejar a sua liberdade financeira?",
+  "orig": [
+   112.03,
+   115.95
+  ]
+ },
+ {
+  "ini": 103.315,
+  "fim": 106.227,
+  "texto": "Ou ainda nem sabe se a sua carteira está batendo a inflação?",
+  "orig": [
+   119.6,
+   122.51
+  ]
+ },
+ {
+  "ini": 106.536,
+  "fim": 109.273,
+  "texto": "Comenta LIBERDADE que eu te mando a tabela completa.",
+  "orig": [
+   122.82,
+   125.56
+  ]
+ }
+]

@@ -1,0 +1,2470 @@
+[
+ {
+  "ini": 0.25,
+  "fim": 2.043,
+  "texto": "Minha carteira | começou no | ~*vermelho.*~",
+  "palavras": [
+   {
+    "w": "Minha",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 0.25,
+    "fim": 0.55
+   },
+   {
+    "w": "carteira",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 0.55,
+    "fim": 0.978
+   },
+   {
+    "w": "começou",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 0.978,
+    "fim": 1.363
+   },
+   {
+    "w": "no",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 1.363,
+    "fim": 1.535
+   },
+   {
+    "w": "vermelho.",
+    "bloco": 2,
+    "destaque": true,
+    "vermelho": true,
+    "ini": 1.535,
+    "fim": 1.963
+   }
+  ]
+ },
+ {
+  "ini": 2.363,
+  "fim": 2.923,
+  "texto": "Hoje",
+  "palavras": [
+   {
+    "w": "Hoje",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 2.363,
+    "fim": 2.843
+   }
+  ]
+ },
+ {
+  "ini": 3.149,
+  "fim": 5.035,
+  "texto": "ela rende | quase o | *dobro* | da inflação",
+  "palavras": [
+   {
+    "w": "ela",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 3.149,
+    "fim": 3.359
+   },
+   {
+    "w": "rende",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 3.359,
+    "fim": 3.653
+   },
+   {
+    "w": "quase",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 3.653,
+    "fim": 3.947
+   },
+   {
+    "w": "o",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 3.947,
+    "fim": 4.073
+   },
+   {
+    "w": "dobro",
+    "bloco": 2,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 4.073,
+    "fim": 4.367
+   },
+   {
+    "w": "da",
+    "bloco": 3,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 4.367,
+    "fim": 4.535
+   },
+   {
+    "w": "inflação",
+    "bloco": 3,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 4.535,
+    "fim": 4.955
+   }
+  ]
+ },
+ {
+  "ini": 5.355,
+  "fim": 6.772,
+  "texto": "Mas isso é | *bom* | ou *ruim?*",
+  "palavras": [
+   {
+    "w": "Mas",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 5.355,
+    "fim": 5.586
+   },
+   {
+    "w": "isso",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 5.586,
+    "fim": 5.862
+   },
+   {
+    "w": "é",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 5.862,
+    "fim": 6.0
+   },
+   {
+    "w": "bom",
+    "bloco": 1,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 6.0,
+    "fim": 6.231
+   },
+   {
+    "w": "ou",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 6.231,
+    "fim": 6.415
+   },
+   {
+    "w": "ruim?",
+    "bloco": 2,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 6.415,
+    "fim": 6.692
+   }
+  ]
+ },
+ {
+  "ini": 7.092,
+  "fim": 11.906,
+  "texto": "Pra responder, | você precisa saber | quanto uma carteira | *diversificada* | rende de | *verdade.*",
+  "palavras": [
+   {
+    "w": "Pra",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 7.092,
+    "fim": 7.336
+   },
+   {
+    "w": "responder,",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 7.336,
+    "fim": 7.922
+   },
+   {
+    "w": "você",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 7.922,
+    "fim": 8.214
+   },
+   {
+    "w": "precisa",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 8.214,
+    "fim": 8.654
+   },
+   {
+    "w": "saber",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 8.654,
+    "fim": 8.995
+   },
+   {
+    "w": "quanto",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 8.995,
+    "fim": 9.386
+   },
+   {
+    "w": "uma",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 9.386,
+    "fim": 9.63
+   },
+   {
+    "w": "carteira",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 9.63,
+    "fim": 10.118
+   },
+   {
+    "w": "diversificada",
+    "bloco": 3,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 10.118,
+    "fim": 10.85
+   },
+   {
+    "w": "rende",
+    "bloco": 4,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 10.85,
+    "fim": 11.192
+   },
+   {
+    "w": "de",
+    "bloco": 4,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 11.192,
+    "fim": 11.387
+   },
+   {
+    "w": "verdade.",
+    "bloco": 5,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 11.387,
+    "fim": 11.826
+   }
+  ]
+ },
+ {
+  "ini": 12.226,
+  "fim": 13.491,
+  "texto": "E quase | *ninguém* | sabe.",
+  "palavras": [
+   {
+    "w": "E",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 12.226,
+    "fim": 12.368
+   },
+   {
+    "w": "quase",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 12.368,
+    "fim": 12.7
+   },
+   {
+    "w": "ninguém",
+    "bloco": 1,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 12.7,
+    "fim": 13.127
+   },
+   {
+    "w": "sabe.",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 13.127,
+    "fim": 13.411
+   }
+  ]
+ },
+ {
+  "ini": 13.681,
+  "fim": 19.66,
+  "texto": "Em *um* *ano,* | uma carteira | bem montada, | com renda fixa, | ações, | fundos imobiliários | e um pouco | de exterior,",
+  "palavras": [
+   {
+    "w": "Em",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 13.681,
+    "fim": 13.874
+   },
+   {
+    "w": "um",
+    "bloco": 0,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 13.874,
+    "fim": 14.068
+   },
+   {
+    "w": "ano,",
+    "bloco": 0,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 14.068,
+    "fim": 14.358
+   },
+   {
+    "w": "uma",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 14.358,
+    "fim": 14.6
+   },
+   {
+    "w": "carteira",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 14.6,
+    "fim": 15.083
+   },
+   {
+    "w": "bem",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 15.083,
+    "fim": 15.325
+   },
+   {
+    "w": "montada,",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 15.325,
+    "fim": 15.809
+   },
+   {
+    "w": "com",
+    "bloco": 3,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 15.809,
+    "fim": 16.05
+   },
+   {
+    "w": "renda",
+    "bloco": 3,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 16.05,
+    "fim": 16.389
+   },
+   {
+    "w": "fixa,",
+    "bloco": 3,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 16.389,
+    "fim": 16.727
+   },
+   {
+    "w": "ações,",
+    "bloco": 4,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 16.727,
+    "fim": 17.114
+   },
+   {
+    "w": "fundos",
+    "bloco": 5,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 17.114,
+    "fim": 17.501
+   },
+   {
+    "w": "imobiliários",
+    "bloco": 5,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 17.501,
+    "fim": 18.178
+   },
+   {
+    "w": "e",
+    "bloco": 6,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 18.178,
+    "fim": 18.323
+   },
+   {
+    "w": "um",
+    "bloco": 6,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 18.323,
+    "fim": 18.516
+   },
+   {
+    "w": "pouco",
+    "bloco": 6,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 18.516,
+    "fim": 18.855
+   },
+   {
+    "w": "de",
+    "bloco": 7,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 18.855,
+    "fim": 19.048
+   },
+   {
+    "w": "exterior,",
+    "bloco": 7,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 19.048,
+    "fim": 19.58
+   }
+  ]
+ },
+ {
+  "ini": 19.98,
+  "fim": 21.873,
+  "texto": "rende em média | uns | *10%.*",
+  "palavras": [
+   {
+    "w": "rende",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 19.98,
+    "fim": 20.256
+   },
+   {
+    "w": "em",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 20.256,
+    "fim": 20.414
+   },
+   {
+    "w": "média",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 20.414,
+    "fim": 20.689
+   },
+   {
+    "w": "uns",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 20.689,
+    "fim": 20.887
+   },
+   {
+    "w": "10%.",
+    "bloco": 2,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 20.887,
+    "fim": 21.793
+   }
+  ]
+ },
+ {
+  "ini": 22.193,
+  "fim": 23.733,
+  "texto": "10 mil | viram | 11 mil.",
+  "palavras": [
+   {
+    "w": "10",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 22.193,
+    "fim": 22.647
+   },
+   {
+    "w": "mil",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 22.647,
+    "fim": 22.809
+   },
+   {
+    "w": "viram",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 22.809,
+    "fim": 23.037
+   },
+   {
+    "w": "11",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 23.037,
+    "fim": 23.491
+   },
+   {
+    "w": "mil.",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 23.491,
+    "fim": 23.653
+   }
+  ]
+ },
+ {
+  "ini": 23.97,
+  "fim": 25.036,
+  "texto": "Parece | *pouco,* | né?",
+  "palavras": [
+   {
+    "w": "Parece",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 23.97,
+    "fim": 24.364
+   },
+   {
+    "w": "pouco,",
+    "bloco": 1,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 24.364,
+    "fim": 24.759
+   },
+   {
+    "w": "né?",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 24.759,
+    "fim": 24.956
+   }
+  ]
+ },
+ {
+  "ini": 25.356,
+  "fim": 27.035,
+  "texto": "E tem ano | que fica no | ~*negativo.*~",
+  "palavras": [
+   {
+    "w": "E",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 25.356,
+    "fim": 25.482
+   },
+   {
+    "w": "tem",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 25.482,
+    "fim": 25.693
+   },
+   {
+    "w": "ano",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 25.693,
+    "fim": 25.903
+   },
+   {
+    "w": "que",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 25.903,
+    "fim": 26.113
+   },
+   {
+    "w": "fica",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 26.113,
+    "fim": 26.366
+   },
+   {
+    "w": "no",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 26.366,
+    "fim": 26.534
+   },
+   {
+    "w": "negativo.",
+    "bloco": 2,
+    "destaque": true,
+    "vermelho": true,
+    "ini": 26.534,
+    "fim": 26.955
+   }
+  ]
+ },
+ {
+  "ini": 27.311,
+  "fim": 28.464,
+  "texto": "A minha | ficou | também.",
+  "palavras": [
+   {
+    "w": "A",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 27.311,
+    "fim": 27.44
+   },
+   {
+    "w": "minha",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 27.44,
+    "fim": 27.74
+   },
+   {
+    "w": "ficou",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 27.74,
+    "fim": 28.041
+   },
+   {
+    "w": "também.",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 28.041,
+    "fim": 28.384
+   }
+  ]
+ },
+ {
+  "ini": 28.784,
+  "fim": 30.896,
+  "texto": "Em *dois* *anos,* | uns | *20%.*",
+  "palavras": [
+   {
+    "w": "Em",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 28.784,
+    "fim": 28.965
+   },
+   {
+    "w": "dois",
+    "bloco": 0,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 28.965,
+    "fim": 29.236
+   },
+   {
+    "w": "anos,",
+    "bloco": 0,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 29.236,
+    "fim": 29.552
+   },
+   {
+    "w": "uns",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 29.552,
+    "fim": 29.777
+   },
+   {
+    "w": "20%.",
+    "bloco": 2,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 29.777,
+    "fim": 30.816
+   }
+  ]
+ },
+ {
+  "ini": 31.216,
+  "fim": 32.255,
+  "texto": "Agora | olha a | *minha.*",
+  "palavras": [
+   {
+    "w": "Agora",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 31.216,
+    "fim": 31.508
+   },
+   {
+    "w": "olha",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 31.508,
+    "fim": 31.758
+   },
+   {
+    "w": "a",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 31.758,
+    "fim": 31.883
+   },
+   {
+    "w": "minha.",
+    "bloco": 2,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 31.883,
+    "fim": 32.175
+   }
+  ]
+ },
+ {
+  "ini": 32.575,
+  "fim": 33.742,
+  "texto": "23",
+  "palavras": [
+   {
+    "w": "23",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 32.575,
+    "fim": 33.662
+   }
+  ]
+ },
+ {
+  "ini": 33.792,
+  "fim": 35.374,
+  "texto": "vírgula 3%.",
+  "palavras": [
+   {
+    "w": "vírgula",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 33.792,
+    "fim": 34.312
+   },
+   {
+    "w": "3%.",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 34.312,
+    "fim": 35.294
+   }
+  ]
+ },
+ {
+  "ini": 35.606,
+  "fim": 37.142,
+  "texto": "Um pouco | acima do | *esperado.*",
+  "palavras": [
+   {
+    "w": "Um",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 35.606,
+    "fim": 35.788
+   },
+   {
+    "w": "pouco",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 35.788,
+    "fim": 36.107
+   },
+   {
+    "w": "acima",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 36.107,
+    "fim": 36.425
+   },
+   {
+    "w": "do",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 36.425,
+    "fim": 36.607
+   },
+   {
+    "w": "esperado.",
+    "bloco": 2,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 36.607,
+    "fim": 37.062
+   }
+  ]
+ },
+ {
+  "ini": 37.462,
+  "fim": 38.405,
+  "texto": "Nada de | *milagre.*",
+  "palavras": [
+   {
+    "w": "Nada",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 37.462,
+    "fim": 37.735
+   },
+   {
+    "w": "de",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 37.735,
+    "fim": 37.916
+   },
+   {
+    "w": "milagre.",
+    "bloco": 1,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 37.916,
+    "fim": 38.325
+   }
+  ]
+ },
+ {
+  "ini": 38.725,
+  "fim": 40.864,
+  "texto": "Carteira montada | e *paciência.*",
+  "palavras": [
+   {
+    "w": "Carteira",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 38.725,
+    "fim": 39.349
+   },
+   {
+    "w": "montada",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 39.349,
+    "fim": 39.91
+   },
+   {
+    "w": "e",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 39.91,
+    "fim": 40.098
+   },
+   {
+    "w": "paciência.",
+    "bloco": 1,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 40.098,
+    "fim": 40.784
+   }
+  ]
+ },
+ {
+  "ini": 41.184,
+  "fim": 42.945,
+  "texto": "Só que | o número | *sozinho* | engana.",
+  "palavras": [
+   {
+    "w": "Só",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 41.184,
+    "fim": 41.366
+   },
+   {
+    "w": "que",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 41.366,
+    "fim": 41.593
+   },
+   {
+    "w": "o",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 41.593,
+    "fim": 41.729
+   },
+   {
+    "w": "número",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 41.729,
+    "fim": 42.093
+   },
+   {
+    "w": "sozinho",
+    "bloco": 2,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 42.093,
+    "fim": 42.502
+   },
+   {
+    "w": "engana.",
+    "bloco": 3,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 42.502,
+    "fim": 42.865
+   }
+  ]
+ },
+ {
+  "ini": 43.167,
+  "fim": 45.171,
+  "texto": "A régua | certa | é a *inflação.*",
+  "palavras": [
+   {
+    "w": "A",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 43.167,
+    "fim": 43.342
+   },
+   {
+    "w": "régua",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 43.342,
+    "fim": 43.75
+   },
+   {
+    "w": "certa",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 43.75,
+    "fim": 44.158
+   },
+   {
+    "w": "é",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 44.158,
+    "fim": 44.333
+   },
+   {
+    "w": "a",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 44.333,
+    "fim": 44.508
+   },
+   {
+    "w": "inflação.",
+    "bloco": 2,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 44.508,
+    "fim": 45.091
+   }
+  ]
+ },
+ {
+  "ini": 45.324,
+  "fim": 46.081,
+  "texto": "O *IPCA.*",
+  "palavras": [
+   {
+    "w": "O",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 45.324,
+    "fim": 45.55
+   },
+   {
+    "w": "IPCA.",
+    "bloco": 0,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 45.55,
+    "fim": 46.001
+   }
+  ]
+ },
+ {
+  "ini": 46.401,
+  "fim": 51.342,
+  "texto": "É ele que mede | quanto seu dinheiro | perde de valor | no *mercado,* | na *gasolina,* | no *aluguel.*",
+  "palavras": [
+   {
+    "w": "É",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 46.401,
+    "fim": 46.544
+   },
+   {
+    "w": "ele",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 46.544,
+    "fim": 46.782
+   },
+   {
+    "w": "que",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 46.782,
+    "fim": 47.021
+   },
+   {
+    "w": "mede",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 47.021,
+    "fim": 47.306
+   },
+   {
+    "w": "quanto",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 47.306,
+    "fim": 47.688
+   },
+   {
+    "w": "seu",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 47.688,
+    "fim": 47.926
+   },
+   {
+    "w": "dinheiro",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 47.926,
+    "fim": 48.403
+   },
+   {
+    "w": "perde",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 48.403,
+    "fim": 48.736
+   },
+   {
+    "w": "de",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 48.736,
+    "fim": 48.927
+   },
+   {
+    "w": "valor",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 48.927,
+    "fim": 49.26
+   },
+   {
+    "w": "no",
+    "bloco": 3,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 49.26,
+    "fim": 49.451
+   },
+   {
+    "w": "mercado,",
+    "bloco": 3,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 49.451,
+    "fim": 49.928
+   },
+   {
+    "w": "na",
+    "bloco": 4,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 49.928,
+    "fim": 50.118
+   },
+   {
+    "w": "gasolina,",
+    "bloco": 4,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 50.118,
+    "fim": 50.642
+   },
+   {
+    "w": "no",
+    "bloco": 5,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 50.642,
+    "fim": 50.833
+   },
+   {
+    "w": "aluguel.",
+    "bloco": 5,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 50.833,
+    "fim": 51.262
+   }
+  ]
+ },
+ {
+  "ini": 51.662,
+  "fim": 55.154,
+  "texto": "No mesmo período, | o IPCA | subiu | *12,6%.*",
+  "palavras": [
+   {
+    "w": "No",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 51.662,
+    "fim": 51.849
+   },
+   {
+    "w": "mesmo",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 51.849,
+    "fim": 52.176
+   },
+   {
+    "w": "período,",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 52.176,
+    "fim": 52.644
+   },
+   {
+    "w": "o",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 52.644,
+    "fim": 52.784
+   },
+   {
+    "w": "IPCA",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 52.784,
+    "fim": 53.064
+   },
+   {
+    "w": "subiu",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 53.064,
+    "fim": 53.391
+   },
+   {
+    "w": "12,6%.",
+    "bloco": 3,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 53.391,
+    "fim": 55.074
+   }
+  ]
+ },
+ {
+  "ini": 55.474,
+  "fim": 57.723,
+  "texto": "Eu fiz | *23,3.*",
+  "palavras": [
+   {
+    "w": "Eu",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 55.474,
+    "fim": 55.715
+   },
+   {
+    "w": "fiz",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 55.715,
+    "fim": 56.016
+   },
+   {
+    "w": "23,3.",
+    "bloco": 1,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 56.016,
+    "fim": 57.643
+   }
+  ]
+ },
+ {
+  "ini": 57.99,
+  "fim": 58.799,
+  "texto": "Quase o | *dobro.*",
+  "palavras": [
+   {
+    "w": "Quase",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 57.99,
+    "fim": 58.29
+   },
+   {
+    "w": "o",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 58.29,
+    "fim": 58.419
+   },
+   {
+    "w": "dobro.",
+    "bloco": 1,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 58.419,
+    "fim": 58.719
+   }
+  ]
+ },
+ {
+  "ini": 59.119,
+  "fim": 61.031,
+  "texto": "E aqui | é onde fica | *interessante.*",
+  "palavras": [
+   {
+    "w": "E",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 59.119,
+    "fim": 59.264
+   },
+   {
+    "w": "aqui",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 59.264,
+    "fim": 59.553
+   },
+   {
+    "w": "é",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 59.553,
+    "fim": 59.698
+   },
+   {
+    "w": "onde",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 59.698,
+    "fim": 59.987
+   },
+   {
+    "w": "fica",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 59.987,
+    "fim": 60.276
+   },
+   {
+    "w": "interessante.",
+    "bloco": 2,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 60.276,
+    "fim": 60.951
+   }
+  ]
+ },
+ {
+  "ini": 61.351,
+  "fim": 65.385,
+  "texto": "Em *5* *anos,* | a mesma carteira | faz uns | *60%.*",
+  "palavras": [
+   {
+    "w": "Em",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 61.351,
+    "fim": 61.571
+   },
+   {
+    "w": "5",
+    "bloco": 0,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 61.571,
+    "fim": 62.01
+   },
+   {
+    "w": "anos,",
+    "bloco": 0,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 62.01,
+    "fim": 62.394
+   },
+   {
+    "w": "a",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 62.394,
+    "fim": 62.559
+   },
+   {
+    "w": "mesma",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 62.559,
+    "fim": 62.944
+   },
+   {
+    "w": "carteira",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 62.944,
+    "fim": 63.493
+   },
+   {
+    "w": "faz",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 63.493,
+    "fim": 63.767
+   },
+   {
+    "w": "uns",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 63.767,
+    "fim": 64.042
+   },
+   {
+    "w": "60%.",
+    "bloco": 3,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 64.042,
+    "fim": 65.305
+   }
+  ]
+ },
+ {
+  "ini": 65.667,
+  "fim": 68.462,
+  "texto": "10 mil | viram | quase 16.",
+  "palavras": [
+   {
+    "w": "10",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 65.667,
+    "fim": 66.476
+   },
+   {
+    "w": "mil",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 66.476,
+    "fim": 66.765
+   },
+   {
+    "w": "viram",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 66.765,
+    "fim": 67.169
+   },
+   {
+    "w": "quase",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 67.169,
+    "fim": 67.573
+   },
+   {
+    "w": "16.",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 67.573,
+    "fim": 68.382
+   }
+  ]
+ },
+ {
+  "ini": 68.782,
+  "fim": 69.946,
+  "texto": "Em *10* *anos,*",
+  "palavras": [
+   {
+    "w": "Em",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 68.782,
+    "fim": 68.955
+   },
+   {
+    "w": "10",
+    "bloco": 0,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 68.955,
+    "fim": 69.562
+   },
+   {
+    "w": "anos,",
+    "bloco": 0,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 69.562,
+    "fim": 69.866
+   }
+  ]
+ },
+ {
+  "ini": 70.266,
+  "fim": 72.299,
+  "texto": "mais de | *150%.*",
+  "palavras": [
+   {
+    "w": "mais",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 70.266,
+    "fim": 70.566
+   },
+   {
+    "w": "de",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 70.566,
+    "fim": 70.767
+   },
+   {
+    "w": "150%.",
+    "bloco": 1,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 70.767,
+    "fim": 72.219
+   }
+  ]
+ },
+ {
+  "ini": 72.619,
+  "fim": 74.626,
+  "texto": "10 mil | viram | 25 mil.",
+  "palavras": [
+   {
+    "w": "10",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 72.619,
+    "fim": 73.219
+   },
+   {
+    "w": "mil",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 73.219,
+    "fim": 73.433
+   },
+   {
+    "w": "viram",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 73.433,
+    "fim": 73.732
+   },
+   {
+    "w": "25",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 73.732,
+    "fim": 74.332
+   },
+   {
+    "w": "mil.",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 74.332,
+    "fim": 74.546
+   }
+  ]
+ },
+ {
+  "ini": 74.933,
+  "fim": 76.763,
+  "texto": "A inflação, | nesse tempo,",
+  "palavras": [
+   {
+    "w": "A",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 74.933,
+    "fim": 75.114
+   },
+   {
+    "w": "inflação,",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 75.114,
+    "fim": 75.778
+   },
+   {
+    "w": "nesse",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 75.778,
+    "fim": 76.2
+   },
+   {
+    "w": "tempo,",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 76.2,
+    "fim": 76.683
+   }
+  ]
+ },
+ {
+  "ini": 77.083,
+  "fim": 81.346,
+  "texto": "levou só uns | *55%.* | Os primeiros anos | parecem | *lentos.*",
+  "palavras": [
+   {
+    "w": "levou",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 77.083,
+    "fim": 77.463
+   },
+   {
+    "w": "só",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 77.463,
+    "fim": 77.681
+   },
+   {
+    "w": "uns",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 77.681,
+    "fim": 77.952
+   },
+   {
+    "w": "55%.",
+    "bloco": 1,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 77.952,
+    "fim": 79.202
+   },
+   {
+    "w": "Os",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 79.202,
+    "fim": 79.419
+   },
+   {
+    "w": "primeiros",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 79.419,
+    "fim": 80.017
+   },
+   {
+    "w": "anos",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 80.017,
+    "fim": 80.342
+   },
+   {
+    "w": "parecem",
+    "bloco": 3,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 80.342,
+    "fim": 80.831
+   },
+   {
+    "w": "lentos.",
+    "bloco": 4,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 80.831,
+    "fim": 81.266
+   }
+  ]
+ },
+ {
+  "ini": 81.666,
+  "fim": 82.816,
+  "texto": "Mas é | no *final* | que os",
+  "palavras": [
+   {
+    "w": "Mas",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 81.666,
+    "fim": 81.857
+   },
+   {
+    "w": "é",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 81.857,
+    "fim": 81.972
+   },
+   {
+    "w": "no",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 81.972,
+    "fim": 82.125
+   },
+   {
+    "w": "final",
+    "bloco": 1,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 82.125,
+    "fim": 82.392
+   },
+   {
+    "w": "que",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 82.392,
+    "fim": 82.583
+   },
+   {
+    "w": "os",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 82.583,
+    "fim": 82.736
+   }
+  ]
+ },
+ {
+  "ini": 82.836,
+  "fim": 84.696,
+  "texto": "*juros* | sobre *juros* | aparecem.",
+  "palavras": [
+   {
+    "w": "juros",
+    "bloco": 0,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 82.836,
+    "fim": 83.238
+   },
+   {
+    "w": "sobre",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 83.238,
+    "fim": 83.64
+   },
+   {
+    "w": "juros",
+    "bloco": 1,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 83.64,
+    "fim": 84.042
+   },
+   {
+    "w": "aparecem.",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 84.042,
+    "fim": 84.616
+   }
+  ]
+ },
+ {
+  "ini": 85.016,
+  "fim": 89.115,
+  "texto": "A diferença | entre quem | chega lá | e quem desiste | no caminho | não é | *sorte.*",
+  "palavras": [
+   {
+    "w": "A",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 85.016,
+    "fim": 85.16
+   },
+   {
+    "w": "diferença",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 85.16,
+    "fim": 85.686
+   },
+   {
+    "w": "entre",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 85.686,
+    "fim": 86.021
+   },
+   {
+    "w": "quem",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 86.021,
+    "fim": 86.308
+   },
+   {
+    "w": "chega",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 86.308,
+    "fim": 86.643
+   },
+   {
+    "w": "lá",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 86.643,
+    "fim": 86.834
+   },
+   {
+    "w": "e",
+    "bloco": 3,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 86.834,
+    "fim": 86.978
+   },
+   {
+    "w": "quem",
+    "bloco": 3,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 86.978,
+    "fim": 87.265
+   },
+   {
+    "w": "desiste",
+    "bloco": 3,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 87.265,
+    "fim": 87.695
+   },
+   {
+    "w": "no",
+    "bloco": 4,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 87.695,
+    "fim": 87.887
+   },
+   {
+    "w": "caminho",
+    "bloco": 4,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 87.887,
+    "fim": 88.317
+   },
+   {
+    "w": "não",
+    "bloco": 5,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 88.317,
+    "fim": 88.557
+   },
+   {
+    "w": "é",
+    "bloco": 5,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 88.557,
+    "fim": 88.7
+   },
+   {
+    "w": "sorte.",
+    "bloco": 6,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 88.7,
+    "fim": 89.035
+   }
+  ]
+ },
+ {
+  "ini": 89.435,
+  "fim": 91.053,
+  "texto": "É saber | o que | *esperar.*",
+  "palavras": [
+   {
+    "w": "É",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 89.435,
+    "fim": 89.606
+   },
+   {
+    "w": "saber",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 89.606,
+    "fim": 90.005
+   },
+   {
+    "w": "o",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 90.005,
+    "fim": 90.176
+   },
+   {
+    "w": "que",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 90.176,
+    "fim": 90.46
+   },
+   {
+    "w": "esperar.",
+    "bloco": 2,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 90.46,
+    "fim": 90.973
+   }
+  ]
+ },
+ {
+  "ini": 91.373,
+  "fim": 95.557,
+  "texto": "Quem acha | que vai | *dobrar* | em um ano | larga tudo | no primeiro mês | no ~*vermelho.*~",
+  "palavras": [
+   {
+    "w": "Quem",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 91.373,
+    "fim": 91.65
+   },
+   {
+    "w": "acha",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 91.65,
+    "fim": 91.926
+   },
+   {
+    "w": "que",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 91.926,
+    "fim": 92.157
+   },
+   {
+    "w": "vai",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 92.157,
+    "fim": 92.387
+   },
+   {
+    "w": "dobrar",
+    "bloco": 2,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 92.387,
+    "fim": 92.756
+   },
+   {
+    "w": "em",
+    "bloco": 3,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 92.756,
+    "fim": 92.941
+   },
+   {
+    "w": "um",
+    "bloco": 3,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 92.941,
+    "fim": 93.125
+   },
+   {
+    "w": "ano",
+    "bloco": 3,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 93.125,
+    "fim": 93.356
+   },
+   {
+    "w": "larga",
+    "bloco": 4,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 93.356,
+    "fim": 93.679
+   },
+   {
+    "w": "tudo",
+    "bloco": 4,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 93.679,
+    "fim": 93.955
+   },
+   {
+    "w": "no",
+    "bloco": 5,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 93.955,
+    "fim": 94.14
+   },
+   {
+    "w": "primeiro",
+    "bloco": 5,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 94.14,
+    "fim": 94.601
+   },
+   {
+    "w": "mês",
+    "bloco": 5,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 94.601,
+    "fim": 94.831
+   },
+   {
+    "w": "no",
+    "bloco": 6,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 94.831,
+    "fim": 95.016
+   },
+   {
+    "w": "vermelho.",
+    "bloco": 6,
+    "destaque": true,
+    "vermelho": true,
+    "ini": 95.016,
+    "fim": 95.477
+   }
+  ]
+ },
+ {
+  "ini": 95.877,
+  "fim": 97.3,
+  "texto": "Eu quase | ~*larguei.*~",
+  "palavras": [
+   {
+    "w": "Eu",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 95.877,
+    "fim": 96.146
+   },
+   {
+    "w": "quase",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 96.146,
+    "fim": 96.616
+   },
+   {
+    "w": "larguei.",
+    "bloco": 1,
+    "destaque": true,
+    "vermelho": true,
+    "ini": 96.616,
+    "fim": 97.22
+   }
+  ]
+ },
+ {
+  "ini": 97.62,
+  "fim": 98.754,
+  "texto": "Então | eu te | *pergunto.*",
+  "palavras": [
+   {
+    "w": "Então",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 97.62,
+    "fim": 97.915
+   },
+   {
+    "w": "eu",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 97.915,
+    "fim": 98.084
+   },
+   {
+    "w": "te",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 98.084,
+    "fim": 98.252
+   },
+   {
+    "w": "pergunto.",
+    "bloco": 2,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 98.252,
+    "fim": 98.674
+   }
+  ]
+ },
+ {
+  "ini": 99.074,
+  "fim": 102.995,
+  "texto": "Você se sente | *preparado* | para planejar | a sua | *liberdade* | *financeira?*",
+  "palavras": [
+   {
+    "w": "Você",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 99.074,
+    "fim": 99.381
+   },
+   {
+    "w": "se",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 99.381,
+    "fim": 99.586
+   },
+   {
+    "w": "sente",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 99.586,
+    "fim": 99.945
+   },
+   {
+    "w": "preparado",
+    "bloco": 1,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 99.945,
+    "fim": 100.508
+   },
+   {
+    "w": "para",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 100.508,
+    "fim": 100.815
+   },
+   {
+    "w": "planejar",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 100.815,
+    "fim": 101.327
+   },
+   {
+    "w": "a",
+    "bloco": 3,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 101.327,
+    "fim": 101.481
+   },
+   {
+    "w": "sua",
+    "bloco": 3,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 101.481,
+    "fim": 101.737
+   },
+   {
+    "w": "liberdade",
+    "bloco": 4,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 101.737,
+    "fim": 102.3
+   },
+   {
+    "w": "financeira?",
+    "bloco": 5,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 102.3,
+    "fim": 102.915
+   }
+  ]
+ },
+ {
+  "ini": 103.315,
+  "fim": 106.227,
+  "texto": "Ou ainda | nem sabe | se a sua carteira | está *batendo* | a *inflação?*",
+  "palavras": [
+   {
+    "w": "Ou",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 103.315,
+    "fim": 103.472
+   },
+   {
+    "w": "ainda",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 103.472,
+    "fim": 103.748
+   },
+   {
+    "w": "nem",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 103.748,
+    "fim": 103.944
+   },
+   {
+    "w": "sabe",
+    "bloco": 1,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 103.944,
+    "fim": 104.18
+   },
+   {
+    "w": "se",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 104.18,
+    "fim": 104.338
+   },
+   {
+    "w": "a",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 104.338,
+    "fim": 104.456
+   },
+   {
+    "w": "sua",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 104.456,
+    "fim": 104.652
+   },
+   {
+    "w": "carteira",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 104.652,
+    "fim": 105.046
+   },
+   {
+    "w": "está",
+    "bloco": 3,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 105.046,
+    "fim": 105.282
+   },
+   {
+    "w": "batendo",
+    "bloco": 3,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 105.282,
+    "fim": 105.636
+   },
+   {
+    "w": "a",
+    "bloco": 4,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 105.636,
+    "fim": 105.754
+   },
+   {
+    "w": "inflação?",
+    "bloco": 4,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 105.754,
+    "fim": 106.147
+   }
+  ]
+ },
+ {
+  "ini": 106.536,
+  "fim": 109.273,
+  "texto": "Comenta | *LIBERDADE* | que eu te mando | a tabela completa.",
+  "palavras": [
+   {
+    "w": "Comenta",
+    "bloco": 0,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 106.536,
+    "fim": 106.928
+   },
+   {
+    "w": "LIBERDADE",
+    "bloco": 1,
+    "destaque": true,
+    "vermelho": false,
+    "ini": 106.928,
+    "fim": 107.407
+   },
+   {
+    "w": "que",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 107.407,
+    "fim": 107.625
+   },
+   {
+    "w": "eu",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 107.625,
+    "fim": 107.799
+   },
+   {
+    "w": "te",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 107.799,
+    "fim": 107.973
+   },
+   {
+    "w": "mando",
+    "bloco": 2,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 107.973,
+    "fim": 108.278
+   },
+   {
+    "w": "a",
+    "bloco": 3,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 108.278,
+    "fim": 108.409
+   },
+   {
+    "w": "tabela",
+    "bloco": 3,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 108.409,
+    "fim": 108.757
+   },
+   {
+    "w": "completa.",
+    "bloco": 3,
+    "destaque": false,
+    "vermelho": false,
+    "ini": 108.757,
+    "fim": 109.193
+   }
+  ]
+ }
+]
