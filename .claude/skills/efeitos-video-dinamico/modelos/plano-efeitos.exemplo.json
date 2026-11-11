@@ -1,0 +1,69 @@
+{
+  "duracao": 38.0,
+  "frase_unica": "Dá pra editar vídeo só pedindo, sem abrir editor.",
+  "objetivo": "comentar EDITAR",
+  "rosto": {"x": 540, "y": 760},
+  "efeitos": [
+    {
+      "id": "e01", "efeito": "saindo-da-tela", "inicio": 0.0, "fim": 2.4,
+      "gatilho": "Eu parei de abrir o CapCut",
+      "motivo": "gancho: a cabeça sai da moldura junto com a quebra de hábito",
+      "textos": {"titulo": "PAREI DE EDITAR"},
+      "params": {"cor": "#C6FF3D"}
+    },
+    {
+      "id": "e02", "efeito": "zoom-digital", "inicio": 3.95, "fim": 4.9,
+      "gatilho": "editar",
+      "motivo": "palavra de impacto, quebra o primeiro vão",
+      "textos": {"palavras": ["EDITAR"]},
+      "params": {"escalas": [1.3], "pb": false}
+    },
+    {
+      "id": "e03", "efeito": "dentro-do-app", "inicio": 6.0, "fim": 9.0,
+      "gatilho": "eu só solto os clipes e peço",
+      "motivo": "ilustra o processo que está sendo descrito",
+      "textos": {"area": "solta seus vídeos aqui", "etiqueta": "4 CLIPES", "comando": "/editar corta, legenda e anima", "legenda": "SOLTA OS CLIPES"}
+    },
+    {
+      "id": "e04", "efeito": "corte-no-zoom", "inicio": 11.0, "fim": 11.5,
+      "gatilho": "agora olha o resultado",
+      "motivo": "troca de bloco, esconde o jump cut"
+    },
+    {
+      "id": "e05", "efeito": "mural-manchete", "inicio": 15.0, "fim": 18.0,
+      "gatilho": "ninguém tá falando disso",
+      "motivo": "re-gancho do meio: afirmação forte vira manchete",
+      "textos": {"manchetes": ["O CLAUDE AGORA EDITA VÍDEO", "SEM ABRIR O CAPCUT", "A EDIÇÃO MUDOU", "TUDO POR PROMPT"]}
+    },
+    {
+      "id": "e06", "efeito": "zoom-digital", "inicio": 20.9, "fim": 21.5,
+      "gatilho": "três passos",
+      "motivo": "número em destaque antes da lista",
+      "textos": {"palavras": ["3"]}
+    },
+    {
+      "id": "e07", "efeito": "checklist", "inicio": 21.5, "fim": 24.5,
+      "gatilho": "grava, manda, posta",
+      "motivo": "lista falada; cada item marca na palavra dita",
+      "textos": {"titulo": "SÓ ISSO", "itens": ["Gravar o vídeo", "Mandar pro Claude", "Postar"]},
+      "params": {"marcas": [21.8, 22.9, 24.1]}
+    },
+    {
+      "id": "e08", "efeito": "grafico-subindo", "inicio": 27.0, "fim": 30.0,
+      "gatilho": "meu alcance dobrou",
+      "motivo": "prova visual da afirmação de resultado",
+      "textos": {"rotulos": ["S", "T", "Q", "Q", "S", "S", "D"], "etiqueta": "DOBROU ↗"}
+    },
+    {
+      "id": "e09", "efeito": "capa-revista", "inicio": 33.0, "fim": 36.0,
+      "gatilho": "comenta EDITAR que eu te mando",
+      "motivo": "payoff de autoridade com o CTA na chamada vermelha; FUNDO seguido do gráfico, aceito porque há 3 s de rosto entre eles",
+      "textos": {"nome": "VICTOR", "chamadas": ["17 EFEITOS", "O FIM DO EDITOR?"], "chamada_vermelha": "COMENTA EDITAR", "faixa": "ESPECIAL"}
+    },
+    {
+      "id": "e10", "efeito": "punch-in", "inicio": 36.0, "fim": 38.0,
+      "gatilho": "(fim da fala)",
+      "motivo": "volta ao rosto limpo; último quadro emenda com o primeiro no loop"
+    }
+  ]
+}

@@ -1,0 +1,189 @@
+{
+ "duracao": 109.87299999999999,
+ "cenas": [
+  {
+   "id": "gancho",
+   "de": 0,
+   "ate": 0,
+   "fundo": "escuro",
+   "visual": "print",
+   "texto": "topo",
+   "ini": 0,
+   "fim": 2.243
+  },
+  {
+   "id": "dobro",
+   "de": 1,
+   "ate": 2,
+   "fundo": "claro",
+   "visual": null,
+   "texto": "centro",
+   "ini": 2.243,
+   "fim": 5.235
+  },
+  {
+   "id": "bom-ruim",
+   "de": 3,
+   "ate": 3,
+   "fundo": "escuro",
+   "visual": "interrogacao",
+   "texto": "centro",
+   "ini": 5.235,
+   "fim": 6.9719999999999995
+  },
+  {
+   "id": "ninguem-sabe",
+   "de": 4,
+   "ate": 5,
+   "fundo": "claro",
+   "visual": null,
+   "texto": "centro",
+   "ini": 6.9719999999999995,
+   "fim": 13.561
+  },
+  {
+   "id": "um-ano",
+   "de": 6,
+   "ate": 7,
+   "fundo": "escuro",
+   "visual": "donut",
+   "texto": "topo",
+   "ini": 13.561,
+   "fim": 22.073
+  },
+  {
+   "id": "dez-mil",
+   "de": 8,
+   "ate": 9,
+   "fundo": "claro",
+   "visual": "contador1",
+   "texto": "topo",
+   "ini": 22.073,
+   "fim": 25.236
+  },
+  {
+   "id": "negativo",
+   "de": 10,
+   "ate": 11,
+   "fundo": "escuro",
+   "visual": "printQueda",
+   "texto": "topo",
+   "ini": 25.236,
+   "fim": 28.663999999999998
+  },
+  {
+   "id": "dois-anos",
+   "de": 12,
+   "ate": 15,
+   "fundo": "claro",
+   "visual": "avanco233",
+   "texto": "topo",
+   "semTexto": [
+    14,
+    15
+   ],
+   "ini": 28.663999999999998,
+   "fim": 35.486000000000004
+  },
+  {
+   "id": "esperado",
+   "de": 16,
+   "ate": 18,
+   "fundo": "escuro",
+   "visual": "barras2",
+   "texto": "topo",
+   "ini": 35.486000000000004,
+   "fim": 41.064
+  },
+  {
+   "id": "regua",
+   "de": 19,
+   "ate": 22,
+   "fundo": "claro",
+   "visual": "regua",
+   "texto": "topo",
+   "ini": 41.064,
+   "fim": 51.542
+  },
+  {
+   "id": "ipca-x-minha",
+   "de": 23,
+   "ate": 25,
+   "fundo": "escuro",
+   "visual": "linhas",
+   "texto": "topo",
+   "ini": 51.542,
+   "fim": 58.999
+  },
+  {
+   "id": "interessante",
+   "de": 26,
+   "ate": 26,
+   "fundo": "claro",
+   "visual": null,
+   "texto": "centro",
+   "ini": 58.999,
+   "fim": 61.231
+  },
+  {
+   "id": "anos",
+   "de": 27,
+   "ate": 32,
+   "fundo": "escuro",
+   "visual": "barrasAnos",
+   "texto": "topo",
+   "ini": 61.231,
+   "fim": 76.963
+  },
+  {
+   "id": "juros",
+   "de": 33,
+   "ate": 35,
+   "fundo": "claro",
+   "visual": "curvaExp",
+   "texto": "topo",
+   "ini": 76.963,
+   "fim": 84.896
+  },
+  {
+   "id": "holofote",
+   "de": 36,
+   "ate": 39,
+   "fundo": "escuro",
+   "visual": "holofote",
+   "texto": "centro",
+   "ini": 84.896,
+   "fim": 97.5
+  },
+  {
+   "id": "pergunta",
+   "de": 40,
+   "ate": 41,
+   "fundo": "claro",
+   "visual": null,
+   "texto": "centro",
+   "ini": 97.5,
+   "fim": 103.195
+  },
+  {
+   "id": "ainda-nem",
+   "de": 42,
+   "ate": 42,
+   "fundo": "escuro",
+   "visual": null,
+   "texto": "centro",
+   "ini": 103.195,
+   "fim": 106.416
+  },
+  {
+   "id": "cta",
+   "de": 43,
+   "ate": 43,
+   "fundo": "claro",
+   "visual": "cta",
+   "texto": "topo",
+   "ini": 106.416,
+   "fim": 109.87299999999999
+  }
+ ]
+}

@@ -1,0 +1,153 @@
+[
+ {
+  "id": "gancho",
+  "de": 0,
+  "ate": 0,
+  "fundo": "escuro",
+  "visual": "print",
+  "texto": "topo"
+ },
+ {
+  "id": "dobro",
+  "de": 1,
+  "ate": 2,
+  "fundo": "claro",
+  "visual": null,
+  "texto": "centro"
+ },
+ {
+  "id": "bom-ruim",
+  "de": 3,
+  "ate": 3,
+  "fundo": "escuro",
+  "visual": "interrogacao",
+  "texto": "centro"
+ },
+ {
+  "id": "ninguem-sabe",
+  "de": 4,
+  "ate": 5,
+  "fundo": "claro",
+  "visual": null,
+  "texto": "centro"
+ },
+ {
+  "id": "um-ano",
+  "de": 6,
+  "ate": 7,
+  "fundo": "escuro",
+  "visual": "donut",
+  "texto": "topo"
+ },
+ {
+  "id": "dez-mil",
+  "de": 8,
+  "ate": 9,
+  "fundo": "claro",
+  "visual": "contador1",
+  "texto": "topo"
+ },
+ {
+  "id": "negativo",
+  "de": 10,
+  "ate": 11,
+  "fundo": "escuro",
+  "visual": "printQueda",
+  "texto": "topo"
+ },
+ {
+  "id": "dois-anos",
+  "de": 12,
+  "ate": 15,
+  "fundo": "claro",
+  "visual": "avanco233",
+  "texto": "topo",
+  "semTexto": [
+   14,
+   15
+  ]
+ },
+ {
+  "id": "esperado",
+  "de": 16,
+  "ate": 18,
+  "fundo": "escuro",
+  "visual": "barras2",
+  "texto": "topo"
+ },
+ {
+  "id": "regua",
+  "de": 19,
+  "ate": 22,
+  "fundo": "claro",
+  "visual": "regua",
+  "texto": "topo"
+ },
+ {
+  "id": "ipca-x-minha",
+  "de": 23,
+  "ate": 25,
+  "fundo": "escuro",
+  "visual": "linhas",
+  "texto": "topo"
+ },
+ {
+  "id": "interessante",
+  "de": 26,
+  "ate": 26,
+  "fundo": "claro",
+  "visual": null,
+  "texto": "centro"
+ },
+ {
+  "id": "anos",
+  "de": 27,
+  "ate": 32,
+  "fundo": "escuro",
+  "visual": "barrasAnos",
+  "texto": "topo"
+ },
+ {
+  "id": "juros",
+  "de": 33,
+  "ate": 35,
+  "fundo": "claro",
+  "visual": "curvaExp",
+  "texto": "topo"
+ },
+ {
+  "id": "holofote",
+  "de": 36,
+  "ate": 39,
+  "fundo": "escuro",
+  "visual": "holofote",
+  "texto": "centro"
+ },
+ {
+  "id": "pergunta",
+  "de": 40,
+  "ate": 41,
+  "fundo": "claro",
+  "visual": null,
+  "texto": "centro"
+ },
+ {
+  "id": "ainda-nem",
+  "de": 42,
+  "ate": 42,
+  "fundo": "escuro",
+  "visual": null,
+  "texto": "centro"
+ },
+ {
+  "id": "cta",
+  "de": 43,
+  "ate": 43,
+  "fundo": "claro",
+  "visual": "cta",
+  "texto": "topo",
+  "semTexto": [
+   43
+  ]
+ }
+]
