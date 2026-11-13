@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>slide 01</title>
+<link rel="stylesheet" href="base.css"><style>
+.luz { left: 90px; top: 40px; width: 900px; height: 760px; background: radial-gradient(closest-side, rgba(255,186,120,.26), rgba(255,186,120,0)); }
+.palco { left: 72px; right: 72px; top: 130px; height: 600px; display: flex; align-items: flex-end; justify-content: center; }
+.palco > div { flex: none; }
+.piso { left: 0; right: 0; top: 722px; height: 150px; background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,0)); }
+.carimbo { left: 92px; top: 116px; width: 264px; height: 264px; border-radius: 50%; transform: rotate(-11deg);
+  border: 7px solid var(--coral-forma); color: var(--coral); display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: rgba(22,19,18,.72); }
+.carimbo::after { content: ''; position: absolute; inset: 9px; border-radius: 50%; border: 2.5px solid var(--coral-forma); }
+.carimbo .k { font: 800 19px/1 'Montserrat'; letter-spacing: .16em; }
+.carimbo .d { font: 400 96px/1 'Anton'; margin: 8px 0 2px; letter-spacing: .01em; }
+.carimbo .y { font: 400 50px/1 'Anton'; letter-spacing: .06em; }
+.manchete { top: 800px; }
+.manchete .anton { line-height: 1.13; }
+.manchete .anton:nth-child(3) { margin-top: 12px; }
+</style></head>
+<body><div id="quadro" class="" data-n="01" data-total="09" data-semente="11" >
+<div class="conteudo">
+<div class="abs luz"></div>
+<div class="abs piso"></div>
+<div class="abs palco">
+  <div data-il="cigarro" style="width:256px;margin-right:-26px;z-index:3"></div>
+  <div data-il="destilado" style="width:216px;z-index:2"></div>
+  <div data-il="cerveja" style="width:194px;margin-left:-10px;z-index:1"></div>
+  <div data-il="lata" style="width:176px;margin-left:-16px;z-index:3"></div>
+</div>
+<div class="abs carimbo"><span class="k">A PARTIR DE</span><span class="d">2 FEV</span><span class="y">2027</span></div>
+<div class="col manchete">
+  <div class="anton" data-fit="936" style="color:var(--coral)">Imposto do pecado</div>
+  <div class="anton" data-fit="936" style="color:var(--coral)">começa em fevereiro.</div>
+  <div class="anton" data-fit="936">O aumento de verdade, não.</div>
+</div>
+</div></div>
+<script src="ilustras.js"></script><script src="base.js"></script></body></html>
