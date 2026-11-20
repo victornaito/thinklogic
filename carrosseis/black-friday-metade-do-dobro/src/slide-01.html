@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>slide 01</title>
+<link rel="stylesheet" href="base.css"><style>
+.luz { left: 60px; top: 30px; width: 960px; height: 780px; background: radial-gradient(closest-side, rgba(255,186,120,.24), rgba(255,186,120,0)); }
+.piso { left: 0; right: 0; top: 700px; height: 150px; background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,0)); }
+.cel { left: 150px; top: 196px; width: 262px; }
+.tag { left: 446px; top: 250px; width: 520px; }
+.riscado { left: 540px; top: 152px; font: 700 54px/1 'Montserrat'; color: rgba(255,255,255,.55); letter-spacing: -0.02em; }
+.riscado::after { content: ''; position: absolute; left: -6px; right: -6px; top: 50%; height: 6px; background: var(--coral-forma); transform: rotate(-4deg); }
+.manchete { top: 792px; }
+.manchete .anton { line-height: 1.12; }
+</style></head>
+<body><div id="quadro" class="" data-n="01" data-total="09" data-semente="13" >
+<div class="conteudo">
+<div class="abs luz"></div>
+<div class="abs piso"></div>
+<div class="abs cel" data-il="celular"></div>
+<div class="abs riscado">R$ 3.560</div>
+<div class="abs tag" data-il="etiqueta"></div>
+<div class="col manchete">
+  <div class="anton" data-fit="936" style="color:var(--coral)">O desconto da Black Friday</div>
+  <div class="anton" data-fit="936" style="color:var(--coral)">pode ser só o preço</div>
+  <div class="anton" data-fit="936">que estava em agosto.</div>
+</div>
+</div></div>
+<script src="ilustras.js"></script><script src="ilustras-bf.js"></script><script src="base.js"></script></body></html>
