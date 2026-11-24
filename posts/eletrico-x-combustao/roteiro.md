@@ -109,3 +109,48 @@ Ponto de virada: cerca de **45 km/dia em 3 anos** e **50 km/dia em 8 anos**. Se 
 - IPVA SP para elétricos: https://autopapo.com.br/noticia/isencao-ipva-2026-estados-carros-eletricos-hibridos/
 - Reajuste Enel SP 2026: https://www.infomoney.com.br/?p=3394051
 - Consumo do Dolphin Mini: https://revistaoeste.com/variedades/byd-dolphin-mini-teste-real-mostra-se-entrega-a-autonomia/
+
+## Notas da produção (v1 animada)
+- Foto do Dolphin Mini enviada pelo autor, com o fundo removido e convertida para tons de cinza. O HB20 é o mesmo do Extrato #3.
+- Duração final: 67 s, no ritmo lento (2,5 s por linha) e com os efeitos sonoros em −6 dB.
+
+## Legenda
+
+Elétrico ou combustão? Tem uma conta circulando por aí dizendo pra comprar o flex e investir "a diferença de preço + a economia de gasolina". Só que quem economiza gasolina é o dono do elétrico. Refiz a conta com dados reais de São Paulo, novembro de 2026.
+
+🔌 BYD Dolphin Mini GS: R$ 119.990
+⛽ HB20 Comfort 1.0: R$ 91.140 (0 km em SP)
+Diferença: R$ 28.850
+
+Rodando 30 km por dia, por mês:
+• Combustível: R$ 108 no BYD x R$ 430 no HB20 (ponto BYD)
+• Seguro: R$ 324 x R$ 171 (ponto HB20)
+• IPVA SP 4%: R$ 400 x R$ 304 (ponto HB20)
+No fim, o BYD economiza só R$ 73 por mês.
+
+E o mito de que elétrico desvaloriza mais? Na FIPE, o Dolphin Mini 2024 vale 83% do 0 km. O HB20 2024 vale 77%. Os dois perderam uns R$ 21 mil.
+
+Quem compra o HB20 e investe os R$ 28.850 a 10% ao ano:
+• 30 km/dia: HB20 na frente em R$ 6,5 mil em 3 anos e R$ 35 mil em 8 anos
+• 50 km/dia: praticamente empate
+• 80 km/dia: BYD na frente em R$ 42 mil em 8 anos
+Se você pegar o BYD na promoção de R$ 109.990, a virada cai para uns 40 km por dia.
+
+Regra prática: até 50 km por dia, flex + investe a diferença. Acima disso, elétrico.
+
+👇 Comenta: quantos km você roda por dia?
+
+📌 Salva e segue pro Extrato #5: Uber x carro próprio.
+
+Premissas (simulação em São Paulo, nov/2026):
+- Preços: Dolphin Mini GS na tabela BYD; HB20 em oferta 0 km em SP.
+- Combustível: gasolina a R$ 6,35 (ANP, capital SP); HB20 com 13,3 km/l (Inmetro, cidade).
+- Energia: Dolphin Mini com 12 kWh/100 km, a R$ 1,00/kWh em casa (estimativa).
+- Seguro: média nacional 2026 (R$ 3.890 x R$ 2.050).
+- IPVA SP de 4% nos dois.
+- Revisões parecidas, por isso ficam fora da conta.
+- Revenda: real até 3 anos (FIPE); estimada em 48% aos 8 anos para os dois.
+- Investimento a 10% a.a. líquido.
+Os valores variam conforme perfil, CEP e uso.
+
+#financaspessoais #educacaofinanceira #carroeletrico #byd #dolphinmini #hb20 #investimentos #saopaulo #investidordocerrado
