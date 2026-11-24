@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Elétrico x Combustão</title>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Archivo:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #e8e4d8;
+    --paper: #fbf9f3;
+    --ink: #1c1c1c;
+    --muted: #7a766c;
+    --dash: #c9c4b4;
+    --stamp: #b5442e;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { width:1080px; height:1920px; overflow:hidden; background:var(--bg); }
+  body { font-family:'Courier Prime', monospace; color:var(--ink); }
+  #stage { position:relative; width:1080px; height:1920px; }
+
+  /* papel persistente */
+  .receipt {
+    position:absolute; left:70px; top:400px; width:940px; height:1330px;
+    background:var(--paper);
+    box-shadow:0 30px 60px rgba(0,0,0,.18);
+    -webkit-mask-image:
+      radial-gradient(circle 16px at 28px 0px, transparent 15px, black 17px),
+      radial-gradient(circle 16px at 912px 0px, transparent 15px, black 17px);
+  }
+  .rhead { position:absolute; left:126px; width:828px; top:455px; text-align:center; }
+  .rhead .brand { font-family:'Archivo',sans-serif; font-weight:800; font-size:38px; letter-spacing:1px; }
+  .rhead .sub { margin-top:8px; font-size:23px; color:var(--muted); letter-spacing:3px; text-transform:uppercase; }
+  .dashed { position:absolute; left:126px; width:828px; border-top:3px dashed var(--dash); }
+  .barcode {
+    position:absolute; left:126px; width:828px; top:1600px; height:62px;
+    background-image:repeating-linear-gradient(90deg,
+      var(--ink) 0, var(--ink) 3px, transparent 3px, transparent 8px,
+      var(--ink) 8px, var(--ink) 9px, transparent 9px, transparent 14px);
+  }
+  .foot { position:absolute; left:126px; width:828px; top:1680px; text-align:center; font-size:22px; color:var(--muted); letter-spacing:2px; }
+
+  /* cenas */
+  .scene { position:absolute; inset:0; opacity:0; }
+  .cap {
+    position:absolute; left:60px; right:60px; top:130px; height:240px;
+    display:flex; align-items:center; justify-content:center; text-align:center;
+    font-family:'Archivo',sans-serif; font-weight:800; font-size:68px; line-height:1.08; letter-spacing:-.5px;
+  }
+  .cap em { font-style:normal; text-decoration:underline; text-decoration-thickness:7px; text-underline-offset:10px; }
+  .body { position:absolute; left:126px; width:828px; top:620px; height:930px; }
+
+  .row { display:grid; grid-template-columns:1fr 268px 268px; align-items:baseline; font-size:36px; margin-bottom:46px; }
+  .row .k { color:var(--muted); font-size:30px; }
+  .row .v { text-align:right; font-weight:700; }
+  .row.colh { font-family:'Archivo',sans-serif; font-weight:800; font-size:31px; margin-bottom:44px; letter-spacing:.5px; }
+  .row.colh span { text-align:right; }
+  .row.big { font-size:40px; }
+  .row.big .v { font-size:40px; }
+  .row.big .k { font-size:34px; color:var(--ink); font-family:'Archivo',sans-serif; font-weight:800; }
+  .sep { border-top:3px dashed var(--dash); margin:8px 0 34px; }
+  .note { font-size:33px; color:var(--muted); text-align:center; line-height:1.35; }
+  .note b { color:var(--ink); }
+  .tag {
+    display:inline-block; border:3px solid var(--ink); padding:6px 16px;
+    font-family:'Archivo',sans-serif; font-weight:800; font-size:26px; letter-spacing:1px;
+  }
+  .stamp {
+    position:absolute; border:5px solid var(--stamp); color:var(--stamp);
+    font-family:'Archivo',sans-serif; font-weight:800; letter-spacing:2px; text-align:center;
+    padding:10px 26px; background:rgba(251,249,243,.85);
+  }
+  .inline { display:inline-block; }
+
+  /* cena 1 */
+  .cars { display:flex; justify-content:space-between; margin-top:40px; }
+  .car { width:370px; text-align:center; }
+  .car svg { width:300px; height:130px; }
+  .car .name { font-family:'Archivo',sans-serif; font-weight:800; font-size:40px; margin-top:16px; }
+  .car .yr { font-size:24px; color:var(--muted); letter-spacing:3px; margin-top:6px; }
+  .car .price { font-size:52px; font-weight:700; margin-top:26px; }
+
+  /* cena 6 */
+  .strike { position:relative; display:inline-block; color:var(--muted); font-weight:400; font-size:30px; }
+  .strike i { position:absolute; left:0; top:52%; height:3px; background:var(--ink); width:0; }
+  .chart { position:relative; height:330px; margin-top:16px; display:flex; align-items:flex-end; justify-content:space-between; padding:0 6px; border-bottom:3px solid var(--ink); }
+  .bar { width:130px; position:relative; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%; }
+  .bar .fill { width:100%; background:var(--ink); transform-origin:bottom; }
+  .bar .val { font-size:23px; font-weight:700; margin-bottom:8px; white-space:nowrap; }
+  .years { display:flex; justify-content:space-between; padding:10px 6px 0; font-size:24px; color:var(--muted); }
+  .years span { width:130px; text-align:center; }
+
+  /* trocas */
+  .tl { position:relative; height:4px; margin:6px 40px 0; }
+  .tl i { position:absolute; inset:0; background:var(--ink); transform-origin:left; }
+  .swaps { display:flex; justify-content:space-between; margin-top:-14px; }
+  .swap { width:256px; text-align:center; }
+  .swap .dot { width:24px; height:24px; border-radius:50%; background:var(--ink); margin:0 auto; }
+  .swap .yh { font-family:'Archivo',sans-serif; font-weight:800; font-size:34px; margin:14px 0 22px; }
+  .sl { display:flex; justify-content:space-between; font-size:27px; margin-bottom:14px; }
+  .sl span { color:var(--muted); } .sl b { font-weight:700; }
+  .sl.big { font-size:34px; } .sl.big span { color:var(--ink); }
+  .sd { border-top:3px dashed var(--dash); margin:4px 0 16px; }
+  .sp { font-size:24px; border:3px solid var(--ink); padding:6px 8px; margin-top:8px; font-weight:700; }
+
+  /* extrato 4 */
+  .claim { font-size:38px; font-weight:700; margin:26px 0 0 20px; }
+  .rx { position:relative; display:inline-block; }
+  .rx i { position:absolute; left:-6px; top:50%; height:6px; background:var(--stamp); width:0; }
+
+  /* extrato 3 */
+  .carimg { text-align:center; } .carimg img { width:680px; }
+  .twocars { display:flex; justify-content:space-between; margin:0 0 30px; }
+  .twocars > div { width:390px; text-align:center; }
+  .twocars img { width:360px; display:block; margin:0 auto 10px; }
+  .twocars b { font-family:'Archivo',sans-serif; font-weight:800; font-size:34px; letter-spacing:1px; }
+  .row .v small { font-size:22px; font-weight:400; color:var(--muted); }
+  .hint { font-size:22px; color:var(--muted); text-align:right; margin:-30px 0 34px; }
+  .checks { display:grid; grid-template-columns:1fr 1fr; gap:34px 30px; margin-top:20px; }
+  .checks div { font-family:'Archivo',sans-serif; font-weight:800; font-size:40px; display:flex; align-items:center; gap:18px; }
+  .checks i { font-style:normal; width:54px; height:54px; border:4px solid var(--ink); border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:30px; }
+  .duo { display:flex; justify-content:space-around; align-items:flex-end; height:470px; margin-top:20px; border-bottom:3px solid var(--ink); }
+  .duo .col { width:250px; height:100%; display:flex; flex-direction:column; justify-content:flex-end; align-items:center; position:relative; }
+  .duo .fill { width:100%; background:var(--ink); transform-origin:bottom; }
+  .duo .val { font-size:44px; font-weight:700; margin-bottom:12px; }
+  .duo b { position:absolute; bottom:-92px; font-family:'Archivo',sans-serif; font-weight:800; font-size:27px; text-align:center; line-height:1.1; }
+  .duo b small { font-family:'Courier Prime',monospace; font-weight:400; font-size:22px; color:var(--muted); }
+  .case { display:flex; justify-content:space-between; align-items:center; padding:30px 0; border-bottom:3px dashed var(--dash); }
+  .case .k { font-size:33px; color:var(--ink); line-height:1.25; }
+  .case .w { text-align:right; font-size:31px; font-weight:700; line-height:1.2; }
+  .case .w b { display:block; font-family:'Archivo',sans-serif; font-weight:800; font-size:38px; letter-spacing:1px; }
+
+  /* cena 8 */
+  .moral { font-family:'Archivo',sans-serif; font-weight:800; font-size:64px; line-height:1.12; text-align:center; }
+  .moral .u { position:relative; display:inline-block; }
+  .moral .u i { position:absolute; left:0; bottom:-4px; height:9px; background:var(--ink); width:0; }
+</style>
+</head>
+<body>
+<div id="stage">
+
+  <div class="receipt"></div>
+  <div class="rhead">
+    <div class="brand">EXTRATO #4 · ELÉTRICO x COMBUSTÃO</div>
+    <div class="sub">simulação São Paulo · nov/2026</div>
+  </div>
+  <div class="dashed" style="top:585px"></div>
+  <div class="dashed" style="top:1565px"></div>
+  <div class="barcode"></div>
+  <div class="foot">INVESTIDOR DO CERRADO · SALVA ESSE EXTRATO</div>
+
+  <!-- CENA 1 · gancho -->
+  <section class="scene" data-start="0" data-end="5.4">
+    <div class="cap" data-a="up" data-t="0"><span>BYD ou HB20? Abaixo de <em>50 km por dia</em>, o elétrico não se paga</span></div>
+    <div class="body">
+      <div class="twocars" style="margin-top:30px">
+        <div data-a="left" data-t=".2"><img src="img/dolphin-mini.png" alt=""><b>BYD DOLPHIN MINI</b></div>
+        <div data-a="right" data-t=".2"><img src="img/hb20.png" alt=""><b>HB20</b></div>
+      </div>
+      <div class="stamp" data-a="stamp" data-t="1.4" style="left:356px; top:250px; font-size:48px; padding:2px 22px;">VS</div>
+      <div class="note" data-a="print" data-t="2.6" data-d=".8" style="margin-top:150px; font-size:38px">Fiz a conta.<br><b>Linha por linha.</b></div>
+    </div>
+  </section>
+
+  <!-- CENA 2 · o erro da conta que circula -->
+  <section class="scene" data-start="5.4" data-end="13.8">
+    <div class="cap" data-a="up" data-t="0"><span>A conta que circula<br>tem um <em>erro</em></span></div>
+    <div class="body">
+      <div class="note" data-a="print" data-t=".4" style="text-align:left; font-size:36px; color:var(--ink)">"Compra o flex e investe:</div>
+      <div class="claim" data-a="print" data-t="1.4">✓ a diferença de preço</div>
+      <div class="claim" data-a="print" data-t="2.6"><span class="rx">✓ + a economia de gasolina"<i data-strike="4.0"></i></span></div>
+      <div class="stamp" data-a="stamp" data-t="4.4" style="left:610px; top:100px; font-size:42px; padding:2px 20px;">ERRO</div>
+      <div class="note" data-a="print" data-t="5.6" data-d=".8" style="margin-top:90px; font-size:38px">Quem economiza gasolina<br>é <b>o dono do elétrico.</b></div>
+    </div>
+  </section>
+
+  <!-- CENA 3 · os dois carros -->
+  <section class="scene" data-start="13.8" data-end="21">
+    <div class="cap" data-a="up" data-t="0"><span>Os dois carros</span></div>
+    <div class="body">
+      <div class="row colh" data-a="fade" data-t=".2"><span></span><span>BYD</span><span>HB20</span></div>
+      <div class="row" data-a="print" data-t=".5"><span class="k">Preço 0 km</span><span class="v" data-count="119990" data-t=".6" data-cd="1.5" data-pre="R$ ">R$ 0</span><span class="v" data-count="91140" data-t=".6" data-cd="1.5" data-pre="R$ ">R$ 0</span></div>
+      <div class="hint" data-a="fade" data-t="1.6">BYD Dolphin Mini GS (tabela) · HB20 Comfort 1.0 (oferta em SP)</div>
+      <div class="sep" data-a="fade" data-t="3.0"></div>
+      <div class="row big" style="grid-template-columns:1fr 340px" data-a="print" data-t="3.2"><span class="k">Diferença</span><span class="v" data-count="28850" data-t="3.3" data-cd="1.5" data-pre="R$ ">R$ 0</span></div>
+      <div class="note" data-a="print" data-t="5.2" data-d=".7" style="margin-top:20px">Quem compra o HB20 <b>investe essa diferença.</b></div>
+    </div>
+  </section>
+
+  <!-- CENA 4 · por mês, 30 km/dia -->
+  <section class="scene" data-start="21" data-end="32.8">
+    <div class="cap" data-a="up" data-t="0"><span>Por mês, rodando<br>30 km por dia</span></div>
+    <div class="body">
+      <div class="row colh" data-a="fade" data-t=".2"><span></span><span>BYD</span><span>HB20</span></div>
+      <div class="row" data-a="print" data-t=".5"><span class="k">Combustível</span><span class="v" data-count="108" data-t=".6" data-cd="1.5" data-pre="R$ ">R$ 0</span><span class="v" data-count="430" data-t=".6" data-cd="1.5" data-pre="R$ " data-dim="2.2">R$ 0</span></div>
+      <div class="row" data-a="print" data-t="3.0"><span class="k">Seguro</span><span class="v" data-count="324" data-t="3.1" data-cd="1.5" data-pre="R$ " data-dim="4.7">R$ 0</span><span class="v" data-count="171" data-t="3.1" data-cd="1.5" data-pre="R$ ">R$ 0</span></div>
+      <div class="row" data-a="print" data-t="5.5"><span class="k">IPVA SP (4%)</span><span class="v" data-count="400" data-t="5.6" data-cd="1.5" data-pre="R$ " data-dim="7.2">R$ 0</span><span class="v" data-count="304" data-t="5.6" data-cd="1.5" data-pre="R$ ">R$ 0</span></div>
+      <div class="sep" data-a="fade" data-t="8.0"></div>
+      <div class="row big" data-a="print" data-t="8.2"><span class="k">Total</span><span class="v" data-count="832" data-t="8.3" data-cd="1.5" data-pre="R$ ">R$ 0</span><span class="v" data-count="905" data-t="8.3" data-cd="1.5" data-pre="R$ ">R$ 0</span></div>
+      <div style="text-align:center; margin-top:20px"><span class="tag" data-a="pop" data-t="10.1" style="font-size:30px">O BYD ECONOMIZA SÓ R$ 73/MÊS</span></div>
+    </div>
+  </section>
+
+  <!-- CENA 5 · o mito da desvalorização -->
+  <section class="scene" data-start="32.8" data-end="40.2">
+    <div class="cap" data-a="up" data-t="0"><span>Elétrico desvaloriza mais?</span></div>
+    <div class="body">
+      <div class="row" style="grid-template-columns:1fr 220px" data-a="print" data-t=".5"><span class="k">HB20 2024 hoje vale</span><span class="v" style="font-size:52px"><span data-count="77" data-t=".6" data-cd="1.5" data-suf="%">0%</span></span></div>
+      <div class="row" style="grid-template-columns:1fr 220px" data-a="print" data-t="2.8"><span class="k">Dolphin Mini 2024 vale</span><span class="v" style="font-size:52px"><span data-count="83" data-t="2.9" data-cd="1.5" data-suf="%">0%</span></span></div>
+      <div class="hint" data-a="fade" data-t="3.4">do preço do 0 km · FIPE out–nov/2026</div>
+      <div class="note" data-a="print" data-t="5.0" data-d=".8" style="margin-top:40px; font-size:38px">Os dois perderam<br><b>uns R$ 21 mil.</b></div>
+    </div>
+  </section>
+
+  <!-- CENA 6 · resultado para 30 km/dia -->
+  <section class="scene" data-start="40.2" data-end="48.8">
+    <div class="cap" data-a="up" data-t="0"><span>Pra quem roda<br>30 km por dia</span></div>
+    <div class="body">
+      <div class="row" style="grid-template-columns:1fr 300px" data-a="print" data-t=".4"><span class="k">HB20: investe hoje</span><span class="v">R$ 28.850</span></div>
+      <div class="row" style="grid-template-columns:1fr 300px" data-a="print" data-t="2.4"><span class="k">BYD: guarda por mês</span><span class="v">R$ 73</span></div>
+      <div class="sep" data-a="fade" data-t="4.2"></div>
+      <div class="row big" style="grid-template-columns:1fr 460px" data-a="print" data-t="4.4"><span class="k">Em 3 anos</span><span class="v">HB20 +R$ 6,5 mil</span></div>
+      <div class="row big" style="grid-template-columns:1fr 460px" data-a="print" data-t="5.8"><span class="k">Em 8 anos</span><span class="v">HB20 +R$ 35 mil</span></div>
+      <div class="stamp" data-a="stamp" data-t="7.0" style="left:110px; top:600px; font-size:44px; padding:6px 24px; white-space:nowrap;">30 KM/DIA: HB20 VENCE</div>
+    </div>
+  </section>
+
+  <!-- CENA 7 · a virada -->
+  <section class="scene" data-start="48.8" data-end="60.2">
+    <div class="cap" data-a="up" data-t="0"><span>Mas quantos km você <em>roda por dia</em>?</span></div>
+    <div class="body">
+      <div class="case" data-a="print" data-t=".6"><span class="k">30 km/dia</span><span class="w"><b>HB20</b>+R$ 35 mil</span></div>
+      <div class="case" data-a="print" data-t="3.1"><span class="k">50 km/dia</span><span class="w"><b>EMPATE</b>quase zero a zero</span></div>
+      <div class="case" data-a="print" data-t="5.6"><span class="k">80 km/dia</span><span class="w"><b>BYD</b>+R$ 42 mil</span></div>
+      <div class="hint" data-a="fade" data-t="6.2" style="margin-top:14px">em 8 anos, com a diferença investida a 10% a.a.</div>
+      <div style="text-align:center; margin-top:40px"><span class="tag" data-a="pop" data-t="8.1" style="font-size:27px">PEGOU O BYD NA PROMOÇÃO? A VIRADA CAI PRA ~40 KM/DIA</span></div>
+    </div>
+  </section>
+
+  <!-- CENA 8 · regra prática + CTA -->
+  <section class="scene" data-start="60.2" data-end="67" data-fadeout="0.5">
+    <div class="body" style="display:flex; flex-direction:column; justify-content:center; align-items:center; gap:46px">
+      <div class="moral" style="font-size:52px">
+        <div data-a="up" data-t=".2" style="color:var(--muted); font-size:40px">Até 50 km por dia:</div>
+        <div data-a="up" data-t=".6"><span class="u">flex + investe a diferença.<i data-strike="1.1"></i></span></div>
+        <div data-a="up" data-t="1.6" style="color:var(--muted); font-size:40px; margin-top:26px">Acima disso:</div>
+        <div data-a="up" data-t="2.0"><span class="u">elétrico.<i data-strike="2.5"></i></span></div>
+      </div>
+      <div class="note" data-a="print" data-t="3.3" data-d=".9" style="font-size:36px">Comenta: <b>quantos km você<br>roda por dia?</b></div>
+      <div class="note" data-a="fade" data-t="4.3" style="font-size:20px">Segue pro Extrato #5: Uber x carro próprio.<br>Simulação SP · nov/2026 · premissas na legenda.</div>
+    </div>
+  </section>
+
+</div>
+<script>
+  const clamp = x => Math.min(1, Math.max(0, x));
+  const easeOut = x => 1 - Math.pow(1 - x, 3);
+  const easeBack = x => { const c = 1.9; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+  const fmt = (n, dec) => n.toLocaleString('pt-BR', { minimumFractionDigits: dec, maximumFractionDigits: dec });
+  const num = (el, k, d) => el.dataset[k] !== undefined ? parseFloat(el.dataset[k]) : d;
+
+  const scenes = [...document.querySelectorAll('.scene')];
+  window.DURATION = Math.max(...scenes.map(s => +s.dataset.end));
+
+  function render(t) {
+    for (const s of scenes) {
+      const st = +s.dataset.start, en = +s.dataset.end, lt = t - st;
+      const last = s === scenes[scenes.length - 1];
+      if (t < st || t >= en + (last ? 1 : 0)) { s.style.opacity = 0; continue; }
+      const fin = easeOut(clamp(lt / .35));
+      const fo = num(s, 'fadeout', .3);
+      const fout = clamp((en - t) / fo);
+      s.style.opacity = Math.min(fin, fout);
+      s.style.transform = `translateY(${(1 - fin) * 40 + (1 - fout) * -30}px)`;
+
+      s.querySelectorAll('[data-a]').forEach(el => {
+        const p = clamp((lt - num(el, 't', 0)) / num(el, 'd', .45)), e = easeOut(p);
+        let o = e, tr = '', clip = '';
+        switch (el.dataset.a) {
+          case 'up': tr = `translateY(${(1 - e) * 40}px)`; break;
+          case 'left': tr = `translateX(${(1 - e) * -120}px)`; break;
+          case 'right': tr = `translateX(${(1 - e) * 120}px)`; break;
+          case 'print': o = p > 0 ? 1 : 0; clip = `inset(0 ${(1 - p) * 100}% 0 0)`; break;
+          case 'grow': o = 1; tr = `scaleY(${e})`; break;
+          case 'growx': o = 1; tr = `scaleX(${e})`; break;
+          case 'pop': tr = `scale(${p > 0 ? .4 + .6 * easeBack(p) : 0})`; break;
+          case 'stamp': {
+            const q = clamp((lt - num(el, 't', 0)) / .28), rot = num(el, 'rot', -8);
+            const shake = lt - num(el, 't', 0) > .28 ? Math.sin((lt - num(el, 't', 0)) * 60) * 6 * clamp(1 - (lt - num(el, 't', 0) - .28) / .3) : 0;
+            o = q > 0 ? Math.min(1, q * 2) : 0;
+            tr = `translate(${shake}px,0) rotate(${rot}deg) scale(${2.4 - 1.4 * q})`;
+            break;
+          }
+          case 'fade': break;
+        }
+        el.style.opacity = o; el.style.transform = tr; el.style.clipPath = clip;
+      });
+
+      s.querySelectorAll('[data-count]').forEach(el => {
+        const p = easeOut(clamp((lt - num(el, 't', 0)) / num(el, 'cd', 1)));
+        const from = num(el, 'from', 0), to = +el.dataset.count, dec = num(el, 'dec', 0);
+        const v = from + (to - from) * p;
+        el.textContent = (el.dataset.pre || '') + fmt(dec ? v : Math.round(v), dec) + (el.dataset.suf || '');
+      });
+
+      s.querySelectorAll('[data-dim]').forEach(el => {
+        el.style.opacity = 1 - .62 * easeOut(clamp((lt - +el.dataset.dim) / .4));
+        el.style.color = lt > +el.dataset.dim ? 'var(--muted)' : '';
+      });
+
+      s.querySelectorAll('[data-pulse]').forEach(el => {
+        const p = clamp((lt - +el.dataset.pulse) / .7);
+        el.style.display = 'inline-block';
+        el.style.transform = `scale(${1 + .28 * Math.sin(Math.PI * p)})`;
+        el.style.transformOrigin = 'right center';
+      });
+
+      s.querySelectorAll('[data-strike]').forEach(el => {
+        el.style.width = (easeOut(clamp((lt - +el.dataset.strike) / .4)) * 100) + '%';
+      });
+
+      const beam = s.querySelector('#beam');
+      if (beam) {
+        const bt = Math.max(0, lt - 1.2);
+        const ang = bt > 0 ? -14 * Math.exp(-bt * 1.6) * Math.cos(bt * 7) + 0.6 * (1 - Math.exp(-bt * 1.6)) : -14;
+        beam.setAttribute('transform', `rotate(${ang} 210 40)`);
+      }
+    }
+  }
+  window.render = render;
+  render(new URLSearchParams(location.search).has('t') ? +new URLSearchParams(location.search).get('t') : 0);
+</script>
+</body>
+</html>

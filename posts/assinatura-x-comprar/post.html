@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Assinar x Comprar</title>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Archivo:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #e8e4d8;
+    --paper: #fbf9f3;
+    --ink: #1c1c1c;
+    --muted: #7a766c;
+    --dash: #c9c4b4;
+    --stamp: #b5442e;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { width:1080px; height:1920px; overflow:hidden; background:var(--bg); }
+  body { font-family:'Courier Prime', monospace; color:var(--ink); }
+  #stage { position:relative; width:1080px; height:1920px; }
+
+  /* papel persistente */
+  .receipt {
+    position:absolute; left:70px; top:400px; width:940px; height:1330px;
+    background:var(--paper);
+    box-shadow:0 30px 60px rgba(0,0,0,.18);
+    -webkit-mask-image:
+      radial-gradient(circle 16px at 28px 0px, transparent 15px, black 17px),
+      radial-gradient(circle 16px at 912px 0px, transparent 15px, black 17px);
+  }
+  .rhead { position:absolute; left:126px; width:828px; top:455px; text-align:center; }
+  .rhead .brand { font-family:'Archivo',sans-serif; font-weight:800; font-size:38px; letter-spacing:1px; }
+  .rhead .sub { margin-top:8px; font-size:23px; color:var(--muted); letter-spacing:3px; text-transform:uppercase; }
+  .dashed { position:absolute; left:126px; width:828px; border-top:3px dashed var(--dash); }
+  .barcode {
+    position:absolute; left:126px; width:828px; top:1600px; height:62px;
+    background-image:repeating-linear-gradient(90deg,
+      var(--ink) 0, var(--ink) 3px, transparent 3px, transparent 8px,
+      var(--ink) 8px, var(--ink) 9px, transparent 9px, transparent 14px);
+  }
+  .foot { position:absolute; left:126px; width:828px; top:1680px; text-align:center; font-size:22px; color:var(--muted); letter-spacing:2px; }
+
+  /* cenas */
+  .scene { position:absolute; inset:0; opacity:0; }
+  .cap {
+    position:absolute; left:60px; right:60px; top:130px; height:240px;
+    display:flex; align-items:center; justify-content:center; text-align:center;
+    font-family:'Archivo',sans-serif; font-weight:800; font-size:68px; line-height:1.08; letter-spacing:-.5px;
+  }
+  .cap em { font-style:normal; text-decoration:underline; text-decoration-thickness:7px; text-underline-offset:10px; }
+  .body { position:absolute; left:126px; width:828px; top:620px; height:930px; }
+
+  .row { display:grid; grid-template-columns:1fr 268px 268px; align-items:baseline; font-size:36px; margin-bottom:46px; }
+  .row .k { color:var(--muted); font-size:30px; }
+  .row .v { text-align:right; font-weight:700; }
+  .row.colh { font-family:'Archivo',sans-serif; font-weight:800; font-size:31px; margin-bottom:44px; letter-spacing:.5px; }
+  .row.colh span { text-align:right; }
+  .row.big { font-size:40px; }
+  .row.big .v { font-size:40px; }
+  .row.big .k { font-size:34px; color:var(--ink); font-family:'Archivo',sans-serif; font-weight:800; }
+  .sep { border-top:3px dashed var(--dash); margin:8px 0 34px; }
+  .note { font-size:33px; color:var(--muted); text-align:center; line-height:1.35; }
+  .note b { color:var(--ink); }
+  .tag {
+    display:inline-block; border:3px solid var(--ink); padding:6px 16px;
+    font-family:'Archivo',sans-serif; font-weight:800; font-size:26px; letter-spacing:1px;
+  }
+  .stamp {
+    position:absolute; border:5px solid var(--stamp); color:var(--stamp);
+    font-family:'Archivo',sans-serif; font-weight:800; letter-spacing:2px; text-align:center;
+    padding:10px 26px; background:rgba(251,249,243,.85);
+  }
+  .inline { display:inline-block; }
+
+  /* cena 1 */
+  .cars { display:flex; justify-content:space-between; margin-top:40px; }
+  .car { width:370px; text-align:center; }
+  .car svg { width:300px; height:130px; }
+  .car .name { font-family:'Archivo',sans-serif; font-weight:800; font-size:40px; margin-top:16px; }
+  .car .yr { font-size:24px; color:var(--muted); letter-spacing:3px; margin-top:6px; }
+  .car .price { font-size:52px; font-weight:700; margin-top:26px; }
+
+  /* cena 6 */
+  .strike { position:relative; display:inline-block; color:var(--muted); font-weight:400; font-size:30px; }
+  .strike i { position:absolute; left:0; top:52%; height:3px; background:var(--ink); width:0; }
+  .chart { position:relative; height:330px; margin-top:16px; display:flex; align-items:flex-end; justify-content:space-between; padding:0 6px; border-bottom:3px solid var(--ink); }
+  .bar { width:130px; position:relative; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%; }
+  .bar .fill { width:100%; background:var(--ink); transform-origin:bottom; }
+  .bar .val { font-size:23px; font-weight:700; margin-bottom:8px; white-space:nowrap; }
+  .years { display:flex; justify-content:space-between; padding:10px 6px 0; font-size:24px; color:var(--muted); }
+  .years span { width:130px; text-align:center; }
+
+  /* trocas */
+  .tl { position:relative; height:4px; margin:6px 40px 0; }
+  .tl i { position:absolute; inset:0; background:var(--ink); transform-origin:left; }
+  .swaps { display:flex; justify-content:space-between; margin-top:-14px; }
+  .swap { width:256px; text-align:center; }
+  .swap .dot { width:24px; height:24px; border-radius:50%; background:var(--ink); margin:0 auto; }
+  .swap .yh { font-family:'Archivo',sans-serif; font-weight:800; font-size:34px; margin:14px 0 22px; }
+  .sl { display:flex; justify-content:space-between; font-size:27px; margin-bottom:14px; }
+  .sl span { color:var(--muted); } .sl b { font-weight:700; }
+  .sl.big { font-size:34px; } .sl.big span { color:var(--ink); }
+  .sd { border-top:3px dashed var(--dash); margin:4px 0 16px; }
+  .sp { font-size:24px; border:3px solid var(--ink); padding:6px 8px; margin-top:8px; font-weight:700; }
+
+  /* extrato 3 */
+  .carimg { text-align:center; } .carimg img { width:680px; }
+  .twocars { display:flex; justify-content:space-between; margin:0 0 30px; }
+  .twocars > div { width:390px; text-align:center; }
+  .twocars img { width:360px; display:block; margin:0 auto 10px; }
+  .twocars b { font-family:'Archivo',sans-serif; font-weight:800; font-size:34px; letter-spacing:1px; }
+  .row .v small { font-size:22px; font-weight:400; color:var(--muted); }
+  .hint { font-size:22px; color:var(--muted); text-align:right; margin:-30px 0 34px; }
+  .checks { display:grid; grid-template-columns:1fr 1fr; gap:34px 30px; margin-top:20px; }
+  .checks div { font-family:'Archivo',sans-serif; font-weight:800; font-size:40px; display:flex; align-items:center; gap:18px; }
+  .checks i { font-style:normal; width:54px; height:54px; border:4px solid var(--ink); border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:30px; }
+  .duo { display:flex; justify-content:space-around; align-items:flex-end; height:470px; margin-top:20px; border-bottom:3px solid var(--ink); }
+  .duo .col { width:250px; height:100%; display:flex; flex-direction:column; justify-content:flex-end; align-items:center; position:relative; }
+  .duo .fill { width:100%; background:var(--ink); transform-origin:bottom; }
+  .duo .val { font-size:44px; font-weight:700; margin-bottom:12px; }
+  .duo b { position:absolute; bottom:-92px; font-family:'Archivo',sans-serif; font-weight:800; font-size:27px; text-align:center; line-height:1.1; }
+  .duo b small { font-family:'Courier Prime',monospace; font-weight:400; font-size:22px; color:var(--muted); }
+  .case { display:flex; justify-content:space-between; align-items:center; padding:30px 0; border-bottom:3px dashed var(--dash); }
+  .case .k { font-size:33px; color:var(--ink); line-height:1.25; }
+  .case .w { text-align:right; font-size:31px; font-weight:700; line-height:1.2; }
+  .case .w b { display:block; font-family:'Archivo',sans-serif; font-weight:800; font-size:38px; letter-spacing:1px; }
+
+  /* cena 8 */
+  .moral { font-family:'Archivo',sans-serif; font-weight:800; font-size:64px; line-height:1.12; text-align:center; }
+  .moral .u { position:relative; display:inline-block; }
+  .moral .u i { position:absolute; left:0; bottom:-4px; height:9px; background:var(--ink); width:0; }
+</style>
+</head>
+<body>
+<div id="stage">
+
+  <div class="receipt"></div>
+  <div class="rhead">
+    <div class="brand">EXTRATO #3 · ASSINAR x COMPRAR</div>
+    <div class="sub">HB20 2027 · simulação São Paulo · nov/2026</div>
+  </div>
+  <div class="dashed" style="top:585px"></div>
+  <div class="dashed" style="top:1565px"></div>
+  <div class="barcode"></div>
+  <div class="foot">INVESTIDOR DO CERRADO · SALVA ESSE EXTRATO</div>
+
+  <!-- CENA 1 · gancho com resultado -->
+  <section class="scene" data-start="0" data-end="5.2">
+    <div class="cap" data-a="up" data-t="0"><span>Assinar um HB20 em SP sai <em>R$ 13 mil</em> mais barato que financiar</span></div>
+    <div class="body">
+      <div class="carimg" data-a="right" data-t=".2"><img src="img/hb20.png" alt=""></div>
+      <div class="note" data-a="fade" data-t=".7" style="margin-top:18px">Hyundai HB20 Comfort 1.0 · 2027</div>
+      <div class="stamp" data-a="stamp" data-t="1.8" style="left:150px; top:420px; font-size:46px; padding:6px 26px;">ASSINANDO: +R$ 13 MIL</div>
+      <div class="note" data-a="print" data-t="2.9" data-d=".8" style="margin-top:190px; font-size:40px"><b>Mas tem uma pegadinha.</b></div>
+    </div>
+  </section>
+
+  <!-- CENA 2 · o mesmo carro, dois caminhos -->
+  <section class="scene" data-start="5.2" data-end="13.6">
+    <div class="cap" data-a="up" data-t="0"><span>O mesmo carro,<br>dois caminhos</span></div>
+    <div class="body">
+      <div class="twocars">
+        <div data-a="left" data-t=".2"><img src="img/hb20.png" alt=""><b>ASSINAR</b></div>
+        <div data-a="right" data-t=".2"><img src="img/hb20.png" alt=""><b>COMPRAR</b></div>
+      </div>
+      <div class="row" data-a="print" data-t="1.2"><span class="k">Para ter o carro</span><span class="v"><span data-count="2050" data-t="1.3" data-cd="1.5" data-pre="R$ ">R$ 0</span><small>/mês</small></span><span class="v" data-count="91140" data-t="1.3" data-cd="1.5" data-pre="R$ ">R$ 0</span></div>
+      <div class="row" data-a="print" data-t="3.9"><span class="k">Contrato</span><span class="v">36 meses</span><span class="v">é seu</span></div>
+      <div class="row" data-a="print" data-t="6.2"><span class="k">Rodagem</span><span class="v">1.000 km/mês</span><span class="v">livre</span></div>
+    </div>
+  </section>
+
+  <!-- CENA 3 · o que a assinatura inclui -->
+  <section class="scene" data-start="13.6" data-end="20.6">
+    <div class="cap" data-a="up" data-t="0"><span>O que a assinatura<br>já inclui</span></div>
+    <div class="body">
+      <div class="checks">
+        <div data-a="pop" data-t=".5"><i>✓</i>IPVA</div>
+        <div data-a="pop" data-t="1.3"><i>✓</i>Seguro</div>
+        <div data-a="pop" data-t="2.1"><i>✓</i>Revisões</div>
+        <div data-a="pop" data-t="2.9"><i>✓</i>Emplacamento</div>
+        <div data-a="pop" data-t="3.7"><i>✓</i>Assistência 24h</div>
+        <div data-a="pop" data-t="4.5"><i>✓</i>Carro reserva</div>
+      </div>
+      <div class="note" data-a="print" data-t="5.2" data-d=".8" style="margin-top:70px; font-size:38px">Na compra, <b>tudo isso sai do seu bolso.</b></div>
+    </div>
+  </section>
+
+  <!-- CENA 4 · quanto custa por mês -->
+  <section class="scene" data-start="20.6" data-end="32">
+    <div class="cap" data-a="up" data-t="0"><span>Quanto custa<br>por mês</span></div>
+    <div class="body">
+      <div class="row colh" data-a="fade" data-t=".2"><span></span><span>ASSINAR</span><span>COMPRAR</span></div>
+      <div class="row" data-a="print" data-t=".6"><span class="k">Entrada (20%)</span><span class="v">R$ 0</span><span class="v" data-count="18228" data-t=".7" data-cd="1.5" data-pre="R$ ">R$ 0</span></div>
+      <div class="row" data-a="print" data-t="3.1"><span class="k">Mensal (36x)</span><span class="v" data-count="2050" data-t="3.2" data-cd="1.5" data-pre="R$ ">R$ 0</span><span class="v" data-count="2848" data-t="3.2" data-cd="1.5" data-pre="R$ ">R$ 0</span></div>
+      <div class="hint" data-a="fade" data-t="4.2">juros médios do Banco Central: 26,4% ao ano</div>
+      <div class="row" data-a="print" data-t="5.7"><span class="k">IPVA+seguro+rev.</span><span class="v">incluso</span><span class="v" data-count="684" data-t="5.8" data-cd="1.5" data-pre="R$ ">R$ 0</span></div>
+      <div class="sep" data-a="fade" data-t="7.9"></div>
+      <div class="row big" data-a="print" data-t="8.1"><span class="k">Total por mês</span><span class="v" data-count="2050" data-t="8.2" data-cd="1.5" data-pre="R$ ">R$ 0</span><span class="v" data-count="3532" data-t="8.2" data-cd="1.5" data-pre="R$ " data-dim="10">R$ 0</span></div>
+    </div>
+  </section>
+
+  <!-- CENA 5 · em 3 anos -->
+  <section class="scene" data-start="32" data-end="40.8">
+    <div class="cap" data-a="up" data-t="0"><span>Em 3 anos</span></div>
+    <div class="body">
+      <div class="row" style="grid-template-columns:1fr 300px" data-a="print" data-t=".4"><span class="k">Quem assina guarda por mês</span><span class="v" data-count="1482" data-t=".5" data-cd="1.5" data-pre="R$ ">R$ 0</span></div>
+      <div class="row" style="grid-template-columns:1fr 300px" data-a="print" data-t="2.5"><span class="k">+ a entrada, investindo a</span><span class="v">10% a.a.</span></div>
+      <div class="duo">
+        <div class="col">
+          <span class="val" data-a="fade" data-t="4.6"><span data-count="85.7" data-dec="1" data-t="4.6" data-cd="2" data-suf=" mil">0 mil</span></span>
+          <div class="fill" data-a="grow" data-t="4.4" data-d="2" style="height:330px"></div>
+          <b>ASSINANTE<br><small>investido</small></b>
+        </div>
+        <div class="col">
+          <span class="val" data-a="fade" data-t="4.6"><span data-count="72.2" data-dec="1" data-t="4.6" data-cd="2" data-suf=" mil">0 mil</span></span>
+          <div class="fill" data-a="grow" data-t="4.4" data-d="2" style="height:278px"></div>
+          <b>COMPRADOR<br><small>carro com 3 anos</small></b>
+        </div>
+      </div>
+      <div class="stamp" data-a="stamp" data-t="6.9" style="left:130px; top:800px; font-size:44px; padding:6px 24px; white-space:nowrap;">ASSINATURA +R$ 13 MIL</div>
+    </div>
+  </section>
+
+  <!-- CENA 6 · como a locadora consegue -->
+  <section class="scene" data-start="40.8" data-end="46.6">
+    <div class="cap" data-a="up" data-t="0"><span>Como a locadora<br>consegue?</span></div>
+    <div class="body">
+      <div class="row" style="grid-template-columns:1fr 200px" data-a="print" data-t=".4"><span class="k">IPVA que você paga em SP</span><span class="v" style="font-size:52px">4%</span></div>
+      <div class="row" style="grid-template-columns:1fr 200px" data-a="print" data-t="2.1"><span class="k">IPVA da locadora</span><span class="v" style="font-size:52px">1%</span></div>
+      <div class="note" data-a="print" data-t="3.8" data-d=".8" style="margin-top:40px; font-size:36px">E ela compra o carro<br><b>com desconto de frota.</b></div>
+    </div>
+  </section>
+
+  <!-- CENA 7 · a pegadinha (virada) -->
+  <section class="scene" data-start="46.6" data-end="59.2">
+    <div class="cap" data-a="up" data-t="0"><span>Mas depende de <em>quanto tempo</em> você fica com o carro</span></div>
+    <div class="body">
+      <div class="case" data-a="print" data-t=".6"><span class="k">Ia financiar e<br>fica 3 anos</span><span class="w"><b>ASSINAR</b>+R$ 13,5 mil</span></div>
+      <div class="case" data-a="print" data-t="3.1"><span class="k">Tem dinheiro à vista<br>e fica 3 anos</span><span class="w"><b>COMPRAR</b>+R$ 7,7 mil</span></div>
+      <div class="case" data-a="print" data-t="5.6"><span class="k">Fica 6 anos</span><span class="w"><b>COMPRAR</b>+R$ 11,7 mil</span></div>
+      <div class="case" data-a="print" data-t="8.1"><span class="k">Fica 10 anos</span><span class="w"><b>COMPRAR</b>+R$ 78,6 mil</span></div>
+      <div style="text-align:center; margin-top:30px"><span class="tag" data-a="pop" data-t="10.4" style="font-size:27px">RODA MAIS DE 1.000 KM/MÊS? A ASSINATURA ENCARECE</span></div>
+    </div>
+  </section>
+
+  <!-- CENA 8 · regra prática + CTA -->
+  <section class="scene" data-start="59.2" data-end="66" data-fadeout="0.5">
+    <div class="body" style="display:flex; flex-direction:column; justify-content:center; align-items:center; gap:46px">
+      <div class="moral" style="font-size:52px">
+        <div data-a="up" data-t=".2" style="color:var(--muted); font-size:40px">Até 3 anos, sem dinheiro à vista:</div>
+        <div data-a="up" data-t=".6"><span class="u">assine.<i data-strike="1.1"></i></span></div>
+        <div data-a="up" data-t="1.6" style="color:var(--muted); font-size:40px; margin-top:26px">Vai ficar 6 anos ou mais:</div>
+        <div data-a="up" data-t="2.0"><span class="u">compre.<i data-strike="2.5"></i></span></div>
+      </div>
+      <div class="note" data-a="print" data-t="3.3" data-d=".9" style="font-size:36px">Comenta: <b>quanto tempo você<br>fica com um carro?</b></div>
+      <div class="note" data-a="fade" data-t="4.3" style="font-size:20px">Segue pro Extrato #4: Uber x carro próprio.<br>Simulação SP · nov/2026 · premissas na legenda.</div>
+    </div>
+  </section>
+
+</div>
+<script>
+  const clamp = x => Math.min(1, Math.max(0, x));
+  const easeOut = x => 1 - Math.pow(1 - x, 3);
+  const easeBack = x => { const c = 1.9; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+  const fmt = (n, dec) => n.toLocaleString('pt-BR', { minimumFractionDigits: dec, maximumFractionDigits: dec });
+  const num = (el, k, d) => el.dataset[k] !== undefined ? parseFloat(el.dataset[k]) : d;
+
+  const scenes = [...document.querySelectorAll('.scene')];
+  window.DURATION = Math.max(...scenes.map(s => +s.dataset.end));
+
+  function render(t) {
+    for (const s of scenes) {
+      const st = +s.dataset.start, en = +s.dataset.end, lt = t - st;
+      const last = s === scenes[scenes.length - 1];
+      if (t < st || t >= en + (last ? 1 : 0)) { s.style.opacity = 0; continue; }
+      const fin = easeOut(clamp(lt / .35));
+      const fo = num(s, 'fadeout', .3);
+      const fout = clamp((en - t) / fo);
+      s.style.opacity = Math.min(fin, fout);
+      s.style.transform = `translateY(${(1 - fin) * 40 + (1 - fout) * -30}px)`;
+
+      s.querySelectorAll('[data-a]').forEach(el => {
+        const p = clamp((lt - num(el, 't', 0)) / num(el, 'd', .45)), e = easeOut(p);
+        let o = e, tr = '', clip = '';
+        switch (el.dataset.a) {
+          case 'up': tr = `translateY(${(1 - e) * 40}px)`; break;
+          case 'left': tr = `translateX(${(1 - e) * -120}px)`; break;
+          case 'right': tr = `translateX(${(1 - e) * 120}px)`; break;
+          case 'print': o = p > 0 ? 1 : 0; clip = `inset(0 ${(1 - p) * 100}% 0 0)`; break;
+          case 'grow': o = 1; tr = `scaleY(${e})`; break;
+          case 'growx': o = 1; tr = `scaleX(${e})`; break;
+          case 'pop': tr = `scale(${p > 0 ? .4 + .6 * easeBack(p) : 0})`; break;
+          case 'stamp': {
+            const q = clamp((lt - num(el, 't', 0)) / .28), rot = num(el, 'rot', -8);
+            const shake = lt - num(el, 't', 0) > .28 ? Math.sin((lt - num(el, 't', 0)) * 60) * 6 * clamp(1 - (lt - num(el, 't', 0) - .28) / .3) : 0;
+            o = q > 0 ? Math.min(1, q * 2) : 0;
+            tr = `translate(${shake}px,0) rotate(${rot}deg) scale(${2.4 - 1.4 * q})`;
+            break;
+          }
+          case 'fade': break;
+        }
+        el.style.opacity = o; el.style.transform = tr; el.style.clipPath = clip;
+      });
+
+      s.querySelectorAll('[data-count]').forEach(el => {
+        const p = easeOut(clamp((lt - num(el, 't', 0)) / num(el, 'cd', 1)));
+        const from = num(el, 'from', 0), to = +el.dataset.count, dec = num(el, 'dec', 0);
+        const v = from + (to - from) * p;
+        el.textContent = (el.dataset.pre || '') + fmt(dec ? v : Math.round(v), dec) + (el.dataset.suf || '');
+      });
+
+      s.querySelectorAll('[data-dim]').forEach(el => {
+        el.style.opacity = 1 - .62 * easeOut(clamp((lt - +el.dataset.dim) / .4));
+        el.style.color = lt > +el.dataset.dim ? 'var(--muted)' : '';
+      });
+
+      s.querySelectorAll('[data-pulse]').forEach(el => {
+        const p = clamp((lt - +el.dataset.pulse) / .7);
+        el.style.display = 'inline-block';
+        el.style.transform = `scale(${1 + .28 * Math.sin(Math.PI * p)})`;
+        el.style.transformOrigin = 'right center';
+      });
+
+      s.querySelectorAll('[data-strike]').forEach(el => {
+        el.style.width = (easeOut(clamp((lt - +el.dataset.strike) / .4)) * 100) + '%';
+      });
+
+      const beam = s.querySelector('#beam');
+      if (beam) {
+        const bt = Math.max(0, lt - 1.2);
+        const ang = bt > 0 ? -14 * Math.exp(-bt * 1.6) * Math.cos(bt * 7) + 0.6 * (1 - Math.exp(-bt * 1.6)) : -14;
+        beam.setAttribute('transform', `rotate(${ang} 210 40)`);
+      }
+    }
+  }
+  window.render = render;
+  render(new URLSearchParams(location.search).has('t') ? +new URLSearchParams(location.search).get('t') : 0);
+</script>
+</body>
+</html>
