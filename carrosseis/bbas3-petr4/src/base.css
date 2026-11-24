@@ -1,0 +1,77 @@
+/* base.css · tokens e peças comuns do carrossel "imposto do pecado".
+   Gramática medida na referência (docs/guia-de-estilo.md): fundo carvão com luz quente desfocada,
+   branco + um destaque coral, cartões de vidro, amarelo só no slide do CTA. */
+@font-face { font-family: 'Montserrat'; src: url('fontes/montserrat-latin-500-normal.woff2') format('woff2'); font-weight: 500; }
+@font-face { font-family: 'Montserrat'; src: url('fontes/montserrat-latin-600-normal.woff2') format('woff2'); font-weight: 600; }
+@font-face { font-family: 'Montserrat'; src: url('fontes/montserrat-latin-700-normal.woff2') format('woff2'); font-weight: 700; }
+@font-face { font-family: 'Montserrat'; src: url('fontes/montserrat-latin-800-normal.woff2') format('woff2'); font-weight: 800; }
+@font-face { font-family: 'Montserrat'; src: url('fontes/montserrat-latin-900-normal.woff2') format('woff2'); font-weight: 900; }
+@font-face { font-family: 'Anton'; src: url('fontes/anton-latin-400-normal.woff2') format('woff2'); font-weight: 400; }
+
+:root {
+  --fundo: #1A1817; --tinta: #FFFFFF; --mudo: rgba(255,255,255,.62);
+  --coral: #FF5A47;        /* destaque em texto */
+  --coral-forma: #DC3F2E;  /* destaque em forma (pílula, carimbo, seta) */
+  --amarelo: #FFD60A;      /* só no CTA */
+  --margem: 72px; --raio: 28px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1080px; height: 1350px; overflow: hidden; background: var(--fundo); }
+body { -webkit-font-smoothing: antialiased; font-family: 'Montserrat'; color: var(--tinta); }
+.abs { position: absolute; }
+
+/* fundo: sala escura, luzes quentes fora de foco no alto, mesa escura embaixo */
+#quadro { position: absolute; inset: 0; overflow: hidden;
+  background: radial-gradient(120% 70% at 50% 0%, #3A2B23 0%, #241F1D 46%, #131110 100%); }
+#quadro.cta { background: radial-gradient(120% 70% at 50% 0%, #3B3830 0%, #24231F 46%, #121211 100%); }
+.bokeh { position: absolute; inset: 0; pointer-events: none; }
+.bokeh i { position: absolute; border-radius: 50%; filter: blur(16px); }
+.mesa { position: absolute; left: 0; right: 0; bottom: 0; height: 46%; pointer-events: none;
+  background: linear-gradient(180deg, rgba(10,9,8,0) 0%, rgba(10,9,8,.55) 55%, rgba(10,9,8,.82) 100%); }
+#grao { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .16; mix-blend-mode: overlay; pointer-events: none; }
+.conteudo { position: absolute; inset: 0; }
+
+/* coluna de texto: tudo empilha, nada se sobrepõe */
+.col { position: absolute; left: var(--margem); right: var(--margem); display: flex; flex-direction: column; }
+.centro { align-items: center; text-align: center; }
+
+/* vozes */
+.titulo { font: 800 80px/1.04 'Montserrat'; letter-spacing: -0.035em; }
+.corpo { font: 500 40px/1.28 'Montserrat'; letter-spacing: -0.012em; color: rgba(255,255,255,.93); }
+.corpo b, .forte { font-weight: 800; color: #fff; }
+.c { color: var(--coral); font-weight: 800; }
+.a { color: var(--amarelo); font-weight: 800; }
+.nota { font: 500 24px/1.4 'Montserrat'; color: var(--mudo); }
+.caps { font: 700 24px/1.15 'Montserrat'; letter-spacing: .09em; text-transform: uppercase; }
+.anton { font-family: 'Anton'; font-weight: 400; letter-spacing: .005em; text-transform: uppercase; line-height: 1.06; }
+
+/* marcas à mão: traço embaixo, elipse em volta, marca-texto atrás */
+.traco, .elipse, .marca { position: relative; display: inline-block; white-space: nowrap; }
+.traco::after { content: ''; position: absolute; left: -2%; right: -4%; bottom: -.22em; height: .24em;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 24' preserveAspectRatio='none'%3E%3Cpath d='M4 16 C70 4 190 3 296 8 C230 9 120 12 40 21' fill='none' stroke='%23FF5A47' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center / 100% 100%; }
+.elipse::after { content: ''; position: absolute; left: -5%; right: -5%; top: -22%; bottom: -24%;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 120' preserveAspectRatio='none'%3E%3Cpath d='M214 8 C330 4 394 30 392 62 C390 98 300 114 196 113 C90 112 8 96 8 60 C8 26 96 6 236 12' fill='none' stroke='%23FF5A47' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center / 100% 100%; }
+.marca { z-index: 0; padding: 0 .16em; }
+.marca::before { content: ''; position: absolute; z-index: -1; left: 0; right: 0; top: .08em; bottom: .02em; border-radius: .18em .5em .22em .42em;
+  background: var(--coral-forma); transform: rotate(-.8deg); }
+.marca.am { color: #15130F; font-weight: 800; }
+.marca.am::before { background: var(--amarelo); }
+
+/* cartão de vidro */
+.vidro { border-radius: var(--raio);
+  background: linear-gradient(180deg, rgba(255,255,255,.14) 0%, rgba(255,255,255,.05) 100%);
+  border: 1.5px solid rgba(255,255,255,.26);
+  box-shadow: 0 26px 54px rgba(0,0,0,.38), inset 0 1px 0 rgba(255,255,255,.28); }
+
+/* pílula da alíquota */
+.pilula { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 20px;
+  background: linear-gradient(180deg, #E8503C 0%, #C93524 100%); color: #fff;
+  box-shadow: inset 0 1.5px 0 rgba(255,255,255,.38), 0 10px 22px rgba(190,45,30,.34); font-weight: 800; letter-spacing: -0.02em; }
+
+/* rodapé fixo: o @ e a posição, sempre no mesmo lugar */
+.rodape { position: absolute; left: var(--margem); bottom: 44px; display: flex; align-items: center; gap: 14px;
+  font: 600 22px/1 'Montserrat'; letter-spacing: .01em; color: rgba(255,255,255,.58); }
+.rodape .pt { width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,.4); }
+.rodape .seta { color: var(--coral); font-weight: 800; }
+
+svg.il { display: block; overflow: visible; }
